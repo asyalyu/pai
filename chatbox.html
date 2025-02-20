@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatbox testing :3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            font-family: Arial, sans-serif; /* Ensure header has same font */
+        }
+
+        .chatbox {
+            width: 100%;
+            max-width: 500px; /* Same max-width for balance */
+            height: 500px; /* Adjust height for a more square shape */
+            margin: auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            justify-content: space-between; /* Space out the form elements */
+        }
+
+        .chatbox input[type="text"], .chatbox textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        /* Make the message box take up more space and match the length of the container */
+        .chatbox textarea {
+            height: 247px; /* Adjust height for the text area */
+            resize: none;  /* Disable resizing */
+        }
+
+        .chatbox input[type="submit"] {
+            padding: 12px 25px;
+            background-color: #5c6bc0;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-family: Arial, sans-serif;
+        }
+
+        .chatbox input[type="submit"]:hover {
+            background-color: #3f4d92;
+        }
+    </style>
+</head>
+<body>
+
+<h1>insert your message here</h1>
+
+<div class="chatbox">
+    <form action="https://formspree.io/f/mzzdodwv" method="POST">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="message">message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
