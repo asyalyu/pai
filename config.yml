@@ -1,0 +1,79 @@
+# config.yml
+
+# Global Settings
+global:
+  site_name: "p-ai"
+  base_url: "https://asyalyu.github.io/pai/"
+  default_language: "en"
+  timezone: "UTC"
+  debug: true
+
+# Toolbar Configuration
+toolbar:
+  items:
+    - label: "Home"
+      url: "/"
+      icon: "home"
+      visible: true
+
+    - label: "Portfolio"
+      url: "/about"
+      icon: "info"
+      visible: true
+
+    - label: "This Semester"
+      url: "/services"
+      icon: "services"
+      visible: true
+
+    - label: "Blog"
+      url: "/blog"
+      icon: "blog"
+      visible: true
+
+    - label: "Contact"
+      url: "/contact"
+      icon: "contact"
+      visible: true
+
+# Pages Configuration
+pages:
+  home:
+    title: "Home"
+    description: "Welcome to My Awesome Website!"
+    meta_keywords: "home, welcome, my awesome website"
+    template: "home.html"
+    css: ["styles/home.css"]
+    js: ["scripts/home.js"]
+
+  about:
+    title: "About Us"
+    description: "Learn more about our company and mission."
+    meta_keywords: "about, company, mission"
+    template: "about.html"
+    css: ["styles/about.css"]
+    js: ["scripts/about.js"]
+
+  services:
+    title: "Our Services"
+    description: "Explore the services we offer."
+    meta_keywords: "services, offerings, solutions"
+    template: "services.html"
+    css: ["styles/services.css"]
+    js: ["scripts/services.js"]
+
+  blog:
+    title: "Blog"
+    description: "Read our latest blog posts."
+    meta_keywords: "blog, posts, articles"
+    template: "blog.html"
+    css: ["styles/blog.css"]
+    js: ["scripts/blog.js"]
+
+  contact:
+    title: "Contact Us"
+    description: "Get in touch with us."
+    meta_keywords: "contact, email, support"
+    template: "contact.html"
+    css: ["styles/contact.css"]
+    js: ["scripts/contact.js"]
