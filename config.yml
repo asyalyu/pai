@@ -23,3 +23,11 @@ navigation:
     url: "/about/"
     icon: "info"
     visible: true
+
+  # Exclude Files/Folders from Build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
