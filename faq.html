@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></titl FAQ </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .faq {
+            margin: 20px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .question {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .question:hover {
+            background-color: #0056b3;
+        }
+
+        .answer {
+            display: none;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background-color: #f0f0f0;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        .social-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            display: inline-block;
+        }
+
+        .linkedin { background-color: #0077b5; }
+        .instagram { background-color: #e4405f; }
+        .github { background-color: #24292e; }
+
+        .social-buttons a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>P-ai FAQ & Contact</h1>
+</header>
+
+<div class="container">
+    <h2>📅 Recruitment Timeline</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <div class="question">When is the recruitment timeline?</div>
+            <div class="answer">Recruitment usually happens during the first few weeks of each semester.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">How does applying to leadership positions work?</div>
+            <div class="answer">Applications for leadership positions are released at the end of each semester, with recruitment occurring over the break.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">What do project managers and project members do?</div>
+            <div class="answer">
+                <strong>Project Managers:</strong> Recruited during the first week of each semester.<br>
+                <strong>Project Members:</strong> Recruited early in the fall semester, with applications announced via Instagram and LinkedIn.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">What are the advantages of being a project manager?</div>
+            <div class="answer">Project managers gain leadership experience, people management skills, and hands-on experience with agile methodology and product management.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">What types of projects are ideal for P-ai?</div>
+            <div class="answer">Either software engineering (SWE) or AI projects, preferably with a social impact focus.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">What makes a good project member or manager?</div>
+            <div class="answer">
+                <strong>Good Project Members:</strong> Eager to learn, self-motivated, and team-oriented.<br>
+                <strong>Good Project Managers:</strong> Technically competent with strong team management skills.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">What’s key to success in P-ai?</div>
+            <div class="answer">Self-initiative, eagerness to learn, and a collaborative mindset are crucial for success in P-ai.</div>
+        </div>
+    </div>
+
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/company/p-ai/" target="_blank" class="linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/pai.claremont/" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://github.com/p-ai-org" target="_blank" class="github">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
+    
+</div>
+
+<script>
+    // JavaScript for FAQ toggle
+    document.querySelectorAll('.question').forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
