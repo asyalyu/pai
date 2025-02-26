@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>P-ai Website</title>
+    <style>
+      /* Basic Navbar Styling */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        z-index: 1000;
+        transition: top 0.3s; /* Transition for smooth hiding/showing */
+      }
+
+      /* Hides navbar when scroll down */
+      .navbar.hide {
+        top: -60px; /* Adjust this value depending on navbar height */
+      }
+
+      /* Ensure body content isn't covered by navbar */
+      body {
+        padding-top: 60px; /* Adjust to navbar height */
+      }
+
+      /* Navbar container */
+      .navbar-nav {
+        display: flex; /* Use flexbox to evenly space the links */
+        justify-content: space-evenly; /* Space links evenly */
+        width: 100%; /* Make navbar stretch full width */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+      }
+
+      /* Styling for nav items (links) */
+      .nav-item {
+        list-style: none; /* Remove bullet points */
+      }
+
+      .nav-link {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #000;
+      }
+
+      /* Hover effect for links */
+      .nav-link:hover {
+        background-color: #ddd;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio</h1>
+    
+    <div class="nav"></div>
+    <div class="right">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="people.html">People</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="thissemester.html"><span class="sr-only">This Semester</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="portfolio.html"><span class="sr-only">Portfolio</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact.html"><span class="sr-only">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <script>
+      let lastScrollTop = 0;
+      const navbar = document.querySelector('.navbar');
+
+      window.addEventListener('scroll', function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // If scrolling down, hide navbar
+        if (currentScroll > lastScrollTop) {
+          navbar.classList.add('hide');
+        } 
+        // If scrolling up, show navbar
+        else {
+          navbar.classList.remove('hide');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+      });
+    </script>
+  </body>
+</html>

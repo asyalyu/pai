@@ -33,10 +33,10 @@ plugins:
 
 # Navigation links
 navigation:
-  - name: Home
-    link: /
-  - name: About
-    link: /about
+  - name: faq
+    link: /faq
+  - name: people
+    link: /people
   - name: Contact
     link: /contact
 
