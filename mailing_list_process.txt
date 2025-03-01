@@ -1,0 +1,21 @@
+
+process for initializing the websites: 
+- go to terminal 
+- make sure you have pvp installed by doing pvp -v 
+    - if not, then install pvp with brew install pvp 
+- run php -S localhost:8000
+
+
+process for adding email: 
+- go to http://localhost:8000/mailinglist.html 
+- enter in your email 
+- after hitting subscribe, the link will change to http://localhost:8000/add_email.php
+    - if it shows a disconnection error, it is likely because your terminal is 
+    no longer running pvp 
+
+
+process for checking email has been added: 
+- in terminal, in the right directory, do "sqlite3 emails.db" 
+- a "sqlite>" prompt should appear, then type in "SELECT * FROM mailing_list;" 
+- this will display a list of all the emails, along with the time when they were added 
+- to exit, then do ".exit"
