@@ -3,54 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>P-ai Website</title>
-    <style>
-      /* Basic Navbar Styling */
-      .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        z-index: 1000;
-        transition: top 0.3s; /* Transition for smooth hiding/showing */
-      }
-
-      /* Hides navbar when scroll down */
-      .navbar.hide {
-        top: -60px; /* Adjust this value depending on navbar height */
-      }
-
-      /* Ensure body content isn't covered by navbar */
-      body {
-        padding-top: 60px; /* Adjust to navbar height */
-      }
-
-      /* Navbar container */
-      .navbar-nav {
-        display: flex; /* Use flexbox to evenly space the links */
-        justify-content: space-evenly; /* Space links evenly */
-        width: 100%; /* Make navbar stretch full width */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-      }
-
-      /* Styling for nav items (links) */
-      .nav-item {
-        list-style: none; /* Remove bullet points */
-      }
-
-      .nav-link {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: #000;
-      }
-
-      /* Hover effect for links */
-      .nav-link:hover {
-        background-color: #ddd;
-        border-radius: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="design.css"> <!-- Link to the CSS file -->
   </head>
   <body>
     <h1>This Semester</h1>
@@ -79,6 +32,12 @@
         </div>
       </nav>
     </div>
+    <div class="semi-circle"></div>
+    <div class="smaller-semi-circle"></div>
+    <div class="smallest-semi-circle"></div>
+    <div class="transition-smaller-semi-circle"></div>
+    <div class="transition-smallest-semi-circle"></div>
+
 
     <script>
       let lastScrollTop = 0;
