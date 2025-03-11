@@ -9,11 +9,10 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent overflow from the semi-circle */
+    overflow-y: scroll; /* Prevent overflow from the semi-circle */
     height: 100vh; /* Ensure the body takes full viewport height */
     position: relative;
-    background: radial-gradient(circle, #071cd6, #b5d3e7);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(100px);
 }
 
 body::before {
@@ -29,23 +28,23 @@ body::before {
 
 /* Full Circle Styling (largest circle takes up full viewport width/height) */
 .circle {
-    width: min(100vw, 100vh); /* Ensures the circle's diameter is limited to the smaller dimension of the screen */
-    height: min(100vw, 100vh); /* Same as width for a perfect circle */
-    background: radial-gradient(circle, #9bcae9, #05036e,  #071cd6, #9bcae9); /* Smooth gradient for the circle */
-    border-radius: 50%; /* This makes it a circle */
-    position: absolute; /* Position it relative to the body */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to truly center the circle */
-    z-index: -1; /* Ensure the circle stays behind the content */
+  position: fixed; /* Fix position relative to the viewport */
+  top: 85%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: min(150vw, 150vh); /* Ensure the circle's diameter is limited to the smaller dimension of the screen */
+  height: min(150vw, 150vh); /* Same as width for a perfect circle */
+  background: radial-gradient(circle, #b8cedd, #9bcae9, #071cd6, #0a0a56, #3b65a3); /* Smooth gradient for the circle */
+  filter: blur(50px);
+  border-radius: 50%; /* This makes it a circle */
+  transform: translate(-50%, -50%); /* Adjust to truly center the circle */
+  z-index: -2; /* Ensure the circle stays behind the content */
 }
-
 
 
 /* Additional content to make the page scroll */
 .content {
     text-align: center;
-    position: relative;
+    position: absolute;
     z-index: 1; /* Ensure content is above the circle */
     color: #333;
 }
@@ -110,9 +109,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-size: 26px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
 }
 
 /* Links */
