@@ -9,7 +9,7 @@ navigation:
   - name: "PORTFOLIO"
     url: "/portfolio.html"
   - name: "CONTACT"
-    url: "/contact.html"
+    url: "/faq.html"
 
 # Defaults
 defaults:

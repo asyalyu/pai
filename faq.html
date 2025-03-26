@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P-ai FAQ & Contact</title>
+
+    <!-- FontAwesome for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: radial-gradient(circle, #d0d8f1, #5271b4);
+            color: black; /* Ensures text is visible */
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .question:hover {
+            color: #5271b4;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 5px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 3px solid #5271b4;
+            color: black;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatbox {
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            resize: none;
+        }
+
+        .send-button {
+            background: #5271b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .send-button:hover {
+            background: #405693;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Social Media Links -->
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/company/p-ai/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/p-ai-org" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.instagram.com/pai.claremont/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container">
+        <h2>📅 Recruitment Timeline</h2>
+        
+        <div class="faq">
+            <div class="faq-item">
+                <div class="question">When is the recruitment timeline?</div>
+                <div class="answer">Recruitment usually happens during the first few weeks of each semester.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">How does applying to leadership positions work?</div>
+                <div class="answer">Applications for leadership positions are released at the end of each semester, with recruitment occurring over the break.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What do project managers and project members do?</div>
+                <div class="answer">
+                    <strong>Project Managers:</strong> Recruited during the first week of each semester.<br>
+                    <strong>Project Members:</strong> Recruited early in the fall semester, with applications announced via Instagram and LinkedIn.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What are the advantages of being a project manager?</div>
+                <div class="answer">Project managers gain leadership experience, people management skills, and hands-on experience with agile methodology and product management.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What types of projects are ideal for P-ai?</div>
+                <div class="answer">Either software engineering (SWE) or AI projects, preferably with a social impact focus.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What makes a good project member or manager?</div>
+                <div class="answer">
+                    <strong>Good Project Members:</strong> Eager to learn, self-motivated, and team-oriented.<br>
+                    <strong>Good Project Managers:</strong> Technically competent with strong team management skills.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What’s key to success in P-ai?</div>
+                <div class="answer">Self-initiative, eagerness to learn, and a collaborative mindset are crucial for success in P-ai.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>chatbox testing :3</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f4;
+            }
+    
+            h1 {
+                color: #333;
+                font-family: Arial, sans-serif; /* Ensure header has same font */
+            }
+    
+            .chatbox {
+                width: 100%;
+                max-width: 500px; /* Same max-width for balance */
+                height: 500px; /* Adjust height for a more square shape */
+                margin: auto;
+                padding: 30px;
+                background-color: #fff;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column; /* Arrange items vertically */
+                justify-content: space-between; /* Space out the form elements */
+            }
+    
+            .chatbox input[type="text"], .chatbox textarea {
+                width: 100%;
+                padding: 12px;
+                margin: 8px 0;
+                border-radius: 6px;
+                border: 1px solid #ddd;
+                font-family: Arial, sans-serif;
+                box-sizing: border-box; /* Ensure padding is included in width */
+            }
+    
+            /* Make the message box take up more space and match the length of the container */
+            .chatbox textarea {
+                height: 247px; /* Adjust height for the text area */
+                resize: none;  /* Disable resizing */
+            }
+    
+            .chatbox input[type="submit"] {
+                padding: 12px 25px;
+                background-color: #5c6bc0;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                border-radius: 6px;
+                font-family: Arial, sans-serif;
+            }
+    
+            .chatbox input[type="submit"]:hover {
+                background-color: #3f4d92;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <h1>insert your message here</h1>
+    
+    <div class="chatbox">
+        <form action="https://formspree.io/f/mzzdodwv" method="POST">
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" required>
+    
+            <label for="message">message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    </body>
+    </html>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 P-AI Contact</p>
+    </footer>
+
+    <script>
+        // Toggle FAQ answers with smooth fade-in effect
+        document.querySelectorAll('.faq-item .question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    document.querySelectorAll('.answer').forEach(ans => ans.style.display = 'none'); // Hide others
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
