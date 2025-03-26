@@ -89,17 +89,29 @@ body {
     color: rgb(76, 138, 213);
 }
 
-/* ===== CONTENT AREA ===== */
+/* ===== TRANSPARENT CONTENT AREA ===== */
 .content {
     position: relative;
     z-index: 1;
     min-height: calc(100vh - 80px);
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.85);
+    /* Remove background-color and box-shadow */
     margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Light text for better contrast */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Text outline for readability */
 }
+
+/* Add contrast to text elements */
+.content h1, 
+.content h2, 
+.content h3,
+.content p,
+.content a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
 
 /* ===== UTILITY CLASSES ===== */
 .container {
