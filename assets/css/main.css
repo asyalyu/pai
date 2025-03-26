@@ -95,7 +95,7 @@ body {
     z-index: 1;
     min-height: calc(100vh - 80px);
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #bdb1e900;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
