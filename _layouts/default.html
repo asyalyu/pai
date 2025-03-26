@@ -1,64 +1,56 @@
----
-layout: default
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-    <!-- Background elements -->
-    <div class="circle-bg"></div>
+    <!-- Background Elements -->
+    <div class="circle"></div>
+    <div class="semi-circle"></div>
+    <div class="smaller-semi-circle"></div>
+    <div class="smallest-semi-circle"></div>
+    <div class="transition-smaller-semi-circle"></div>
+    <div class="transition-smallest-semi-circle"></div>
     
     <!-- Navigation -->
     <nav class="navbar">
         <ul class="navbar-nav">
             {% for link in site.navigation %}
             <li class="nav-item {% if page.url == link.url %}active{% endif %}">
-                <a href="{{ link.url | relative_url }}" class="nav-link">{{ link.name }}</a>
+                <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
             </li>
             {% endfor %}
         </ul>
     </nav>
-
+    
     <!-- Main Content -->
-    <main class="container">
-        <header>
-            <h1>{{ site.title }}</h1>
-            <p>{{ site.description }}</p>
-        </header>
-
-        <section>
-            <h2>Welcome to {{ site.title }}</h2>
-            <p>This is the homepage of {{ site.title }}. You can find more information about us by navigating through the links above.</p>
-        </section>
+    <main class="content">
+        {{ content }}
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>Contact us at <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <p>Follow us on GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
-    </footer>
+    <!-- Footer can be added here if needed -->
 
-    <!-- Optional JavaScript -->
     <script>
         // Navbar hide/show on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
+            const navbar = document.querySelector('.navbar');
+            
             if (currentScroll <= 0) {
-                document.querySelector('.navbar').classList.remove('hide');
+                navbar.classList.remove('hide');
+                return;
             }
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                document.querySelector('.navbar').classList.add('hide');
-            } 
-            if (currentScroll < lastScroll) {
-                document.querySelector('.navbar').classList.remove('hide');
+            
+            if (currentScroll > lastScroll && !navbar.classList.contains('hide')) {
+                navbar.classList.add('hide');
+            } else if (currentScroll < lastScroll && navbar.classList.contains('hide')) {
+                navbar.classList.remove('hide');
             }
+            
             lastScroll = currentScroll;
         });
     </script>
