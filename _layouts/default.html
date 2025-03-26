@@ -1,17 +1,40 @@
+---
+layout: default
+---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <!-- Add other meta tags and stylesheets here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  {% include header.html %}
-  
-  <main class="content">
-    {{ content }}
-  </main>
-  
-  {% include footer.html %}
-</body>
-</html>
+    <!-- Background Circle -->
+    <div class="background-circle"></div>
+    
+    <!-- Main Content -->
+    <div class="content-container">
+        <header>
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.description }}</p>
+        </header>
+        
+        <nav>
+            <ul>
+                {% for link in site.navigation %}
+                <li><a href="{{ link.url | relative_url }}">{{ link.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>Welcome to {{ site.title }}</h2>
+            <p>This is the homepage of {{ site.title }}.</p>
+        </main>
+        
+        <footer>
+            <p>Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            <p>GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
+        </footer>
+    </
