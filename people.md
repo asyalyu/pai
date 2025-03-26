@@ -20,7 +20,7 @@
         }
 
         body{
-            background-color: #ffe6ee;
+           
             font-family: 'Trebuchet MS', sans-serif;
             text-align: center;
         }
@@ -98,7 +98,7 @@
         }
 
         .highlight{
-            background-color: #ff69b4;
+            background-color:rgb(44, 57, 235);
             color: white;
             padding-left: -10px;
             padding-right: -10px;
