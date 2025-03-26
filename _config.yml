@@ -5,7 +5,7 @@ navigation:
   - name: "PEOPLE"
     url: "/people.html"
   - name: "THIS SEMESTER"
-    url: "/thissemester.html"
+    url: "/semester.html"
   - name: "PORTFOLIO"
     url: "/portfolio.html"
   - name: "CONTACT"
