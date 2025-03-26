@@ -58,6 +58,12 @@
             object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
         }
 
+        .image-wrapper img:hover {
+            width: 400px; /* Adjust the width of the images */
+            height: 600px;
+            object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
+        }
+
         .image-wrapper p {
             width: 100%; /* Ensures text wraps within the image width */
             word-wrap: break-word; /* Forces long words to break and wrap */
@@ -210,35 +216,35 @@
         <h1>P-ai Alumni</h1>
         <div class="image-container2">
             <div class="image-wrapper">
-                <img src="Pink/amu (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/hannahmandell/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/3a9b4e89-861a-4152-b6d4-b66e18dbb9ef/309385309_487313920080617_3733610816308122036_n.jpg?format=1000w"/></a>
                 <h3>Hannah Mandell</h3>
                 <p>Managing Director</p>
                 <p>Pomona '23</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/amu (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/bansipatel-/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/b481b9c8-5d26-410a-a19c-975b4466695a/bansi.jpeg?format=1000w"/></a>
                 <h3>Bansi Patel</h3>
                 <p>Director of Marketing</p>
                 <p>Scripps '23</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/amu (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/waverly-w-32ab80b9/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/66bca4de-5af3-4e65-b5e0-46e7ca480ff7/DSCF6704.jpg?format=1000w"/></a>
                 <h3>Waverly Wang</h3>
                 <p>Director of Design</p>
                 <p>Harvey Mudd '25</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/amu (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/andy-liu-8a2735126/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/59f0e4d2-8255-4cef-b158-9315e5352351/andy.jpg?format=1000w"/></a>
                 <h3>Andy Liu</h3>
                 <p>Director of Projects</p>
                 <p>Harvey Mudd</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/amu (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/alex-ker/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1612060178561-3DIHW96ANZFUTT9R7T9T/alex.jpg?format=1000w"/></a>
                 <h3>Alex Ker</h3>
                 <p>Founder</p>
                 <p>Pomona</p>
@@ -247,7 +253,7 @@
 
         <div class="image-container2">
             <div class="image-wrapper">
-                <img src="Pink/chara (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/tai-xiang-120120192/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/581de72c-a80a-4865-a7fa-5c6a57ddc36b/taiii.jpg?format=1000w"/></a>
                 <h3>Tai Xiang</h3>
                 <p>Project Manager</p>
                 <p>p-yum: Quantifying the Culinary side of YouTube </p>
@@ -255,7 +261,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/chara (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/jczimm/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1612060234433-35A8R4M96FEL6L44ZJKO/jacob.jpg?format=1000w"/></a>
                 <h3>Jacob Zimmerman</h3>
                 <p>Project Manager</p>
                 <p>P-sync</p>
@@ -263,12 +269,12 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/chara (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/nikolas-papastavrou-17b935155/" target="_blank"><img src="https://www.linkedin.com/in/nikolas-papastavrou-17b935155/"/></a>
                 <h3>Nikolas Papastavrou</h3>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/chara (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/marcos-acosta-949b3217a/" target="_blank"><img src="https://www.linkedin.com/in/marcos-acosta-949b3217a/"/></a>
                 <h3>Marcos Acosta</h3>
                 <p>Director of Projects</p>
                 <p>P-ASL Project Manager</p>
@@ -276,7 +282,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/chara (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/michael-lee0/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/af2a6b48-7e6c-4ecf-ae8f-91b5832560ee/118959628_649427552660839_7201994308099998664_n.jpg?format=1000w"/></a>
                 <h3>Michael Lee</h3>
                 <p>Project Manager</p>
                 <p>P-agent</p>
@@ -286,7 +292,7 @@
 
         <div class="image-container2">
             <div class="image-wrapper">
-                <img src="Pink/peakpx (1).jpg"/>
+                <a href = "https://www.linkedin.com/in/sophia-epstein-5a4085166/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/bb84eff1-bd4b-4efb-91ea-0c95ff9a9279/DSCF6721.jpg?format=1000w"/></a>
                 <h3>Sophia Epstein</h3>
                 <p>Project Manager</p>
                 <p>p-PET</p>
@@ -294,14 +300,14 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/peakpx (1).jpg"/>
+                <a href = "https://www.linkedin.com/in/sophia-epstein-5a4085166/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1f814a2a-5ae0-4aec-b929-c8619bae99e2/DSCF6703.jpg?format=1000w"/></a>
                 <h3>Varun Bopardikar</h3>
                 <p>Managing Director</p>
                 <p>Pitzer</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/peakpx (1).jpg"/>
+                <a href = "https://www.linkedin.com/in/marwan-bit-4790b3179/" target="_blank"><img src="https://media.licdn.com/dms/image/v2/D5603AQGScRtfIkvyMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684543110903?e=2147483647&v=beta&t=48JIP6Yti-obXcFX9CHk1BBJyEhvE-6x3VXHl8scbSI"/></a>
                 <h3>Marwan Bit</h3>
                 <p>Project Manager</p>
                 <p>p-music: AI-Generated Album Ratings</p>
@@ -309,7 +315,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/peakpx (1).jpg"/>
+                <a href = "https://www.linkedin.com/in/zachary-davis123/" target="_blank"><img src="https://media.licdn.com/dms/image/v2/C5603AQHQ4bZG1Zo_jg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1601444824511?e=2147483647&v=beta&t=h_u4YRV2MlK_TxVfLhtATgxnu0xGOS-rCmPs1Ls928Y"/></a>
                 <h3>Zac Davis</h3>
                 <p>Project Manager</p>
                 <p><a href="https://docs.google.com/document/d/1JNg2dKvUoyJu4OiK47wWQ3E6oSsQfsYjPfgkCP_Kg-I/edit?tab=t.0#heading=h.h5ghr4yvf1pp" target="_blank">p-okémon: Pokémon Battle Engine</a></p>
