@@ -110,3 +110,92 @@ body {
 .text-center {
     text-align: center;
 }
+
+/* FAQ & Contact Styles */
+.faq-container, .contact-form {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.question {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.question:hover {
+    color: #9bcae9;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.send-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #5271b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-button:hover {
+    background: #3b65a3;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.social-buttons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.social-buttons a:hover {
+    color: #9bcae9;
+}
