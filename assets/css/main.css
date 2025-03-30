@@ -66,13 +66,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Solution 2: Semi-transparent background for text only */
-p, li, .text-block {
+/* p, li, .text-block {
     background: rgba(0,0,0,0.3);
     padding: 8px 12px;
     border-radius: 4px;
     display: inline-block;
     margin: 5px 0;
-}
+} */
 
 /* ===== SPECIAL SECTIONS ===== */
 
