@@ -5,85 +5,103 @@
     box-sizing: border-box;
 }
 
-/* Make sure the body is the background container */
+/* Body Styling */
 body {
     margin: 0;
     padding: 0;
-    overflow-y: scroll; /* Prevent overflow from the semi-circle */
-    height: 100vh; /* Ensure the body takes full viewport height */
+    height: 100vh;
+    overflow-y: scroll;
     position: relative;
-    backdrop-filter: blur(100px);
+    background: #f5f5f5;
 }
 
-body::before {
-    position: absolute;
+/* Circle background */
+.circle {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    width: min(175vw, 175vh);
+    height: min(175vw, 175vh);
+    background: radial-gradient(circle, #b8cedd, #b8cedd, #b8cedd, #0a0a56, #0a0a56, #b8cedd, #1530ff, #1530ff, #1530ff, #1530ff, #1530ff, #1530ff, #1530ff);
+    filter: blur(50px);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Background */
+}
+
+/* Blur Layer */
+.blur {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #00000019; /* Your desired background */
-    backdrop-filter: blur(150%); /* Apply the blur */
-    z-index: 4; /* Ensure it stays in the background */
+    backdrop-filter: blur(50px);
+    z-index: -1; /* Above the circle, below content */
 }
 
-/* Full Circle Styling (largest circle takes up full viewport width/height) */
-.circle {
-  position: fixed; /* Fix position relative to the viewport */
-  top: 85%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  width: min(150vw, 150vh); /* Ensure the circle's diameter is limited to the smaller dimension of the screen */
-  height: min(150vw, 150vh); /* Same as width for a perfect circle */
-  background: radial-gradient(circle, #b8cedd, #9bcae9, #071cd6, #0a0a56, #3b65a3); /* Smooth gradient for the circle */
-  filter: blur(50px);
-  border-radius: 50%; /* This makes it a circle */
-  transform: translate(-50%, -50%); /* Adjust to truly center the circle */
-  z-index: -2; /* Ensure the circle stays behind the content */
-}
-
-
-/* Additional content to make the page scroll */
-.content {
-    text-align: center;
-    position: absolute;
-    z-index: 1; /* Ensure content is above the circle */
-    color: #333;
-}
-
-/* Basic Navbar Styling */
+/* Navbar Styling */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     height: 12%;
     background-color: rgba(0, 0, 0, 0.304);
-    z-index: 1000;
-    transition: top 0.3s; /* Transition for smooth hiding/showing */
+    z-index: 1000; /* Topmost layer */
+    transition: top 0.3s;
 }
 
 /* Hides navbar when scroll down */
 .navbar.hide {
-    top: -60px; /* Adjust this value depending on navbar height */
+    top: -60px;
 }
 
 /* Ensure body content isn't covered by navbar */
 body {
-    padding-top: 100px; /* Adjust to navbar height */
+    padding-top: 100px; 
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 50%; /* Spacing from the content */
+    margin-top: 10%;
+    z-index: 3; /* Above content, below navbar */
+    transform: translate(-50%, -50%);
+}
+
+.logo-container img {
+    width: 20%;  /* Adjust size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Content Styling */
+.text {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    z-index: 2; /* Below logo, above blur */
+    color: #000000;
 }
 
 /* Navbar container */
 .navbar-nav {
-    display: flex; /* Use flexbox to evenly space the links */
-    justify-content: space-evenly; /* Space links evenly */
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%; /* Make navbar stretch full width */
+    width: 100%;
     height: 100%;
-    padding: 0; /* Remove default padding */
-    margin-top: 15px; /* Remove default margin */
+    padding: 0;
+    margin-top: 15px;
 }
 
-/* Styling for nav items (links) */
+/* Nav links */
 .nav-item {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
 }
 
 .nav-link {
@@ -93,85 +111,21 @@ body {
     color: #000;
 }
 
-/* Hover effect for links */
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
 
 .nav-item.active .nav-link {
     font-size: 26px;
-    color: rgb(76, 138, 213);
+    color: rgb(2, 42, 91);
     border-radius: 5px;
 }
 
-/* Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-    font-size: 26px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 20px;
-    color: #000000;
-}
-
-/* Links */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Containers */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* General Buttons */
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
     background-color: #f8f9fa;
     padding: 20px 0;
     text-align: center;
     color: #333;
 }
-
-footer a {
-    color: #007bff;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
