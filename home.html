@@ -1,0 +1,52 @@
+---
+layout: default
+title: Home
+subtitle: Welcome to our creative space
+---
+
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+        <a href="#featured-projects" class="cta-button">View Our Work</a>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured-projects" class="featured-projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            {% assign featured_projects = site.data.portfolio | where: "featured", true %}
+            {% for project in featured_projects limit:3 %}
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                </div>
+                <div class="project-info">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description | truncate: 100 }}</p>
+                    <div class="project-links">
+                        {% if project.github %}
+                        <a href="{{ project.github }}" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        {% endif %}
+                        {% if project.demo %}
+                        <a href="{{ project.demo }}" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/portfolio" class="view-all">View All Projects →</a>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Ready to collaborate?</h2>
+        <a href="/contact" class="cta-button">Get in Touch</a>
+    </section>
+</div>
