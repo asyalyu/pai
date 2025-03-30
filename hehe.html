@@ -12,8 +12,16 @@
             margin-bottom: 50px;
         }
 
+        .image-container3 {
+            display: flex; /* Aligns the images in a row */
+            justify-content: center; /* Centers the images horizontally */
+            gap: 30px; /* Adds space between the images */
+            margin-bottom: 50px;
+        }
+
         .image-container2 {
             display: flex; /* Aligns the images in a row */
+            flex-wrap: wrap; /* Allows items to move to the next row */
             justify-content: center; /* Centers the images horizontally */
             gap: 30px; /* Adds space between the images */
             margin-bottom: 50px;
@@ -35,14 +43,16 @@
 
         .image-item img {
             width: 300px; /* Adjust the width of the images */
-            height: 500px; /* Maintain aspect ratio */
-            object-fit: cover
+            height: 400px; /* Maintain aspect ratio */
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         .image-item2 img {
             width: 300px; /* Adjust the width of the images */
             height: 300px; /* Maintain aspect ratio */
-            object-fit: cover
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         .image-wrapper {
@@ -50,18 +60,37 @@
             flex-direction: column;
             align-items: center;
             width: 220px;
+            transition: all 0.3s ease-in-out;
         }
 
         .image-wrapper img {
             width: 200px; /* Adjust the width of the images */
             height: 300px;
             object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
+            transition: all 0.3s ease-in-out;
+            border-radius: 10px;
         }
 
-        .image-wrapper img:hover {
-            width: 400px; /* Adjust the width of the images */
-            height: 600px;
+        .image-wrapper:hover {
+            width: 100%; /* Make it take the full width, pushing others down */
+        }
+
+        .image-wrapper:hover img {
+            width: 350px; /* Adjust the width of the images */
+            height: 500px;
             object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
+            border-radius: 10px;
+        }
+
+        .image-wrapper .hover-text {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .image-wrapper:hover .hover-text {
+            display: block; /* Show text on hover */
         }
 
         .image-wrapper p {
@@ -76,6 +105,8 @@
         h1 {
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 30px;
+            margin-bottom: 50px;
         }
 
         h2{
@@ -107,13 +138,13 @@
         }
 
         a {
-            color: rgb(255, 0, 128); /* Changes the link color */
+            color: rgb(126, 214, 255);
             text-decoration: none; /* Removes the underline */
             text-decoration: underline;
         }
 
         a:hover {
-            color: rgb(221, 0, 255); /* Changes color when hovered over */
+            color: rgb(255, 0, 128); /* Changes the link color */
             text-decoration: underline;
         }
 
@@ -122,17 +153,10 @@
 <body>
     <!-- P-ai Leadership -->
     <h1>Meet the P-ai Leadership</h1>
-        <div class="image-container">
-        <div class="image-item">
-            <img src="download (6).jpeg"/>
-            <h2>Asya Lyubavina</h2>
-            <p>Director of Marketing and Design</p>
-            <p>Pomona '26</p>
-            <p>Computer Science</p>
-        </div>
+    <div class="image-container">
 
         <div class="image-item">
-            <img src="download (1).jpeg"/>
+            <a href="https://www.linkedin.com/in/sae-furukawa-0314b71a3/"><img src="sae.jpeg"/></a>
             <h2>Sae Furukawa</h2>
             <p>President</p>
             <p>Pomona '25</p>
@@ -140,18 +164,26 @@
         </div>
 
         <div class="image-item">
-            <img src="download (2).jpeg"/>
+            <a href="https://www.linkedin.com/in/jayhyunsuh/"><img src="jay.jpeg"/></a>
             <h2>Jayhyun Suh</h2>
             <p>Vice President</p>
             <p>Pomona '26</p>
             <p>Math/Cognitive Science</p>
         </div>
 
+        <div class="image-item">
+            <a href="https://www.linkedin.com/in/asya-lyubavina-058155271/"><img src="Asya.jpeg"/></a>
+            <h2>Asya Lyubavina</h2>
+            <p>Director of Marketing and Design</p>
+            <p>Pomona '26</p>
+            <p>Computer Science</p>
+        </div>
+
     </div>
 
     <div class="image-container">
         <div class="image-item">
-            <img src="download (3).jpeg"/>
+            <a href = "https://www.linkedin.com/in/aimeekco/"><img src="Aimee_headshot.jpeg"/></a>
             <h2>Aimee Co</h2>
             <p>Director Of Projects</p>
             <p>Harvey Mudd '26</p>
@@ -159,7 +191,7 @@
         </div>
 
         <div class="image-item">
-            <img src="download (5).jpeg"/>
+            <a href = "https://www.linkedin.com/in/abraryaser/"><img src="abrar.jpeg"/></a>
             <h2>Abrar Yaser</h2>
             <p>Director of Projects</p>
             <p>Pomona '25</p>
@@ -167,7 +199,7 @@
         </div>
 
         <div class="image-item">
-            <img src="download.jpeg"/>
+            <a href="https://www.linkedin.com/in/dylan-o-connor/"><img src="dylan.jpeg"/></a>
             <h2>Dylan O'Conner</h2>
             <p>Director of Projects</p>
             <p>Pomona '26</p>
@@ -178,35 +210,35 @@
     <!-- Advisory Board -->
     <div class="highlight">
         <h1>Advisory Board</h1>
-        <p>David Kauchak (Pomona College)</p>
-        <p>George Montañez (Harvey Mudd College)</p>
-        <p>Michael Spezio (Scripps College)</p>
-        <p>Avery Bedows (Neurotechnology Specialist Loup Ventures)</p>
-        <p>Ron Sege (Partner Benhamou Global Ventures)</p>
-        <p>Aashita Kesarwani (HMC Scientific Computing Specialist/ML Researcher)</p>
-        <p>HaoLiang Chang (CityU HK PhD Student/NLP Researcher)</p>
-        <p>Andrew Strait (DeepMind Researcher)    </p>
+        <p><a href = "http://www.cs.pomona.edu/~dkauchak/" target="_blank"> David Kauchak</a> (Pomona College)</p>
+        <p><a href = "https://www.cs.hmc.edu/~montanez/" target="_blank"> George Montañez</a> (Harvey Mudd College)</p>
+        <p><a href = "https://www.scrippscollege.edu/offices/profile/michael-spezio" target="_blank"> Michael Spezio </a>(Scripps College)</p>
+        <p><a href = "https://www.crunchbase.com/person/avery-bedows" target="_blank"> Avery Bedows</a> (Neurotechnology Specialist Loup Ventures)</p>
+        <p><a href = "https://www.crunchbase.com/person/ron-sege" target = "_blank"> Ron Sege</a> (Partner Benhamou Global Ventures)</p>
+        <p><a href = "https://www.linkedin.com/in/aashita-kesarwani/" target = "_blank">Aashita Kesarwani</a> (HMC Scientific Computing Specialist/ML Researcher)</p>
+        <p><a href = "https://bright1993ff66.github.io/Resume/" target="_blank">HaoLiang Chang </a>(CityU HK PhD Student/NLP Researcher)</p>
+        <p><a href = "https://bsky.app/profile/agstrait.bsky.social" target="_blank">Andrew Strait </a>(DeepMind Researcher)</p>
     </div>
 
     <!-- Partners -->
     <div>
         <h1>Partners</h1>
         <p>Please send an email to p.ai.claremont@gmail.com if you are interested in partnering or sponsoring P-ai!</p>
-        <div class="image-container2">
+        <div class="image-container3">
             <div class="image-item2">
-                <img src="download (4).jpeg"/>
+                <a href="https://www.korbit.ai/" target="_blank"><img src="Screenshot 2025-03-02 161153.png"/></a>
             </div>
 
             <div class="image-item2">
-                <img src="download.png"/>
+                <a href="https://www.navfeas.com/" target="_blank"><img src="navfeas.png"/></a>
             </div>
 
             <div class="image-item2">
-                <img src="download (4).jpeg"/>
+                <a href="https://www.samba.tv/" target="_blank"><img src="Screenshot 2025-03-02 212321.png"/></a>
             </div>
 
             <div class="image-item2">
-                <img src="download.png"/>
+                <a href="https://www.tradeweb.com/" target="_blank"><img src="Tradeweb.jpeg"/></a>
             </div>
         </div>
     </div>
@@ -220,6 +252,7 @@
                 <h3>Hannah Mandell</h3>
                 <p>Managing Director</p>
                 <p>Pomona '23</p>
+                <p class="hover-text">This is additional information that appears on hover.</p>
             </div>
 
             <div class="image-wrapper">
@@ -227,6 +260,7 @@
                 <h3>Bansi Patel</h3>
                 <p>Director of Marketing</p>
                 <p>Scripps '23</p>
+                <p class="hover-text">Bansi is an alumni at Scripps College, who studied Media Studies and Psychology. She is interested in the role AI can play in social media monitoring and marketing. Outside of P-ai, Bansi has experience in marketing in the semiconductor industry. In her free time, Bansi enjoys photography, videography, and graphic design.</p>
             </div>
 
             <div class="image-wrapper">
@@ -269,12 +303,12 @@
             </div>
 
             <div class="image-wrapper">
-                <a href = "https://www.linkedin.com/in/nikolas-papastavrou-17b935155/" target="_blank"><img src="https://www.linkedin.com/in/nikolas-papastavrou-17b935155/"/></a>
+                <a href = "https://www.linkedin.com/in/nikolas-papastavrou-17b935155/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1582402517199-9MX507TFCVLVPU9IJIQF/nik.jpg?format=1500w"/></a>
                 <h3>Nikolas Papastavrou</h3>
             </div>
 
             <div class="image-wrapper">
-                <a href = "https://www.linkedin.com/in/marcos-acosta-949b3217a/" target="_blank"><img src="https://www.linkedin.com/in/marcos-acosta-949b3217a/"/></a>
+                <a href = "https://www.linkedin.com/in/marcos-acosta-949b3217a/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/b64e7141-568c-4ba4-8bca-8d9c83e1e920/DSCF6737.jpg?format=1500w"/></a>
                 <h3>Marcos Acosta</h3>
                 <p>Director of Projects</p>
                 <p>P-ASL Project Manager</p>
@@ -300,7 +334,7 @@
             </div>
 
             <div class="image-wrapper">
-                <a href = "https://www.linkedin.com/in/sophia-epstein-5a4085166/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1f814a2a-5ae0-4aec-b929-c8619bae99e2/DSCF6703.jpg?format=1000w"/></a>
+                <a href = "https://www.linkedin.com/in/varun-bopardikar-983302183/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/1f814a2a-5ae0-4aec-b929-c8619bae99e2/DSCF6703.jpg?format=1500w"/></a>
                 <h3>Varun Bopardikar</h3>
                 <p>Managing Director</p>
                 <p>Pitzer</p>
@@ -323,7 +357,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/peakpx (1).jpg"/>
+                <a href = "https://www.linkedin.com/in/rachel-yang-/" target="_blank"><img src="DSCF6717.jpg"/></a>
                 <h3>Rachel Yang</h3>
                 <p>Director of Events</p>
             </div>
@@ -331,7 +365,7 @@
 
         <div class="image-container2">
             <div class="image-wrapper">
-                <img src="Pink/shugo (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/saatvik-kher/" target="_blank"><img src="saatvik.jpeg"/></a>
                 <h3>Saatvik Kher</h3>
                 <p>Project Manager</p>
                 <p><a href = "https://docs.google.com/document/d/1WH6Yi6u8a3c_GAeRdc3mlEMIYcwPYOTKg044vfyWZx4/edit?tab=t.0#heading=h.mkb6nexdlkr2"  target="_blank">p-recommender: Interactive Course Recommender for 5C Students</a></p>
@@ -339,7 +373,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/shugo (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/taylor-venenciano-a76655192/" target="_blank"><img src="taylor.jpeg"/></a>
                 <h3>Taylor Venenciano</h3>
                 <p>Project Manager</p>
                 <p><a href = "https://docs.google.com/document/d/1i9PuWptIY8uMR9-i3c-oE2-FF2tt3Qoj7gcC72EQT9k/edit?tab=t.0#heading=h.mkb6nexdlkr2" target="_blank"> p-laying_soccer: UEFA Soccer Match Prediction</a></p>
@@ -347,7 +381,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/shugo (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/arjun-govind-94951322a/" target="_blank"><img src="arjun.jpeg"/></a>
                 <h3>Arjun Govind</h3>
                 <p>Project Manager</p>
                 <p><a href = "https://docs.google.com/document/d/1s3mQwcG99Ojq7AFSOUyYcsvEcDSZVoNPQk9FaULEgiY/edit?tab=t.0#heading=h.hg4u2olerq8t" target="_blank">p-stocks: Predicting Stock Behavior from Google Searches</a></p>
@@ -355,7 +389,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/shugo (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/guythampakkul/" target="_blank"><img src="Guy.jpeg"/></a>
                 <h3>Guy Thampakkul</h3>
                 <p>Project Manager</p>
                 <p><a href = "https://docs.google.com/document/d/1i9PuWptIY8uMR9-i3c-oE2-FF2tt3Qoj7gcC72EQT9k/edit?tab=t.0#heading=h.mkb6nexdlkr2" target="_blank"> p-laying_soccer: UEFA Soccer Match Prediction</a></p>
@@ -363,27 +397,27 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/shugo (2).jpg"/>
+                <a href = "https://www.linkedin.com/in/hannah-zucker-0bb88b184/" target="_blank"><img src="hannah.jpg"/></a>
                 <h3>Hannah Zucker</h3>
             </div>
         </div>
 
         <div class="image-container2">
             <div class="image-wrapper">
-                <img src="Pink/tumblr_nz42ck2W7p1ugs750o1_1280.jpg"/>
-                <h3>Winnie</h3>
+                <a href = "https://www.linkedin.com/in/winnie-xu-a9224313b/" target="_blank"><img src="winnie.webp"/></a>
+                <h3>Winnie Xu</h3>
                 <p>Pomona</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/tumblr_nz42ck2W7p1ugs750o1_1280.jpg"/>
+                <a href = "https://www.linkedin.com/in/songelizabeth/" target="_blank"><img src="elizabeth.jpg"/></a>
                 <h3>Elizabeth Song</h3>
                 <p>Director of Operations & Finance </p>
                 <p>Claremont McKenna</p>
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/tumblr_nz42ck2W7p1ugs750o1_1280.jpg"/>
+                <a href = "https://www.linkedin.com/in/aaron-xie-0000/" target="_blank"><img src="Aaron.jpg"/></a>
                 <h3>Aaron Xie</h3>
                 <p>Project Manager</p>
                 <p>p-TCM</p>
@@ -391,7 +425,7 @@
             </div>
 
             <div class="image-wrapper">
-                <img src="Pink/tumblr_nz42ck2W7p1ugs750o1_1280.jpg"/>
+                <a href = "https://www.linkedin.com/in/danica-du/" target="_blank"><img src="danica.jpg"/></a>
                 <h3>Danica Du </h3>
                 <p>Project Manager</p>
                 <p>p-deepfake</p>
