@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <!-- Add Font Awesome if needed -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Background Elements -->
@@ -26,19 +28,34 @@
         </ul>
     </nav>
     
+    <!-- Standardized Page Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <h1>{{ page.title | default: site.title }}</h1>
+            {% if page.subtitle %}
+            <p class="subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="content">
         {{ content }}
     </main>
 
-    <!-- Footer can be added here if needed -->
+    <!-- Standardized Footer -->
+    <footer class="site-footer">
+        <p>Contact us at <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p>Follow us on GitHub: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a></p>
+    </footer>
 
     <script>
         // Navbar hide/show on scroll
         let lastScroll = 0;
+        const navbar = document.querySelector('.navbar');
+        
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
-            const navbar = document.querySelector('.navbar');
             
             if (currentScroll <= 0) {
                 navbar.classList.remove('hide');
@@ -52,6 +69,16 @@
             }
             
             lastScroll = currentScroll;
+        });
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
