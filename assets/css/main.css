@@ -184,15 +184,22 @@ a:hover {
     transition: all 0.5s ease;
     opacity: 1;
     pointer-events: none;
+    width: 100%; /* Ensures centering context */
+    text-align: center; /* Centers inline elements */
 }
 
 .site-logo {
-    max-width: 200px;
+    width: auto;
     height: auto;
+    max-width: 200px; /* Adjust based on your logo size */
+    max-height: 200px;
     filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    display: inline-block; /* Better centering behavior */
 }
 
+/* Scrolled state */
 .scrolled .logo-container {
     opacity: 0;
     transform: translate(-50%, -60%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
