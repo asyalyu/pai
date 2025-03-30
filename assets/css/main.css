@@ -173,3 +173,26 @@ a:hover {
     color: #b8cedd;
     text-decoration: underline;
 }
+
+/* Logo Styles */
+.logo-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: all 0.5s ease;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.site-logo {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+}
+
+.scrolled .logo-container {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+}

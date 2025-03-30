@@ -9,6 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    {% if page.add_logo %}
+<div class="logo-container">
+    <img src="assets/css/pailogo.png" alt="Logo" class="site-logo">
+</div>
+    {% endif %}
     <!-- Background Elements -->
     <div class="circle"></div>
     <div class="semi-circle"></div>
@@ -91,6 +96,20 @@
             
             lastScroll = currentScroll;
         });
+      
+    // Only run if logo exists on page
+    const logo = document.querySelector('.logo-container');
+    if (logo) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+    }
+
     </script>
 
         <!-- // Add smooth scrolling to all links
