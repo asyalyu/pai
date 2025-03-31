@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0;
+}
+
+body {
+    /* Align the body content */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fee3ff;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin: 20px;
+}
+
+
+/* Add space above and below the gallery box */
+.gallery-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto; /* Adds space above and below the gallery */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: visible; /* Ensure arrows are visible */
+    background-color: rgb(255, 198, 229);
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    padding: 35px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align the content */
+}
+
+/* Title Styling */
+.gallery-title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Image Styling */
+.gallery img {
+    width: 40%; /* Center image and set width */
+    max-height: 350px;
+    object-fit: cover;
+    height: auto;
+    display: block; /* Ensures the image is displayed as a block (so it's centered properly) */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 10px;
+}
+
+/* Caption Styling */
+.caption {
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    margin: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Arrow Styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(206, 171, 255, 0.5);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10; /* Ensure it's always above images */
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgb(255, 141, 204);
+}
+
+/* Slide Styling */
+.slide {
+    flex: 0 0 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Title for individual slide */
+.slide-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Align the buttons to the left */
+    gap: 15px; /* Space between the buttons */
+    width: 100%;
+    margin-top: 20px; /* Space between the image and the buttons */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ddb6ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid white;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: rgb(255, 141, 204);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
