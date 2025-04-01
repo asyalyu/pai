@@ -1,19 +1,27 @@
 * {
     box-sizing: border-box;
-    margin: 10px;
+    margin: 0;
     padding: 0;
+    /* padding and margin of everything on page */
 }
 
 body {
     /* Align the body content */
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100vh;
     background-color: #fee3ff;
     padding: 20px;
+    margin: 20px;
+}
+
+.text {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
+    text-align: left;
     margin: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -21,7 +29,7 @@ body {
 .gallery-container {
     position: relative;
     width: 80%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 50px auto; /* Adds space above and below the gallery */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -96,8 +104,10 @@ body {
 /* Slide Styling */
 .slide {
     flex: 0 0 100%;
-    text-align: center;
+    text-align: left; /*botton position*/
     position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 /* Title for individual slide */
@@ -120,6 +130,9 @@ body {
 
 .button {
     display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
     padding: 10px 20px;
     background-color: #ddb6ff;
     color: white;
