@@ -5,6 +5,36 @@
     <title>P-ai Website</title>
     <link rel="stylesheet" href="design.css"> <!-- Link to the CSS file -->
   </head>
+    <style>
+      /* Dropdown styling for content area */
+      .project-dropdown {
+        margin: 20px;
+        margin-left: 40%;
+        position: relative;
+        display: inline-block;
+      }
+
+      .project-dropdown select {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .project-links {
+        margin-top: 10px;
+      }
+
+      .project-links a {
+        display: block;
+        margin: 5px 0;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .project-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
   <body>
     
     <div class="nav"></div>
@@ -31,31 +61,65 @@
         </div>
       </nav>
     </div>
-    <div class="semi-circle"></div>
-    <div class="smaller-semi-circle"></div>
-    <div class="smallest-semi-circle"></div>
-    <div class="transition-smaller-semi-circle"></div>
-    <div class="transition-smallest-semi-circle"></div>
-    <div class="content"></div>
 
+    <div class="circlesc"></div>
+<div class="blur"></div>
+
+    <div class="content">
+      <!-- ✅ Dropdown inside main content area -->
+      <div class="project-dropdown">
+        <label for="projectSelect">Select a project category:</label>
+        <select id="projectSelect">
+          <option value="">-- Choose a Semester --</option>
+          <option value="FA 2024">FA 2024</option>
+          <option value="SP 2024">SP 2024</option>
+          <option value="FA 2023">FA 2023</option>
+          <option value="SP 2023">SP 2023</option>
+          <option value="FA 2022">FA 2022</option>
+          <option value="SP 2022">SP 2022</option>
+          <option value="FA 2021">FA 2021</option>
+          <option value="SP 2021">SP 2021</option>
+        </select>
+
+        <div class="project-links" id="projectLinks"></div>
+      </div>
+    </div>
 
     <script>
-      let lastScrollTop = 0;
-      const navbar = document.querySelector('.navbar');
+      const projectSelect = document.getElementById("projectSelect");
+      const projectLinks = document.getElementById("projectLinks");
 
-      window.addEventListener('scroll', function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // If scrolling down, hide navbar
-        if (currentScroll > lastScrollTop) {
-          navbar.classList.add('hide');
-        } 
-        // If scrolling up, show navbar
-        else {
-          navbar.classList.remove('hide');
+      const links = {
+        "web-dev": [
+          { name: "Personal Portfolio", url: "projects/web-dev.html#portfolio" },
+          { name: "Team Website", url: "projects/web-dev.html#team" }
+        ],
+        "data-science": [
+          { name: "Data Viz Dashboard", url: "projects/data-science.html#viz" },
+          { name: "ML Model", url: "projects/data-science.html#ml" }
+        ],
+        "mobile-apps": [
+          { name: "Weather App", url: "projects/mobile-apps.html#weather" },
+          { name: "To-Do App", url: "projects/mobile-apps.html#todo" }
+        ],
+        "games": [
+          { name: "2D Platformer", url: "projects/games.html#platformer" },
+          { name: "Puzzle Game", url: "projects/games.html#puzzle" }
+        ]
+      };
+
+      projectSelect.addEventListener("change", function () {
+        const value = this.value;
+        projectLinks.innerHTML = ""; // clear old
+
+        if (value && links[value]) {
+          links[value].forEach(link => {
+            const a = document.createElement("a");
+            a.href = link.url;
+            a.textContent = link.name;
+            projectLinks.appendChild(a);
+          });
         }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
       });
     </script>
   </body>

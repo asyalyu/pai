@@ -29,6 +29,59 @@ body {
     z-index: -2; /* Background */
 }
 
+.circlecmc {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    width: min(175vw, 175vh);
+    height: min(175vw, 175vh);
+    background: radial-gradient(circle, #7b1d1d, #f0f3f4,#c4a700, #c4a700, #c4a700,#7b1d1d,#7b1d1d,#c4a700, #c4a700,#c4a700, #c4a700);
+    filter: blur(50px);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Background */
+}
+
+.circlesc {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    width: min(175vw, 175vh);
+    height: min(175vw, 175vh);
+    background: radial-gradient(circle, #f7f7f7, #f7f7f7, #013b02, #013b02,  #013b02,#ffffff, #3f8e3a, #3f8e3a,#013b02, #013b02,  #013b02,#013b02,  #013b02);
+    filter: blur(50px);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Background */
+}
+
+.circlepz {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    width: min(175vw, 175vh);
+    height: min(175vw, 175vh);
+    background: radial-gradient(circle, #ffffff, #ffffff, #f08400, #f08400,#ffffff, #ffffff, #f08400, #f08400, #f08400,  #f08400);
+    filter: blur(50px);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Background */
+}
+
+.circlehmc {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    width: min(175vw, 175vh);
+    height: min(175vw, 175vh);
+    background: radial-gradient(circle, #000000, #ffffff, #ffffff, #ffffff, #d39e00, #d39e00,#d39e00, #000000, #ffffff, #d39e00, #d39e00,#d39e00);
+    filter: blur(50px);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Background */
+}
+
+
 /* Blur Layer */
 .blur {
     position: fixed;
@@ -118,7 +171,7 @@ body {
 
 .nav-item.active .nav-link {
     font-size: 26px;
-    color: rgb(2, 42, 91);
+    color: rgb(202, 202, 202);
     border-radius: 5px;
 }
 
