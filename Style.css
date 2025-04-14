@@ -1,0 +1,454 @@
+:root {
+    /* Default Light Theme */
+    --background-color: #fff;
+    --text-color: #000;
+    --button-background: #4CAF50;
+    --button-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* padding and margin of everything on page */
+}
+
+body {
+    /* Align the body content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+.top-background {
+    background-image: url('ChatGPT Image Apr 13, 2025, 06_44_41 PM.png'); /* Path to your background image */
+    background-size: cover; /* Make the image cover the top of the page */
+    background-position: center center;
+    height: 1600px; /* Adjust height for the top section */
+    background-attachment: scroll;
+    transition: background-size 0.2s ease-in-out; /* Smooth zoom transition */
+    padding: 20px;
+}
+
+img {
+    width: 60%;
+    max-height: 400px;
+    object-fit: cover;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 40px; /* Add space below the image */
+}
+
+
+
+/* TEXT */
+.bold-text {
+    font-weight: bold;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-weight: 10px;
+    font-size: 22px;
+    margin-left: 200px;
+    margin-right: 150px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+
+
+/* GALLERY */
+.gallery-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 50px auto; /* Adds space above and below the gallery */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: visible; /* Ensure arrows are visible */
+    background-color: rgb(255, 198, 229);
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    padding: 35px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align the content */
+}
+
+/* Title Styling */
+.gallery-title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
+/* Image Styling */
+.gallery img {
+    width: 40%; /* Center image and set width */
+    max-height: 350px;
+    object-fit: cover;
+    height: auto;
+    display: block; /* Ensures the image is displayed as a block (so it's centered properly) */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 10px;
+}
+
+/* Caption Styling */
+.caption {
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    margin: 25px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+/* ARROW */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(206, 171, 255, 0.5);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10; /* Ensure it's always above images */
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgb(255, 141, 204);
+}
+
+
+
+
+/* SLIDE */
+.slide {
+    flex: 0 0 100%;
+    text-align: left; /*botton position*/
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+    transition: transform 0.3s ease-in-out; /*new! apply bounce*/
+    display: none; /*to use java file for animation */
+}
+
+.slide-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* Keyframes for the zoom effect */
+@keyframes zoom {
+    0% { transform: scale(1); }          /* Start at normal size */
+    50% { transform: scale(1.05); }      /* Zoom in slightly */
+    100% { transform: scale(1); }        /* Return to normal size */
+}
+
+.zoom {
+    animation: zoom 0.5s ease;  /* 0.5s for the zoom effect */
+}
+
+
+
+/* BUTTONS */
+.button1-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the buttons */
+    align-items: center; /* Vertically center the buttons */
+    height: 10vh; /* Full height of the viewport */
+    flex-direction: column; /* Optional: Stack buttons vertically */
+}
+
+.button1 {
+    display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 20px 30px;
+    background-color: #ddb6ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
+    /* transform-style: preserve-3d; Ensures the 3D effect is preserved */
+}
+
+.button1:hover {
+    background-color: rgb(255, 141, 204);
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Align the buttons to the left */
+    gap: 15px; /* Space between the buttons */
+    width: 100%;
+    margin-top: 20px; /* Space between the image and the buttons */
+}
+
+.button {
+    display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 10px 20px;
+    background-color: #ddb6ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
+}
+
+.button:hover {
+    background-color: rgb(255, 141, 204);
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    25% {
+        transform: translateY(-10px); /* Move up */
+    }
+    50% {
+        transform: translateY(0); /* Return to normal position */
+    }
+    75% {
+        transform: translateY(-5px); /* Move up slightly less */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+
+
+
+/* HEADINGS */
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 200px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+h4{
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+h3{
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    width: 100%; /* Ensures text wraps within the image width */
+    word-wrap: break-word; /* Forces long words to break and wrap */
+    overflow-wrap: break-word;
+    margin-top: 5px; /* Adds space between the image and its caption */
+    text-align: center; /* Centers text */
+}
+
+
+
+/* IMAGES */
+.image-container {
+    display: flex; /* Aligns the images in a row */
+    justify-content: center; /* Centers the images horizontally */
+    gap: 100px; /* Adds space between the images */
+    margin-bottom: 50px;
+}
+
+.image-container3 {
+    display: flex; /* Aligns the images in a row */
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Adds space between the images */
+    margin-bottom: 50px;
+}
+
+.image-container2 {
+    display: flex; /* Aligns the images in a row */
+    flex-wrap: wrap; /* Allows items to move to the next row */
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Adds space between the images */
+    margin-bottom: 50px;
+}
+
+.image-item {
+    text-align: center; /* Center the text (caption) below the image */
+}
+
+.image-item p {
+    margin-top: 10px; /* Adds space between the image and its caption */
+}
+
+.image-item img {
+    width: 300px; /* Adjust the width of the images */
+    height: 400px; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-item2 img {
+    width: 300px; /* Adjust the width of the images */
+    height: 300px; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    transition: all 0.3s ease-in-out;
+}
+
+.image-wrapper img {
+    width: 200px; /* Adjust the width of the images */
+    height: 300px;
+    object-fit: cover; /* Ensures images maintain aspect ratio while filling the space */
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.image-wrapper .hover-text {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.image-wrapper:hover .hover-text {
+    display: block; /* Show text on hover */
+}
+
+.image-wrapper p {
+    width: 100%; /* Ensures text wraps within the image width */
+    word-wrap: break-word; /* Forces long words to break and wrap */
+    overflow-wrap: break-word;
+    margin-top: 5px; /* Adds space between the image and its caption */
+    text-align: center; /* Centers text */
+}
+
+
+
+/* RANDOM BOXES */
+.highlight{
+    background-color: #a0dbff;
+    color: white;
+    padding-left: -10px;
+    padding-right: -10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+
+/* LINKS */
+a {
+    color: rgb(189, 229, 255);
+    text-decoration: none; /* Removes the underline */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(189, 229, 255); /*Changes the link color*/
+    text-decoration: underline;
+}
+
+/* THEMES */
+/* Dark Theme */
+[data-theme='dark'] {
+    --background-color: #333;
+    --text-color: #fff;
+    --button-background: #ff4081;
+    --button-color: #fff;
+}
+
+/* Theme 2 */
+[data-theme='theme2'] {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --button-background: #2196F3;
+    --button-color: #fff;
+}
+
+/* Theme 3 */
+[data-theme='theme3'] {
+    --background-color: #3a3a3a;
+    --text-color: #ffcc00;
+    --button-background: #ff5722;
+    --button-color: #fff;
+}
+
+/* Theme 4 */
+[data-theme='theme4'] {
+    --background-color: #fce4ec;
+    --text-color: #c2185b;
+    --button-background: #8e24aa;
+    --button-color: #fff;
+}
+
+/* Theme 5 */
+[data-theme='theme5'] {
+    --background-color: #e0f7fa;
+    --text-color: #004d40;
+    --button-background: #00acc1;
+    --button-color: #fff;
+}

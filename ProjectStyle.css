@@ -17,7 +17,8 @@ body {
 }
 
 .text {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
     font-size: 20px;
     text-align: left;
     margin: 20px;
@@ -51,7 +52,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
 }
 
 /* Image Styling */
@@ -71,7 +73,7 @@ body {
     font-size: 16px;
     color: #333;
     margin: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 /* Arrow Styling */
@@ -108,7 +110,23 @@ body {
     position: relative;
     margin-left: 30px;
     margin-right: 30px;
+    transition: transform 0.3s ease-in-out; /*new! apply bounce*/
+    display: none; /*to use java file for animation */
 }
+
+/* Keyframes for the bounce effect */
+/* Keyframes for the zoom effect */
+@keyframes zoom {
+    0% { transform: scale(1); }          /* Start at normal size */
+    50% { transform: scale(1.05); }      /* Zoom in slightly */
+    100% { transform: scale(1); }        /* Return to normal size */
+}
+
+.zoom {
+    animation: zoom 0.5s ease;  /* 0.5s for the zoom effect */
+}
+
+
 
 /* Title for individual slide */
 .slide-title {
@@ -116,10 +134,40 @@ body {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 /* Button Styling */
+.button1-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the buttons */
+    align-items: center; /* Vertically center the buttons */
+    height: 10vh; /* Full height of the viewport */
+    flex-direction: column; /* Optional: Stack buttons vertically */
+}
+
+
+.button1 {
+    display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 20px 30px;
+    background-color: #ddb6ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
+    /* transform-style: preserve-3d; Ensures the 3D effect is preserved */
+}
+
+
+
 .button-container {
     display: flex;
     justify-content: flex-start; /* Align the buttons to the left */
@@ -138,20 +186,49 @@ body {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     border: 2px solid white;
     font-size: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
     border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
 }
 
 .button:hover {
     background-color: rgb(255, 141, 204);
+    animation: bounce 0.5s ease-in-out infinite;
 }
+
+.button1:hover {
+    background-color: rgb(255, 141, 204);
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+
+    
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    25% {
+        transform: translateY(-10px); /* Move up */
+    }
+    50% {
+        transform: translateY(0); /* Return to normal position */
+    }
+    75% {
+        transform: translateY(-5px); /* Move up slightly less */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+
 
 h1 {
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
     margin-top: 30px;
     margin-bottom: 50px;
 }

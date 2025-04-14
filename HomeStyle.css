@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-background {
+    background-image: url('ChatGPT Image Apr 13, 2025, 06_44_41 PM.png'); /* Path to your background image */
+    background-size: cover; /* Make the image cover the top of the page */
+    background-position: center center;
+    height: 1600px; /* Adjust height for the top section */
+    background-attachment: scroll;
+    transition: background-size 0.2s ease-in-out; /* Smooth zoom transition */
+    padding: 20px;
+}
+
+
+img {
+    width: 60%; /* Center image and set width */
+    max-height: 400px;
+    object-fit: cover;
+    height: auto;
+    display: block; /* Ensures the image is displayed as a block (so it's centered properly) */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 10px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.text {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 10px;
+    font-size: 22px;
+    margin-left: 200px;
+    margin-right: 150px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 200px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the buttons */
+    align-items: center; /* Vertically center the buttons */
+    height: 10vh; /* Full height of the viewport */
+    flex-direction: column; /* Optional: Stack buttons vertically */
+}
+
+
+.button {
+    display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 20px 30px;
+    background-color: #ddb6ff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
+    /* transform-style: preserve-3d; Ensures the 3D effect is preserved */
+}
+
+.button:hover {
+    background-color: rgb(255, 141, 204);
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    25% {
+        transform: translateY(-10px); /* Move up */
+    }
+    50% {
+        transform: translateY(0); /* Return to normal position */
+    }
+    75% {
+        transform: translateY(-5px); /* Move up slightly less */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+
