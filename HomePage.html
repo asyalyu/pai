@@ -13,10 +13,52 @@
         <h2>P-AI</h2>
         <h1>a technical <span class="bold-text">Project Incubator</span> at the <span class="bold-text">Claremont Colleges </span> 
             exploring applied <span class="bold-text">Computer Science</span> & <span class="bold-text">AI/ML</span> </h1>
-        <div class = "button-container">
+        <div class = "button1-container">
             <a href="https://forms.gle/Dk9hxEhGtADuoSNF6" class="button1" target="_blank">JOIN P-AI!</a>
         </div>
     </div>
+
+    <div class="scrolling-image-wrapper">
+        <img id="themeImage" src="light.png" alt="Theme Image" class="scrolling-image">
+    </div>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const wrapper = document.querySelector(".scrolling-image-wrapper");
+            const image = document.querySelector("img.scrolling-image");
+            const rect = wrapper.getBoundingClientRect();
+
+            // Only animate if the image is on screen
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+                const imageHeight = image.offsetHeight;
+                const wrapperHeight = wrapper.offsetHeight;
+
+                // Calculate how far to move the image up
+                const maxScroll = imageHeight - wrapperHeight;
+                const translateY = Math.min(maxScroll, Math.max(0, scrollProgress * maxScroll));
+
+                image.style.transform = `translateY(-${translateY}px)`;
+            }
+    });
+    </script>
+      
+    <div class = "button2-container">
+        <button class="button" onclick="changeTheme('light')">Pomona Theme</button>
+        <button class="button" onclick="changeTheme('dark')">Dark Theme</button>
+        <button class="button" onclick="changeTheme('theme2')">Harvey Mudd Theme</button>
+        <button class="button" onclick="changeTheme('theme3')">Scripps Theme</button>
+        <button class="button" onclick="changeTheme('theme4')">Claremont Mckenna Theme</button>
+        <button class="button" onclick="changeTheme('theme5')">Pitzer Theme</button>
+    </div>
+    
+
+    <script>
+        function changeTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+        }
+    </script>
+    
 
     
     <!-- Your main page content here -->
@@ -67,12 +109,12 @@
     <p class="text">Contact us at: <a href="mailto:p.ai.claremont@gmail.com?" target="_blank">p.ai.claremont@gmail.com</a></p>
 
     <h1>Featured Projects</h1>
-    <div class = "button-container">
+    <div class = "button1-container">
         <a href="https://www.pai5c.com/portfolio" class="button1" target="_blank">View Our Work</a>
     </div>
 
 
-    <script src="HomeScript.js"></script>
+    <script src="Script.js"></script>
 
 </body>
 </html>

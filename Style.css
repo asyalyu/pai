@@ -1,9 +1,17 @@
 :root {
-    /* Default Light Theme */
-    --background-color: #fff;
-    --text-color: #000;
-    --button-background: #4CAF50;
-    --button-color: #fff;
+    /* Pomona Theme */
+    --background-color: #d6f3ff;
+    --button-color: #8dd3ff;
+    --button-hover-color: rgb(0, 85, 255);
+    --button-text: #fff;
+    --arrow-color:var(--button-hover-color);
+    --arrow-hover-color: var(--button-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:black;
+    --top-color: #1596eb;
+    --background-image: url('light.png');
 }
 
 * {
@@ -18,25 +26,46 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
-    background-color: white;
+    min-height: 100vh;
     padding: 20px;
     margin: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--background-color);
+    color:var(--text)
 }
 
 .top-background {
-    background-image: url('ChatGPT Image Apr 13, 2025, 06_44_41 PM.png'); /* Path to your background image */
+    background-color: var(--top-color); /* Path to your background image */
     background-size: cover; /* Make the image cover the top of the page */
     background-position: center center;
-    height: 1600px; /* Adjust height for the top section */
-    background-attachment: scroll;
+    height: 600px; /* Adjust height for the top section */
     transition: background-size 0.2s ease-in-out; /* Smooth zoom transition */
     padding: 20px;
 }
 
+.scrolling-image-wrapper {
+    height: 600px; /* adjust as your "window" height */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+  
+img.scrolling-image {
+    all: unset; /* clears all inherited styles from global 'img' */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+    position: absolute;
+}
+
+
+
 img {
     width: 60%;
-    max-height: 400px;
     object-fit: cover;
     height: auto;
     display: block;
@@ -74,7 +103,7 @@ img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: visible; /* Ensure arrows are visible */
-    background-color: rgb(255, 198, 229);
+    background-color: var(--button-color);
 }
 
 .gallery {
@@ -110,7 +139,6 @@ img {
 .caption {
     text-align: left;
     font-size: 16px;
-    color: #333;
     margin: 25px;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -123,7 +151,7 @@ img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(206, 171, 255, 0.5);
+    background-color: var(--arrow-color);
     color: white;
     border: 2px solid white;
     padding: 10px 15px;
@@ -142,7 +170,7 @@ img {
 }
 
 .arrow:hover {
-    background-color: rgb(255, 141, 204);
+    background-color: var(--arrow-hover-color);
 }
 
 
@@ -195,8 +223,8 @@ img {
     margin-right: 50px;
     margin-left: 30px;
     padding: 20px 30px;
-    background-color: #ddb6ff;
-    color: white;
+    background-color: var(--button-color);
+    color: var(--button-text);
     text-align: center;
     text-decoration: none;
     font-family: 'Trebuchet MS', sans-serif;
@@ -209,8 +237,16 @@ img {
 }
 
 .button1:hover {
-    background-color: rgb(255, 141, 204);
+    background-color: var(--button-hover-color);
     animation: bounce 0.5s ease-in-out infinite;
+}
+
+.button2-container {
+    display: flex;
+    justify-content: flex-start; /* Align the buttons to the left */
+    /* gap: 7px; Space between the buttons */
+    width: 100%;
+    margin-top: 20px; /* Space between the image and the buttons */
 }
 
 .button-container {
@@ -227,8 +263,8 @@ img {
     margin-right: 50px;
     margin-left: 30px;
     padding: 10px 20px;
-    background-color: #ddb6ff;
-    color: white;
+    background-color: var(--button-color);
+    color: var(--button-text);
     text-align: center;
     text-decoration: none;
     font-family: 'Trebuchet MS', sans-serif;
@@ -240,7 +276,7 @@ img {
 }
 
 .button:hover {
-    background-color: rgb(255, 141, 204);
+    background-color: var(--button-hover-color);
     animation: bounce 0.5s ease-in-out infinite;
 }
 
@@ -282,6 +318,7 @@ h2 {
     font-size: 200px;
     margin-top: 30px;
     margin-bottom: 50px;
+    color: white;
 }
 
 
@@ -390,65 +427,103 @@ h3{
 
 /* RANDOM BOXES */
 .highlight{
-    background-color: #a0dbff;
+    background-color: var(--highlight);
     color: white;
-    padding-left: -10px;
-    padding-right: -10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 50px;
+    padding-top: 1px;
 }
 
 
 
 /* LINKS */
 a {
-    color: rgb(189, 229, 255);
+    color: var(--link-color);
     text-decoration: none; /* Removes the underline */
     text-decoration: underline;
 }
 
 a:hover {
-    color: rgb(189, 229, 255); /*Changes the link color*/
+    color: var(--link-hover-color); /*Changes the link color*/
     text-decoration: underline;
 }
 
 /* THEMES */
 /* Dark Theme */
 [data-theme='dark'] {
-    --background-color: #333;
-    --text-color: #fff;
-    --button-background: #ff4081;
-    --button-color: #fff;
+    --background-color: black;
+    --button-color: white;
+    --button-hover-color: #d6f3ff;
+    --button-text:black;
+    --arrow-color:var(--button-color);
+    --arrow-hover-color: var(--button-hover-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:white;
+    --top-color: black;
+    --background-image: url('dark.png');
 }
 
-/* Theme 2 */
+/* HMC Theme */
 [data-theme='theme2'] {
-    --background-color: #f5f5f5;
-    --text-color: #333;
-    --button-background: #2196F3;
-    --button-color: #fff;
+    --background-color: #faefc6;
+    --button-color: #ffe88d;
+    --button-hover-color: #ffcc00;
+    --button-text: #fff;
+    --arrow-color:var(--button-color);
+    --arrow-hover-color: var(--button-hover-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:black;
+    --top-color: #1596eb;
+    --background-image: url('light.png');
 }
 
-/* Theme 3 */
+/* Scripps Theme */
 [data-theme='theme3'] {
-    --background-color: #3a3a3a;
-    --text-color: #ffcc00;
-    --button-background: #ff5722;
-    --button-color: #fff;
+    --background-color: #d6ffd8;
+    --button-color: #00ae09;
+    --button-hover-color: #006705;
+    --button-text: #fff;
+    --arrow-color:var(--button-color);
+    --arrow-hover-color: var(--button-hover-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:black;
+    --top-color: #1596eb;
+    --background-image: url('light.png');
 }
 
-/* Theme 4 */
+/* CMC Theme */
 [data-theme='theme4'] {
-    --background-color: #fce4ec;
-    --text-color: #c2185b;
-    --button-background: #8e24aa;
-    --button-color: #fff;
+    --background-color: #ffc6c6;
+    --button-color: #de0000;
+    --button-hover-color: #920000;
+    --button-text: #ffe5a3;
+    --arrow-color:var(--button-color);
+    --arrow-hover-color: var(--button-hover-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:black;
+    --top-color: #1596eb;
+    --background-image: url('light.png');
 }
 
-/* Theme 5 */
+/* Pitzer Theme */
 [data-theme='theme5'] {
-    --background-color: #e0f7fa;
-    --text-color: #004d40;
-    --button-background: #00acc1;
-    --button-color: #fff;
+    --background-color: #ffd3ac;
+    --button-color: #ff973c;
+    --button-hover-color: #f77300;
+    --button-text: #fff;
+    --arrow-color:var(--button-color);
+    --arrow-hover-color: var(--button-hover-color);
+    --link-color: var(--button-hover-color);
+    --link-hover-color:var(--button-color);
+    --highlight:var(--button-color);
+    --text:black;
+    --top-color: #1596eb;
+    --background-image: url('light.png');
 }

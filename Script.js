@@ -36,3 +36,39 @@ nextButton.addEventListener("click", () => {
 
 // Show the first image when the page loads
 showSlide(currentIndex);
+
+
+
+
+
+//theme
+
+function changeTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    changeImage(theme);
+}
+
+function changeImage(theme) {
+    // You can also switch the image in an <img> tag if you prefer
+    var themeImage = document.getElementById("themeImage");
+    
+    switch (theme) {
+        case 'dark':
+            themeImage.src = 'dark.png';
+            break;
+        case 'theme2':
+            themeImage.src = 'light.png';
+            break;
+        case 'theme3':
+            themeImage.src = 'light.png';
+            break;
+        case 'theme4':
+            themeImage.src = 'light.png';
+            break;
+        case 'theme5':
+            themeImage.src = 'light.png';
+            break;
+        default:
+            themeImage.src = 'light.png'; // Default image
+    }
+}
