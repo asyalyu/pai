@@ -4,8 +4,9 @@
     --button-color: #8dd3ff;
     --button-hover-color: rgb(0, 85, 255);
     --button-text: #fff;
+    --button2-color: var(--background-color);
     --arrow-color:var(--button-hover-color);
-    --arrow-hover-color: var(--button-color);
+    --arrow-hover-color: #aaddfc;
     --link-color: var(--button-hover-color);
     --link-hover-color:var(--button-color);
     --highlight:var(--button-color);
@@ -249,6 +250,30 @@ img {
     margin-top: 20px; /* Space between the image and the buttons */
 }
 
+.button2 {
+    display: inline-block;
+    margin: 10px; /*button margins*/
+    margin-right: 50px;
+    margin-left: 30px;
+    padding: 10px 20px;
+    background-color: var(--button-hover-color);
+    color: var(--button-text);
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    transition: transform 0.6s; /* Smooth transition for the flip effect */
+}
+
+.button2:hover {
+    background-color: var(--button2-color);
+    color: black;
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
 .button-container {
     display: flex;
     justify-content: flex-start; /* Align the buttons to the left */
@@ -263,7 +288,7 @@ img {
     margin-right: 50px;
     margin-left: 30px;
     padding: 10px 20px;
-    background-color: var(--button-color);
+    background-color: var(--button-hover-color);
     color: var(--button-text);
     text-align: center;
     text-decoration: none;
@@ -276,7 +301,7 @@ img {
 }
 
 .button:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--background-color);
     animation: bounce 0.5s ease-in-out infinite;
 }
 
@@ -454,10 +479,11 @@ a:hover {
     --button-color: white;
     --button-hover-color: #d6f3ff;
     --button-text:black;
+    --button2-color: white;
     --arrow-color:var(--button-color);
     --arrow-hover-color: var(--button-hover-color);
     --link-color: var(--button-hover-color);
-    --link-hover-color:var(--button-color);
+    --link-hover-color:black;
     --highlight:var(--button-color);
     --text:white;
     --top-color: black;
@@ -470,10 +496,11 @@ a:hover {
     --button-color: #ffe88d;
     --button-hover-color: #ffcc00;
     --button-text: #fff;
+    --button2-color: var(--button-color);
     --arrow-color:var(--button-color);
     --arrow-hover-color: var(--button-hover-color);
     --link-color: var(--button-hover-color);
-    --link-hover-color:var(--button-color);
+    --link-hover-color:black;
     --highlight:var(--button-color);
     --text:black;
     --top-color: #1596eb;
@@ -486,6 +513,7 @@ a:hover {
     --button-color: #00ae09;
     --button-hover-color: #006705;
     --button-text: #fff;
+    --button2-color: var(--button-color);
     --arrow-color:var(--button-color);
     --arrow-hover-color: var(--button-hover-color);
     --link-color: var(--button-hover-color);
@@ -502,10 +530,11 @@ a:hover {
     --button-color: #de0000;
     --button-hover-color: #920000;
     --button-text: #ffe5a3;
+    --button2-color: var(--button-color);
     --arrow-color:var(--button-color);
     --arrow-hover-color: var(--button-hover-color);
     --link-color: var(--button-hover-color);
-    --link-hover-color:var(--button-color);
+    --link-hover-color:var(--button-text);
     --highlight:var(--button-color);
     --text:black;
     --top-color: #1596eb;
@@ -518,10 +547,11 @@ a:hover {
     --button-color: #ff973c;
     --button-hover-color: #f77300;
     --button-text: #fff;
+    --button2-color: var(--button-color);
     --arrow-color:var(--button-color);
     --arrow-hover-color: var(--button-hover-color);
     --link-color: var(--button-hover-color);
-    --link-hover-color:var(--button-color);
+    --link-hover-color:white;
     --highlight:var(--button-color);
     --text:black;
     --top-color: #1596eb;
