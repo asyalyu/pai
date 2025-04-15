@@ -1,8 +1,57 @@
+/* Reset & Base */
 body {
-    background-color: white;
-}
-
-/* Ensure navbar is unaffected (adjust selector as needed) */
-.navbar, nav, #navbar {
-    background-color: initial !important; /* Resets to default or inherited value */
-}
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    padding: 1rem;
+    background: #f8f8f8;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Content */
+  .content {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Footer */
+  .site-footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+  }
+  
+  /* Logo */
+  .logo-container {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .site-logo {
+    height: 60px;
+  }
