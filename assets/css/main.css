@@ -5,13 +5,21 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
   }
-  
-  /* Horizontal Navbar */
-  .navbar {
+  /* Add this to your existing CSS */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background: #f8f8f8;
     padding: 1rem 0;
     border-bottom: 1px solid #ddd;
-  }
+}
+
+/* Remove any existing 'hide' classes that might be affecting the navbar */
+.navbar.hide {
+    display: flex !important;
+}
+  
   
   .navbar-nav {
     display: flex;
