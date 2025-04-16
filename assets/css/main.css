@@ -6,23 +6,42 @@ body {
     line-height: 1.6;
   }
   
-  /* Navbar */
+  /* Horizontal Navbar */
   .navbar {
-    padding: 1rem;
     background: #f8f8f8;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
   }
   
   .navbar-nav {
     display: flex;
-    gap: 1rem;
+    justify-content: space-around;
     list-style: none;
+    margin: 0 auto;
     padding: 0;
-    margin: 0;
+    max-width: 1200px;
+  }
+  
+  .nav-item {
+    flex: 1;
+    text-align: center;
   }
   
   .nav-link {
     text-decoration: none;
     color: #333;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: block;
+  }
+  
+  .nav-link:hover {
+    color: #0066cc;
+  }
+  
+  .nav-item.active .nav-link {
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
   }
   
   /* Page Header */
@@ -44,54 +63,4 @@ body {
     text-align: center;
     border-top: 1px solid #eee;
     margin-top: 2rem;
-  }
-  
-  /* Logo */
-  .logo-container {
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .site-logo {
-    height: 60px;
-  }
-
-  /* Horizontal Navbar */
-.navbar {
-    background: #f8f8f8; /* Light gray background (adjust as needed) */
-    padding: 1rem 0; /* Vertical padding */
-    border-bottom: 1px solid #ddd; /* Optional separator */
-  }
-  
-  .navbar-nav {
-    display: flex;
-    justify-content: space-around; /* Evenly spaces links */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-width: 1200px; /* Prevents navbar from stretching too wide */
-    margin: 0 auto; /* Centers navbar */
-  }
-  
-  .nav-item {
-    flex: 1; /* Each link takes equal space */
-    text-align: center; /* Centers link text */
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: #333; /* Link color */
-    font-weight: 500; /* Slightly bold */
-    padding: 0.5rem 0; /* Clickable area padding */
-    display: block; /* Ensures padding works */
-  }
-  
-  .nav-link:hover {
-    color: #0066cc; /* Hover color (blue) */
-  }
-  
-  /* Active link highlight */
-  .nav-item.active .nav-link {
-    color: #0066cc;
-    border-bottom: 2px solid #0066cc; /* Underline effect */
   }
