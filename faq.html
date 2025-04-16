@@ -5,13 +5,13 @@ title: FAQ & Contact
 
 <!-- Social Media Links -->
 <div class="social-buttons">
-    <a href="https://www.linkedin.com/company/p-ai/" target="_blank">
+    <a href="https://www.linkedin.com/company/p-ai/" target="_blank" class="social-button">
         <i class="fab fa-linkedin"></i> LinkedIn
     </a>
-    <a href="https://github.com/p-ai-org" target="_blank">
+    <a href="https://github.com/p-ai-org" target="_blank" class="social-button">
         <i class="fab fa-github"></i> GitHub
     </a>
-    <a href="https://www.instagram.com/pai.claremont/" target="_blank">
+    <a href="https://www.instagram.com/pai.claremont/" target="_blank" class="social-button">
         <i class="fab fa-instagram"></i> Instagram
     </a>
 </div>
@@ -20,11 +20,13 @@ title: FAQ & Contact
 <div class="faq-container">
     <h2>📅 Recruitment Timeline</h2>
     
-    <div class="faq">
+    <div class="faq-list">
         {% for item in site.data.faq %}
         <div class="faq-item">
-            <div class="question">{{ item.question }}</div>
-            <div class="answer">{{ item.answer }}</div>
+            <button class="faq-question">{{ item.question }}
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">{{ item.answer }}</div>
         </div>
         {% endfor %}
     </div>
@@ -38,7 +40,7 @@ title: FAQ & Contact
         <input type="text" id="name" name="name" required>
         
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
+        <input type="email" id="email" name="email" required>
         
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
@@ -47,12 +49,76 @@ title: FAQ & Contact
     </form>
 </div>
 
+<style>
+    /* FAQ Styles */
+    .faq-list {
+        margin: 20px 0;
+    }
+    
+    .faq-item {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .faq-question {
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        background: #f8f8f8;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    .faq-question:hover {
+        background: #e8e8e8;
+    }
+    
+    .faq-answer {
+        padding: 0 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background: white;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 15px;
+        max-height: 500px;
+    }
+    
+    .faq-toggle {
+        font-size: 1.2em;
+    }
+    
+    .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+    }
+</style>
+
 <script>
-    // FAQ toggle functionality
-    document.querySelectorAll('.faq-item .question').forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Toggle active class on clicked item
+                item.classList.toggle('active');
+                
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
         });
     });
 </script>
