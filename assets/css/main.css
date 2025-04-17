@@ -279,18 +279,20 @@ body {
   }
 }
 
+
+
 /* Slideshow Container */
 .project-slideshow {
   position: relative;
   max-width: 800px;
   margin: 2rem auto;
-  min-height: 650px; /* Fixed height for container */
+  min-height: 650px;
 }
 
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
-  min-height: 650px; /* Match container height */
+  min-height: 650px;
 }
 
 /* Project Slide */
@@ -316,13 +318,6 @@ body {
 }
 
 /* Content Styling */
-.project-title {
-  color: #0066cc;
-  margin: 0 0 15px 0;
-  font-size: 1.5em;
-  flex-shrink: 0;
-}
-
 .project-slide img {
   width: 65%;
   max-height: 200px;
@@ -331,27 +326,10 @@ body {
   margin: 0 auto 15px;
   display: block;
   object-fit: contain;
-  flex-shrink: 0;
-}
-
-.project-description {
-  margin: 10px 0;
-  line-height: 1.5;
-  flex: 1;
-}
-
-.project-meta {
-  margin: 8px 0;
-  font-size: 0.95em;
-  flex-shrink: 0;
 }
 
 .button-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-  flex-shrink: 0;
+  margin-top: auto; /* Pushes buttons to bottom */
 }
 
 /* Arrow Buttons */
@@ -381,7 +359,6 @@ body {
 
 .slideshow-arrow:hover {
   background: rgba(0,0,0,0.8);
-  transform: translateY(-50%) scale(1.1);
 }
 
 /* Responsive Adjustments */
