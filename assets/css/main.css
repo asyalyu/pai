@@ -246,11 +246,57 @@ body {
   filter: grayscale(0%);
 }
 
-/* Alumni section specific styling */
+
+/* Alumni Section */
 .image-container2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
   margin-top: 30px;
+}
+
+.image-item {
+  flex: 0 0 calc(20% - 30px); /* Adjust width as needed */
+  max-width: 200px;
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.image-item h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.image-item p {
+  margin: 3px 0;
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .image-item {
+      flex: 0 0 calc(25% - 30px);
+  }
+}
+
+@media (max-width: 900px) {
+  .image-item {
+      flex: 0 0 calc(33.333% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .image-item {
+      flex: 0 0 calc(50% - 30px);
+  }
 }
