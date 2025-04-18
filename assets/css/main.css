@@ -66,16 +66,10 @@ body {
     border-bottom: none; /* Ensure no border at bottom of content */
   }
 
-    /* Add this to your main.css */
-  .site-footer {
-    border-top: none; /* Explicitly remove any border */
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px; /* Adjust spacing as needed */
-  }
-
-    
   
+
+  
+ 
 
   /* Add these to your existing main.css */
 .project-slideshow {

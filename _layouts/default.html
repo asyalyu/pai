@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <style>
+    .footer-logo {
+      max-width: 50px; /* Adjust size as needed */
+      height: auto;
+      display: block;
+      margin: 20px auto; /* Centers the logo and adds spacing */
+    }
 
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: none; /* Optional divider */
+    }
+
+  </style>
 </head>
 <body>
   <!-- Navigation -->
