@@ -6,68 +6,6 @@
     <link rel="stylesheet" href="design.css"> <!-- Link to the CSS file -->
   </head>
   <body>
-    
-    <div class="nav"></div>
-    <div class="right">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="people.html">PEOPLE</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="thissemester.html"><span class="sr-only">THIS SEMESTER</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="homepage.html">HOME</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="portfolio.html"><span class="sr-only">PORTFOLIO</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="contact.html"><span class="sr-only">CONTACT</span></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="semi-circle"></div>
-    <div class="smaller-semi-circle"></div>
-    <div class="smallest-semi-circle"></div>
-    <div class="transition-smaller-semi-circle"></div>
-    <div class="transition-smallest-semi-circle"></div>
-    <div class="content"></div>
-
-
-    <script>
-      let lastScrollTop = 0;
-      const navbar = document.querySelector('.navbar');
-
-      window.addEventListener('scroll', function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // If scrolling down, hide navbar
-        if (currentScroll > lastScrollTop) {
-          navbar.classList.add('hide');
-        } 
-        // If scrolling up, show navbar
-        else {
-          navbar.classList.remove('hide');
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-      });
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>P-ai Website</title>
-    <link rel="stylesheet" href="design.css"> <!-- Link to the CSS file -->
-  </head>
-  <body>
 
     <div class="theme-switcher">
       <label for="bg-select">Choose a background theme:</label>
