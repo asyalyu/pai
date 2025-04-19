@@ -1,7 +1,7 @@
 # Navigation links
 navigation:
   - name: "HOME"
-    url: "/home.html"
+    url: "/index.html"
   - name: "PEOPLE"
     url: "/people.html"
   - name: "THIS SEMESTER"
