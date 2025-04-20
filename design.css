@@ -52,10 +52,11 @@ body {
 /* Circle background */
 .circle {
     position: fixed;
+    top: 85%;
     left: 50%;
     width: min(175vw, 175vh);
     height: min(175vw, 175vh);
-    background: linear-gradient(#ffffff,#ffffff, rgb(0, 83, 132));
+    background: linear-gradient(#ffffff, rgb(0, 83, 132));
     filter: blur(50px);
     transform: translate(-50%, -50%);
     z-index: -2; /* Background */
