@@ -1,0 +1,9 @@
+<header>
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+    <nav>
+      {% for link in site.navigation %}
+        <a href="{{ link.url }}">{{ link.name }}</a>
+      {% endfor %}
+    </nav>
+  </header>
