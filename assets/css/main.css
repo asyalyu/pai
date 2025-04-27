@@ -397,8 +397,8 @@ body {
   top: 0;
   z-index: 1000;
   background: #f8f8f8;
-  padding: 1rem 0; /* Increased vertical padding */
-  border-bottom: 1px solid #ddd;
+  padding: 3rem ; /* Increased vertical padding */
+  border-bottom: none ;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
