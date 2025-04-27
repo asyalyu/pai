@@ -6,14 +6,14 @@ body {
     line-height: 1.6;
   }
   /* Add this to your existing CSS */
-.navbar {
+/* .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
     background: #f8f8f8;
     padding: 1rem 0;
     border-bottom: 1px solid #ddd;
-}
+} */
 
 /* Remove any existing 'hide' classes that might be affecting the navbar */
 .navbar.hide {
@@ -391,8 +391,9 @@ body {
   top: 0;
   z-index: 1000;
   background: #f8f8f8;
-  padding: 1rem 0;
+  padding: 0; /* Changed from 1rem 0 to remove vertical padding */
   border-bottom: 1px solid #ddd;
+  margin-bottom: 0; /* Ensure no margin below the navbar */
 }
 
 /* Desktop Navigation */
