@@ -30,7 +30,7 @@
   <button class="mobile-menu-btn">☰ Menu</button>
   <ul class="navbar-nav">
     {% for link in site.navigation %}
-      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+    <li class="nav-item {% if page.url == link.url or (page.url == '/' and link.url == '/index.html') %}active{% endif %}">
         <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
       </li>
     {% endfor %}
