@@ -5,21 +5,19 @@ subtitle: Welcome to our creative space
 ---
 <style>
   .particle-banner {
-    background: #0f1923;
-    color: #00d8ff;
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 40px;
-    font-family: 'Courier New', monospace;
-    border-bottom: 1px solid #00d8ff33;
-    width: 100vw; /* Full viewport width */
-    margin-left: calc(-50vw + 50%); /* Centers the full-width element */
-    left: 0;
-    right: 0;
-  }
-  
+  background: #0f1923;
+  color: #00d8ff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0; /* Changed from margin-bottom: 40px */
+  font-family: 'Courier New', monospace;
+  border-bottom: 1px solid #00d8ff33;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box; /* Add this */
+}
   .particle-banner h1 {
     font-size: 3rem;
     margin-bottom: 15px;
