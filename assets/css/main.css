@@ -397,12 +397,12 @@ body {
   top: 0;
   z-index: 1000;
   background: #f8f8f8;
-  padding: 0;
+  padding: 1rem 0; /* Increased vertical padding */
   border-bottom: 1px solid #ddd;
   margin: 0;
-  width: 100vw; /* Change from 100% to 100vw */
-  left: 0;
+  width: 100%;
   box-sizing: border-box;
+  min-height: 60px; /* Optional: Set minimum height */
 }
 /* Desktop Navigation */
 .navbar-nav {
@@ -423,9 +423,10 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding: 0.5rem 0 0.8rem; /* ← Adds space for underline */
+  padding: 1.2rem 0; /* Increased padding for taller bar */
   display: block;
-  position: relative; /* ← Needed for pseudo-element */
+  position: relative;
+  font-size: 1.1rem; /* Optional: Increase font size */
 }
 .nav-link:hover {
   color: #0066cc;
