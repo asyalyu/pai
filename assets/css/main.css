@@ -49,7 +49,7 @@ body {
   
   .nav-item.active .nav-link {
     color: #0066cc;
-    border-bottom: 2px solid #0066cc;
+
   }
   
   /* Page Header */
@@ -414,10 +414,10 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.8rem; /* ← Adds space for underline */
   display: block;
+  position: relative; /* ← Needed for pseudo-element */
 }
-
 .nav-link:hover {
   color: #0066cc;
 }
