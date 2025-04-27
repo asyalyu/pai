@@ -14,6 +14,10 @@ subtitle: Welcome to our creative space
     margin-bottom: 40px;
     font-family: 'Courier New', monospace;
     border-bottom: 1px solid #00d8ff33;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Centers the full-width element */
+    left: 0;
+    right: 0;
   }
   
   .particle-banner h1 {
@@ -38,9 +42,16 @@ subtitle: Welcome to our creative space
     border-radius: 50%;
     pointer-events: none;
     opacity: 0.6;
+    animation: float 15s infinite linear;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
   }
 </style>
 
+<!-- Place this right after your navigation bar in the HTML -->
 <div class="particle-banner">
   <h1>{{ site.title }}</h1>
   <p>{{ site.subtitle }}</p>
@@ -62,7 +73,8 @@ subtitle: Welcome to our creative space
       particle.style.top = Math.random() * 100 + '%';
       
       const duration = Math.random() * 20 + 10;
-      particle.style.animation = `float ${duration}s linear infinite`;
+      particle.style.animationDuration = duration + 's';
+      particle.style.animationDelay = Math.random() * 5 + 's';
       
       banner.appendChild(particle);
       
