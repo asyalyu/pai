@@ -3,7 +3,84 @@ layout: default
 title: Home
 subtitle: Welcome to our creative space
 ---
+<style>
+  .particle-banner {
+    background: #0f1923;
+    color: #00d8ff;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 1px solid #00d8ff33;
+  }
+  
+  .particle-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .particle-banner p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    color: #a8b2bf;
+  }
+  
+  .particle {
+    position: absolute;
+    background: #00d8ff;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+</style>
 
+<div class="particle-banner">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.subtitle }}</p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.querySelector('.particle-banner');
+    
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      const size = Math.random() * 5 + 2;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      
+      const duration = Math.random() * 20 + 10;
+      particle.style.animation = `float ${duration}s linear infinite`;
+      
+      banner.appendChild(particle);
+      
+      // Remove particle after animation completes to prevent DOM overload
+      setTimeout(() => {
+        particle.remove();
+      }, duration * 1000);
+    }
+    
+    // Create initial particles
+    for (let i = 0; i < 50; i++) {
+      createParticle();
+    }
+    
+    // Continue creating particles
+    setInterval(createParticle, 300);
+  });
+</script>
 <style>
   .centered-logo {
     text-align: center;
