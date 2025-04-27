@@ -1,0 +1,386 @@
+/* Reset & Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  /* Add this to your existing CSS */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #f8f8f8;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Remove any existing 'hide' classes that might be affecting the navbar */
+.navbar.hide {
+    display: flex !important;
+}
+  
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+  }
+  
+  .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: block;
+  }
+  
+  .nav-link:hover {
+    color: #0066cc;
+  }
+  
+  .nav-item.active .nav-link {
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Content */
+  .content {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: none; /* Ensure no border at bottom of content */
+  }
+
+  
+
+  
+ 
+
+  /* Add these to your existing main.css */
+.project-slideshow {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+
+
+
+.project-slide.active {
+    position: relative;
+    opacity: 1;
+}
+
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+.slideshow-arrow:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Keep your existing project card styles */
+.project-title {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+
+
+.project-description {
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Add these styles to your main.css */
+
+/* Container for the entire page content */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Image container styling */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Individual image item styling */
+.image-item {
+  flex: 0 0 calc(33.333% - 30px);
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Rounded corners for images */
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Adjust this value for more/less rounding */
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Makes images square */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Text styling under images */
+.image-item h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.image-item p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Special styling for advisory board */
+.highlight {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+/* Partners section specific styling */
+.image-container3 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.image-item2 img {
+  max-width: 200px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.image-item2 img:hover {
+  filter: grayscale(0%);
+}
+
+
+/* Alumni Section */
+.image-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.image-item {
+  flex: 0 0 calc(20% - 30px); /* Adjust width as needed */
+  max-width: 200px;
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.image-item h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.image-item p {
+  margin: 3px 0;
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .image-item {
+      flex: 0 0 calc(25% - 30px);
+  }
+}
+
+@media (max-width: 900px) {
+  .image-item {
+      flex: 0 0 calc(33.333% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .image-item {
+      flex: 0 0 calc(50% - 30px);
+  }
+}
+
+
+
+/* Slideshow Container */
+.project-slideshow {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  min-height: 650px;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+}
+
+/* Project Slide */
+.project-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Content Styling */
+.project-slide img {
+  width: 65%;
+  max-height: 200px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 15px;
+  display: block;
+  object-fit: contain;
+}
+
+.button-container {
+  margin-top: auto; /* Pushes buttons to bottom */
+}
+
+/* Arrow Buttons */
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.prev-arrow {
+  left: -60px;
+}
+
+.next-arrow {
+  right: -60px;
+}
+
+.slideshow-arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .project-slideshow,
+  .slideshow-wrapper {
+      min-height: 700px;
+  }
+  
+  .slideshow-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+  }
+  
+  .prev-arrow {
+      left: -10px;
+  }
+  
+  .next-arrow {
+      right: -10px;
+  }
+  
+  .project-slide img {
+      width: 80%;
+  }
+}

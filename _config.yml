@@ -1,0 +1,19 @@
+# Navigation links
+navigation:
+  - name: "HOME"
+    url: "/index.html"
+  - name: "PEOPLE"
+    url: "/people.html"
+  - name: "THIS SEMESTER"
+    url: "/semester.html"
+  - name: "PORTFOLIO"
+    url: "/portfolio.html"
+  - name: "CONTACT"
+    url: "/faq.html"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

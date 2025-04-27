@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .footer-logo {
+      max-width: 50px; /* Adjust size as needed */
+      height: auto;
+      display: block;
+      margin: 20px auto; /* Centers the logo and adds spacing */
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: none; /* Optional divider */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- mobile app icon for tabs -->
+    <ul class="navbar-nav">
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/index.html">HOME</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/people.html">PEOPLE</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/semester.html">THIS SEMESTER</a>
+        </li>
+      
+        <li class="nav-item active">
+          <a class="nav-link" href="/portfolio.html">PORTFOLIO</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/faq.html">CONTACT</a>
+        </li>
+      
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Portfolio</h1>
+    
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="portfolio-container">
+    <h1>Our Projects</h1>
+    
+    <div class="projects-grid">
+        
+    </div>
+</div>
+  </main>
+
+  <!-- Footer with Logo -->
+  <footer class="site-footer">
+    <img src="/assets/css/inversepailogo.png" alt="Site Logo" class="footer-logo">
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.navbar-nav');
+      nav.classList.toggle('active');
+    }
+    </script>    
+  
+</body>
+</html>

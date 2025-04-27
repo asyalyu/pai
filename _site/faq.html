@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ & Contact</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .footer-logo {
+      max-width: 50px; /* Adjust size as needed */
+      height: auto;
+      display: block;
+      margin: 20px auto; /* Centers the logo and adds spacing */
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: none; /* Optional divider */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- mobile app icon for tabs -->
+    <ul class="navbar-nav">
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/index.html">HOME</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/people.html">PEOPLE</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/semester.html">THIS SEMESTER</a>
+        </li>
+      
+        <li class="nav-item ">
+          <a class="nav-link" href="/portfolio.html">PORTFOLIO</a>
+        </li>
+      
+        <li class="nav-item active">
+          <a class="nav-link" href="/faq.html">CONTACT</a>
+        </li>
+      
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>FAQ & Contact</h1>
+    
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Social Media Links -->
+<div class="social-buttons">
+    <a href="https://www.linkedin.com/company/p-ai/" target="_blank" class="social-button">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/p-ai-org" target="_blank" class="social-button">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.instagram.com/pai.claremont/" target="_blank" class="social-button">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-container">
+    <h2>📅 Recruitment Timeline</h2>
+    
+    <div class="faq-list">
+        
+        <div class="faq-item">
+            <button class="faq-question">When is the recruitment timeline?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Recruitment usually happens during the first few weeks of each semester.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">How does applying to leadership positions work?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Applications for leadership positions are released at the end of each semester, with recruitment occurring over the break.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">When are project managers and project members recruited?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Project Managers: Recruited during the first week of each semester. 
+ Project Members: Recruited early in the fall semester, with applications announced via Instagram and LinkedIn.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">What are the advantages of being a project manager?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Project managers gain leadership experience, people management skills, and hands-on experience with agile methodology and product management.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">What types of projects are ideal for P-ai?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Either software engineering (SWE) or AI projects, preferably with a social impact focus.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">What makes a good project member or manager?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Good Project Members: Eager to learn, self-motivated, and team-oriented 
+ Good Project Managers: Technically competent with strong team management skills.</div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">What’s key to success in P-ai?
+                <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">Self-initiative, eagerness to learn, and a collaborative mindset are crucial for success in P-ai.</div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Contact Form -->
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/mzzdodwv" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit" class="send-button">Send Message</button>
+    </form>
+</div>
+
+<style>
+    /* FAQ Styles */
+    .faq-list {
+        margin: 20px 0;
+    }
+    
+    .faq-item {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .faq-question {
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        background: #f8f8f8;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+    
+    .faq-question:hover {
+        background: #e8e8e8;
+    }
+    
+    .faq-answer {
+        padding: 0 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background: white;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 15px;
+        max-height: 500px;
+    }
+    
+    .faq-toggle {
+        font-size: 1.2em;
+    }
+    
+    .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Toggle active class on clicked item
+                item.classList.toggle('active');
+                
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
+>>>>>>> origin/main
+
+  </main>
+
+  <!-- Footer with Logo -->
+  <footer class="site-footer">
+    <img src="/assets/css/inversepailogo.png" alt="Site Logo" class="footer-logo">
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.navbar-nav');
+      nav.classList.toggle('active');
+    }
+    </script>    
+  
+</body>
+</html>

@@ -94,22 +94,4 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
 }
-
-/* stacking tabs so that they aren't smushed on mobile */
-@media (max-width: 768px) {
-    nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      background-color: red; /* <<< TEMPORARY TEST ONLY */
-    }
-  
-    nav a {
-      font-size: 18px;
-      padding: 10px;
-    }
-  }
-  
   
