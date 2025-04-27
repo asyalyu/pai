@@ -23,15 +23,21 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      {% for link in site.navigation %}
-        <li class="nav-item {% if page.url == link.url %}active{% endif %}">
-          <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+   <!-- Update your default.html file's navigation section -->
+<nav class="navbar">
+  <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="navbar-nav">
+    {% for link in site.navigation %}
+      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
 
   <!-- Page Header -->
   <header class="page-header">
@@ -51,6 +57,16 @@
     <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" alt="Site Logo" class="footer-logo">
   </footer>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('.navbar-nav');
+      
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
