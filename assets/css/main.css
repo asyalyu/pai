@@ -452,3 +452,66 @@ body {
     max-width: 40px;
   }
 }
+/* Mobile Navigation - Dropdown Style */
+@media (max-width: 768px) {
+  /* Navigation Bar */
+  .navbar {
+    padding: 0;
+    position: relative; /* Changed from sticky for dropdown */
+  }
+  
+  /* Hide regular nav items */
+  .navbar-nav {
+    display: none;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #f8f8f8;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-btn:hover {
+    color: #0066cc;
+  }
+  
+  /* Dropdown menu */
+  .navbar-nav.mobile {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    width: 100%;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navbar-nav.mobile.active {
+    display: flex; /* Show when active */
+  }
+  
+  .navbar-nav.mobile .nav-item {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar-nav.mobile .nav-link {
+    padding: 1rem;
+    display: block;
+  }
+  
+  /* Active state */
+  .navbar-nav.mobile .nav-item.active .nav-link {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: #0066cc;
+    border-bottom: none;
+  }
+}

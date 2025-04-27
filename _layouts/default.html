@@ -22,18 +22,25 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-   
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      {% for link in site.navigation %}
-        <li class="nav-item {% if page.url == link.url %}active{% endif %}">
-          <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
-
+ <!-- Navigation -->
+<nav class="navbar">
+  <button class="mobile-menu-btn">☰ Menu</button>
+  <ul class="navbar-nav">
+    {% for link in site.navigation %}
+      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <!-- Mobile version of the menu -->
+  <ul class="navbar-nav mobile">
+    {% for link in site.navigation %}
+      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
   <!-- Page Header -->
   <header class="page-header">
     <h1>{{ page.title | default: site.title }}</h1>
@@ -52,6 +59,33 @@
     <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" alt="Site Logo" class="footer-logo">
   </footer>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      const mobileMenu = document.querySelector('.navbar-nav.mobile');
+      
+      // Toggle mobile menu when button is clicked
+      mobileBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        this.textContent = mobileMenu.classList.contains('active') ? '✕ Close' : '☰ Menu';
+      });
+      
+      // Hide desktop nav on mobile
+      if (window.innerWidth <= 768) {
+        document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
+      }
+      
+      // Update on window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          document.querySelector('.navbar-nav:not(.mobile)').style.display = 'flex';
+          mobileMenu.style.display = 'none';
+          mobileBtn.textContent = '☰ Menu';
+        } else {
+          document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
+        }
+      });
+    });
+  </script>  
 </body>
 </html>
