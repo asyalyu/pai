@@ -12,7 +12,7 @@ subtitle: Welcome to our creative space
   overflow: hidden;
   margin: 0; /* Changed from margin-bottom: 40px */
   font-family: 'Courier New', monospace;
-  border-bottom: 1px solid #00d8ff33;
+  border-bottom: none;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   box-sizing: border-box; /* Add this */
@@ -70,17 +70,17 @@ subtitle: Welcome to our creative space
 </style>
 
 <!-- Place this right after your navigation bar in the HTML -->
-<div class="particle-banner">
+
   <div class="particle-banner">
     <div class="banner-content">
-      <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" 
+      <img src="{{ 'assets/css/pailogo.png' | relative_url }}" 
            alt="Logo" 
            class="banner-logo">
       <h1>{{ site.title }}</h1>
       <p>{{ site.subtitle }}</p>
     </div>
   </div>
-</div>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
