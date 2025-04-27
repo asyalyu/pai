@@ -385,133 +385,133 @@ body {
   }
 }
 
-/* Mobile Navigation Styles */
+/* ===== Navigation Styles ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f8f8f8;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Desktop Navigation */
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.nav-link:hover {
+  color: #0066cc;
+}
+
+.nav-item.active .nav-link {
+  color: #0066cc;
+  border-bottom: 2px solid #0066cc;
+}
+
+/* Mobile Menu Button - Hidden by Default */
+.mobile-menu-btn {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  background: #f8f8f8;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+.mobile-menu-btn:hover {
+  color: #0066cc;
+}
+
+/* Mobile Navigation - Hidden by Default */
+.navbar-nav.mobile {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: #f8f8f8;
+}
+
+.navbar-nav.mobile .nav-item {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-nav.mobile .nav-link {
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-nav.mobile .nav-item.active .nav-link {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: #0066cc;
+  border-bottom: none;
+}
+
+/* ===== Mobile Responsive Styles ===== */
 @media (max-width: 768px) {
-  /* Navigation Bar */
+  /* Navigation */
   .navbar {
-    position: sticky;
-    padding: 0.5rem 0;
-    background: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
     padding: 0;
+    position: sticky;
   }
   
-  .nav-item {
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+  /* Hide desktop nav */
+  .navbar-nav:not(.mobile) {
+    display: none;
   }
   
-  .nav-link {
-    padding: 0.8rem 0;
-    font-size: 1rem;
+  /* Show mobile button */
+  .mobile-menu-btn {
+    display: block;
   }
   
-  .nav-item.active .nav-link {
-    border-bottom: none;
-    background-color: rgba(0, 102, 204, 0.1);
+  /* Show mobile nav when active */
+  .navbar-nav.mobile.active {
+    display: flex;
   }
   
-  /* Page Header */
+  /* Adjust other elements for mobile */
   .page-header {
     padding: 1.5rem 1rem;
   }
   
-  /* Content Area */
   .content {
     padding: 1rem;
-  }
-  
-  /* Particle Banner (if you're using it) */
-  .particle-banner {
-    padding: 40px 15px;
-  }
-  
-  .particle-banner h1 {
-    font-size: 2rem;
-  }
-  
-  .particle-banner p {
-    font-size: 1.1rem;
-  }
-  
-  /* Footer */
-  .site-footer {
-    padding: 15px 0;
   }
   
   .footer-logo {
     max-width: 40px;
   }
 }
-/* Mobile Navigation - Dropdown Style */
-@media (max-width: 768px) {
-  /* Navigation Bar */
-  .navbar {
-    padding: 0;
-    position: relative; /* Changed from sticky for dropdown */
-  }
-  
-  /* Hide regular nav items */
-  .navbar-nav {
-    display: none;
-  }
-  
-  /* Mobile menu button */
-  .mobile-menu-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background: #f8f8f8;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  .mobile-menu-btn:hover {
-    color: #0066cc;
-  }
-  
-  /* Dropdown menu */
+
+/* Desktop Styles - Ensure mobile elements are hidden */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
   .navbar-nav.mobile {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    width: 100%;
-    background: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .navbar-nav.mobile.active {
-    display: flex; /* Show when active */
-  }
-  
-  .navbar-nav.mobile .nav-item {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .navbar-nav.mobile .nav-link {
-    padding: 1rem;
-    display: block;
-  }
-  
-  /* Active state */
-  .navbar-nav.mobile .nav-item.active .nav-link {
-    background-color: rgba(0, 102, 204, 0.1);
-    color: #0066cc;
-    border-bottom: none;
+    display: none !important;
   }
 }
