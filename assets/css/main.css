@@ -393,16 +393,16 @@ body {
 
 /* ===== Navigation Styles ===== */
 .navbar {
+  padding: 1.5rem 1.5rem; /* Increased from 0 to add vertical space */
+  min-height: 70px; /* Optional: Set minimum height */
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #f8f8f8;
-  padding: 1rem 0; /* Increased vertical padding */
   border-bottom: 1px solid #ddd;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  min-height: 60px; /* Optional: Set minimum height */
 }
 /* Desktop Navigation */
 .navbar-nav {
@@ -420,10 +420,10 @@ body {
 }
 
 .nav-link {
+  padding: 1.5rem 1.5rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding: 1.2rem 0; /* Increased padding for taller bar */
   display: block;
   position: relative;
   font-size: 1.1rem; /* Optional: Increase font size */
