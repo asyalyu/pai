@@ -63,16 +63,8 @@ body {
     color: #0066cc;
   }
   
-  .nav-item.active .nav-link {
-    color: #0066cc;
-
-  }
   
-  /* Page Header */
-  .page-header {
-    padding: 2rem 1rem;
-    text-align: center;
-  }
+  
   
   /* Content */
   .content {
@@ -442,7 +434,7 @@ body {
 
 .nav-item.active .nav-link {
   color: #0066cc;
-  
+  border-bottom: 2px solid #0066cc;
 }
 
 /* Mobile Menu Button - Hidden by Default */
