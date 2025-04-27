@@ -1,10 +1,24 @@
-/* Reset & Base */
+html {
+  scrollbar-gutter: stable; /* Prevents layout shift when scrollbar appears */
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Reset & Base */
+/* body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-  }
+  } */
   /* Add this to your existing CSS */
 /* .navbar {
     position: sticky;
@@ -35,12 +49,14 @@ body {
     text-align: center;
   }
   
+ 
   .nav-link {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 1rem 0; /* Consistent padding */
     display: block;
+    position: relative;
   }
   
   .nav-link:hover {
@@ -391,11 +407,12 @@ body {
   top: 0;
   z-index: 1000;
   background: #f8f8f8;
-  padding: 0; /* Changed from 1rem 0 to remove vertical padding */
+  padding: 0;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 0; /* Ensure no margin below the navbar */
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 /* Desktop Navigation */
 .navbar-nav {
   display: flex;
@@ -425,7 +442,7 @@ body {
 
 .nav-item.active .nav-link {
   color: #0066cc;
-  border-bottom: 2px solid #0066cc;
+  
 }
 
 /* Mobile Menu Button - Hidden by Default */
