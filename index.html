@@ -7,7 +7,6 @@ subtitle: Welcome to our creative space
   .particle-banner {
   background: #0f1923;
   color: #00d8ff;
-  padding: 80px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -17,6 +16,12 @@ subtitle: Welcome to our creative space
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   box-sizing: border-box; /* Add this */
+  padding: 160px 20px; /* Doubled from 80px to make it taller */
+  min-height: 400px; /* Set minimum height */
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
 }
   .particle-banner h1 {
     font-size: 3rem;
@@ -47,12 +52,34 @@ subtitle: Welcome to our creative space
     0% { transform: translateY(0) rotate(0deg); }
     100% { transform: translateY(-100vh) rotate(360deg); }
   }
+  .banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.banner-logo {
+  max-width: 150px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 10px rgba(0, 216, 255, 0.7));
+  animation: pulse 2s infinite alternate;
+}
+
+
 </style>
 
 <!-- Place this right after your navigation bar in the HTML -->
 <div class="particle-banner">
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.subtitle }}</p>
+  <div class="particle-banner">
+    <div class="banner-content">
+      <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" 
+           alt="Logo" 
+           class="banner-logo">
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.subtitle }}</p>
+    </div>
+  </div>
 </div>
 
 <script>
