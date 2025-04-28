@@ -4,6 +4,35 @@ title: Home
 subtitle: Welcome to our creative space
 ---
 <style>
+  .mailing-list-btn {
+    display: inline-block;
+    margin: 30px 0;
+    padding: 12px 30px;
+    background-color: #00d8ff;
+    color: #0f1923;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 216, 255, 0.5);
+  }
+  
+  .mailing-list-btn:hover {
+    background-color: #0f1923;
+    color: #00d8ff;
+    border: 1px solid #00d8ff;
+    box-shadow: 0 0 20px rgba(0, 216, 255, 0.8);
+    transform: translateY(-2px);
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin: 40px 0;
+  }
   .particle-banner {
   background: #0f1923;
   color: #00d8ff;
@@ -138,9 +167,11 @@ subtitle: Welcome to our creative space
   }
 </style>
 
-<div class="centered-logo">
-  <img src="{{ 'assets/css/pailogo.png' | relative_url }}" alt="{{ site.title }} Logo">
+<div class="btn-container">
   <h1>{{ site.title }}</h1>
+  <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="mailing-list-btn" target="_blank">
+    Join Our Mailing List
+  </a>
 </div>
 
 <div class="home-content">
