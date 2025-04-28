@@ -9,6 +9,20 @@
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <style>
+    body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Ensure the banner starts immediately after nav */
+  .content {
+    padding-top: 0;
+    margin-top: 0;
+  }
     .footer-logo {
       max-width: 50px; /* Adjust size as needed */
       height: auto;
