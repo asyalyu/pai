@@ -204,8 +204,12 @@ title: This Semester
     }
     
     .button-container {
-    margin-top: auto; /* Push buttons to bottom */
-    padding-top: 20px; /* Add some space above buttons */
+    display: flex;
+    justify-content: center; /* This centers the buttons horizontally */
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    width: 100%; /* Ensure full width */
 }
     
     .button1, .button {
