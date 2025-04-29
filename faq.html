@@ -20,19 +20,19 @@ body {
     }
     
     .social-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 50%, #4776e6 100%);
-        color: white;
-        font-size: 24px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        text-decoration: none;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px; /* Adjust this value for more/less rounding */
+    background: black;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
     
     .social-button:hover {
         transform: translateY(-3px);
@@ -43,23 +43,34 @@ body {
         margin: 0;
     }
     
-    /* Modern FAQ Section */
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto 40px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0);
-        border-radius: 12px;
-    
-    }
-    
-    .faq-container h2 {
-        color: #6e48aa;
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 28px;
-    }
-    
+ /* FAQ Section with Courier Font */
+.faq-container,
+.faq-list,
+.faq-item,
+.faq-question,
+.faq-answer,
+.faq-toggle {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Specific FAQ element adjustments */
+.faq-question {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000; /* Changed from #f8f8f8 to black for better visibility */
+}
+
+.faq-answer {
+    background: white;
+    color: #000000; /* Ensure answer text is readable */
+    line-height: 1.6;
+}
+
+.faq-container h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
     .faq-list {
         margin: 20px 0;
     }
@@ -88,7 +99,7 @@ body {
     align-items: center;
     font-weight: 600;
     font-size: 16px;
-    color: #333;
+    color:#f8f8f8;
     transition: all 0.3s ease;
 }
     
@@ -117,7 +128,7 @@ body {
     
     .faq-item.active .faq-toggle {
         transform: rotate(45deg);
-        color: #6e48aa;
+        color: #000000;
     }
     
     /* Stylish Contact Form */
@@ -136,7 +147,7 @@ body {
     text-align: center;
 } 
 .contact-form h2 {
-    color: #6e48aa;
+    color: #000000;
     text-align: center;
     margin-bottom: 25px;
     font-size: 28px;
@@ -173,9 +184,9 @@ body {
     
     .contact-form input:focus,
     .contact-form textarea:focus {
-        border-color: #9d50bb;
+        border-color: #000000;
         outline: none;
-        box-shadow: 0 0 0 3px rgba(157, 80, 187, 0.2);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
     }
     
     .contact-form textarea {
@@ -184,15 +195,28 @@ body {
     }
     
     .send-button {
-    margin: 0 auto; /* Center the button */
-    display: block; /* Needed for margin:auto to work */
+    margin: 0 auto;
+    display: block;
+    width: 150px; /* Square width */
+    height: 50px; /* Square height */
+    border-radius: 12px; /* Rounded edges - adjust as needed */
+    background: black; /* Button color */
+    color: white; /* Text color */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 12px 24px; /* Adjust padding as needed */
 }
 
-    
-    .send-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
+.send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: #333; /* Slightly lighter on hover */
+}
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -223,7 +247,7 @@ body {
 
 <!-- FAQ Section -->
 <div class="faq-container">
-    <h2>📅 Recruitment Timeline</h2>
+    <h2>FAQ</h2>
     
     <div class="faq-list">
         {% for item in site.data.faq %}
