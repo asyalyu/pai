@@ -67,8 +67,8 @@ title: Portfolio
       <label for="projectSelect">View Archived Projects:</label>
       <select id="projectSelect">
         <option value="">Choose a Semester</option>
-        <option value="FA2024">FA 2024</option>
-        <option value="SP2024">SP 2024</option>
+        <!--<option value="FA2024">FA 2024</option>
+        <option value="SP2024">SP 2024</option>-->
         <option value="FA2023">FA 2023</option>
         <option value="SP2023">SP 2023</option>
         <option value="FA2022">FA 2022</option>
@@ -855,206 +855,202 @@ title: Portfolio
       max-width: 700px;
   }
   
-  /* Button Styles */
-  .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-  }
-  
-  .button1, .button {
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-  }
-  
-  .button1 {
-      background-color: #0066cc;
-      color: white;
-      border: 2px solid #0066cc;
-  }
-  
-  .button1:hover {
-      background-color: #0055aa;
-      border-color: #0055aa;
-  }
-  
-  .button {
-      background-color: white;
-      color: #0066cc;
-      border: 2px solid #0066cc;
-  }
-  
-  .button:hover {
-      background-color: #f0f7ff;
-  }
-  
   /* Slideshow Styles */
-  .project-slideshow {
-      position: relative;
-      max-width: 800px;
-      margin: 30px auto;
-  }
-  
-  .slideshow-wrapper {
-      position: relative;
-      overflow: hidden;
-      min-height: 300px; /* Adjusted for better content fit */
-  }
-  
-  .project-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-  
-  .project-slide.active {
-      position: relative;
-      opacity: 1;
-  }
-  
-  /* Image Styles */
-  .project-slide img {
-      width: 65%;
-      height: auto;
-      border-radius: 12px;
-      margin: 15px auto;
-      display: block;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Text Styles */
-  .project-title {
-      color: #0066cc;
-      margin: 15px 0;
-      font-size: 1.5em;
-  }
-  
-  .project-description {
-      margin: 10px 0;
-      line-height: 1.5;
-  }
-  
-  .project-meta {
-      margin: 8px 0;
-      font-size: 0.95em;
-  }
-  
-  /* Arrow Styles */
-  .slideshow-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s ease;
-  }
-  
-  .prev-arrow {
-      left: -60px;
-  }
-  
-  .next-arrow {
-      right: -60px;
-  }
-  
-  .slideshow-arrow:hover {
-      background: rgba(0,0,0,0.8);
-      transform: translateY(-50%) scale(1.1);
-  }
-  
-  @media (max-width: 900px) {
-      .slideshow-arrow {
-          width: 35px;
-          height: 35px;
-          font-size: 18px;
-      }
-      
-      .prev-arrow {
-          left: -10px;
-      }
-      
-      .next-arrow {
-          right: -10px;
-      }
-      
-      .slideshow-wrapper {
-          min-height: 700px; /* Adjusted for mobile */
-      }
-  }
+.project-slideshow {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 650px; /* Fixed height for scrolling */
+}
+
+.project-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Enable scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Image Styles */
+.project-slide img {
+    width: 65%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto 15px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Text Styles */
+.project-title {
+    color: #0066cc;
+    margin: 15px 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.project-description {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.project-meta {
+    margin: 8px 0;
+    font-size: 0.95em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #f0f7ff;
+}
+
+/* Arrow Styles */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.prev-arrow {
+    left: -60px;
+}
+
+.next-arrow {
+    right: -60px;
+}
+
+.slideshow-arrow:hover {
+    background: rgba(0,0,0,0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .slideshow-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .prev-arrow {
+        left: -10px;
+    }
+    
+    .next-arrow {
+        right: -10px;
+    }
+    
+    .slideshow-wrapper {
+        height: 700px;
+    }
+    
+    .project-slide img {
+        width: 80%;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.project-slideshow').forEach(slideshow => {
-      const slides = slideshow.querySelectorAll('.project-slide');
-      const prevBtn = slideshow.querySelector('.prev-arrow');
-      const nextBtn = slideshow.querySelector('.next-arrow');
-      let currentSlide = 0;
-      
-      // Initialize - hide all slides except first
-      slides.forEach((slide, index) => {
-          if (index !== 0) {
-              slide.style.opacity = '0';
-              slide.style.zIndex = '0';
-          } else {
-              slide.style.opacity = '1';
-              slide.style.zIndex = '1';
-          }
-      });
-      
-      function showSlide(index) {
-          // Hide current slide
-          slides[currentSlide].style.opacity = '0';
-          slides[currentSlide].style.zIndex = '0';
-          
-          // Show new slide
-          slides[index].style.opacity = '1';
-          slides[index].style.zIndex = '1';
-          
-          currentSlide = index;
-      }
-      
-      // Next slide
-      nextBtn.addEventListener('click', function() {
-          let nextIndex = (currentSlide + 1) % slides.length;
-          showSlide(nextIndex);
-      });
-      
-      // Previous slide
-      prevBtn.addEventListener('click', function() {
-          let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-          showSlide(prevIndex);
-      });
-      
-      // Keyboard navigation
-      document.addEventListener('keydown', function(e) {
-          if (e.key === 'ArrowRight') {
-              let nextIndex = (currentSlide + 1) % slides.length;
-              showSlide(nextIndex);
-          } else if (e.key === 'ArrowLeft') {
-              let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-              showSlide(prevIndex);
-          }
-      });
+        const slides = slideshow.querySelectorAll('.project-slide');
+        const prevBtn = slideshow.querySelector('.prev-arrow');
+        const nextBtn = slideshow.querySelector('.next-arrow');
+        let currentSlide = 0;
+        
+        // Initialize slides
+        slides.forEach((slide, index) => {
+            if (index !== 0) {
+                slide.style.opacity = '0';
+                slide.style.zIndex = '0';
+            }
+        });
+        
+        function showSlide(index) {
+            slides[currentSlide].style.opacity = '0';
+            slides[currentSlide].style.zIndex = '0';
+            slides[index].style.opacity = '1';
+            slides[index].style.zIndex = '1';
+            currentSlide = index;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') showSlide((currentSlide + 1) % slides.length);
+            else if (e.key === 'ArrowLeft') showSlide((currentSlide - 1 + slides.length) % slides.length);
+        });
     });
-  });
+});
   </script>
