@@ -223,6 +223,46 @@ title: People
                 gap: 30px; /* Further reduce gap on mobile */
             }
         }
+        /* Leadership Container - 3 per row */
+.image-container.leadership {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px 0;
+    margin: 0;
+}
+
+/* Leadership Items - 3 per row */
+.image-container.leadership .image-item,
+.image-container2 .image-item {
+    width: calc(33.33% - 40px); /* Changed from 25% to 33.33% */
+    min-width: 250px;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .image-container.leadership .image-item,
+    .image-container2 .image-item {
+        width: calc(50% - 40px); /* 2 per row on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .image-container.leadership .image-item,
+    .image-container2 .image-item {
+        width: calc(50% - 40px); /* 2 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .image-container.leadership .image-item,
+    .image-container2 .image-item {
+        width: 100%; /* 1 per row on mobile */
+        max-width: 350px;
+    }
+}
     </style>
 </head>
 
@@ -232,7 +272,7 @@ title: People
         <div class="image-section">
             <div class="content-width">
                 <h1>Meet the P-ai Leadership</h1>
-                <div class="image-container">
+                <div class="image-container leadership">
                     <div class="image-item">
                         <a href="https://www.linkedin.com/in/sae-furukawa-0314b71a3/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/df08961d-b330-4978-937b-ecc79c324683/29AE2008-7765-446B-BEFD-F770DED5A25C.jpeg?format=750w"/></a>
                         <h4>Sae<br>Furukawa</h4>
