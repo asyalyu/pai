@@ -11,40 +11,90 @@ title: People
     <title>People</title>
     <link rel="stylesheet" href="main.css">
     <style>
-        .page-container {
-  max-width: 1400px; /* Increased from default ~800px */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Make sections full width within container */
-.section {
-  width: 100%;
-}
         body {
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
+            font-size: 18px;
+            line-height: 1.6;
         }
-
-        :root {
-      --scale: 1.3; /* Adjust between 1.1-1.3 as needed */
-    }
-        
+    
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
         h1, h2, h3, h4 {
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
         }
         
-        .image-item h3, 
-        .image-item h4, 
-        .image-item p {
-            font-family: 'Courier New', Courier, monospace;
+        h1 {
+            font-size: 2.5rem;
         }
         
-        .section p, 
-        .section a {
-            font-family: 'Courier New', Courier, monospace;
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3, h4 {
+            font-size: 1.5rem;
+        }
+    
+        .section {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    
+        /* Image containers */
+        .image-container,
+        .image-container2,
+        .image-container3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            margin: 30px 0;
+        }
+    
+        /* Profile items */
+        .image-item {
+            width: calc(25% - 30px);
+            min-width: 250px;
+            text-align: center;
+        }
+    
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .image-item h3, 
+        .image-item h4 {
+            white-space: pre-line;
+            margin: 10px 0 5px;
+        }
+    
+        .image-item p {
+            margin: 5px 0;
+        }
+    
+        /* Partner logos */
+        .image-item2 {
+            width: 300px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .image-item2 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
