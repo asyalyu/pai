@@ -145,10 +145,16 @@ body {
 /* Add these styles to your main.css */
 
 /* Container for the entire page content */
+/* Make the main container wider */
 .page-container {
-  max-width: 1200px;
+  max-width: 1400px; /* Increased from default ~800px */
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
+}
+
+/* Make sections full width within container */
+.section {
+  width: 100%;
 }
 
 /* Section styling */
