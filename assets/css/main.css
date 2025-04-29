@@ -209,23 +209,33 @@ body {
 }
 
 /* Partners section specific styling */
+/* Partner logo container */
 .image-container3 {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
   flex-wrap: wrap;
+  gap: 30px; /* Space between logos */
+  margin: 30px 0;
 }
 
-.image-item2 img {
-  max-width: 200px;
+/* Partner logo items */
+.image-item2, .image-item3, .image-item4 {
+  width: 200px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Partner logo images */
+.image-item2 img, 
+.image-item3 img, 
+.image-item4 img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.image-item2 img:hover {
-  filter: grayscale(0%);
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
 
@@ -253,9 +263,11 @@ body {
   margin-bottom: 10px;
 }
 
-.image-item h3 {
-  margin: 10px 0 5px;
-  font-size: 1.1em;
+/* For leadership and alumni names */
+.image-item h3, 
+.image-item h4 {
+  white-space: pre-line; /* Respect line breaks */
+  margin-bottom: 0.5rem;
 }
 
 .image-item p {
