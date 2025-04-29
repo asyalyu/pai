@@ -420,6 +420,8 @@ body {
   margin: 0;
   width: 100%;
   box-sizing: border-box;
+  min-height: 60px !important; /* Fixed height */
+  padding: 0.5rem 0 !important; /* Consistent padding */
 }
 /* Desktop Navigation */
 .navbar-nav {
@@ -443,6 +445,7 @@ body {
   font-weight: 500;
   display: block;
   position: relative;
+  padding: 1rem 0 !important; /* Uniform link padding */
  
 }
 .nav-link:hover {
