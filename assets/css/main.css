@@ -1,0 +1,545 @@
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Reset & Base */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  } */
+  /* Add this to your existing CSS */
+/* .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #f8f8f8;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+} */
+
+/* Remove any existing 'hide' classes that might be affecting the navbar */
+.navbar.hide {
+    display: flex !important;
+}
+  
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+  }
+  
+  .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+ 
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 1rem 0; /* Consistent padding */
+    display: block;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #0066cc;
+  }
+  
+  
+  
+  
+  /* Content */
+  .content {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: none; /* Ensure no border at bottom of content */
+  }
+
+  
+
+  
+ 
+
+  /* Add these to your existing main.css */
+.project-slideshow {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+
+
+
+.project-slide.active {
+    position: relative;
+    opacity: 1;
+}
+
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+.slideshow-arrow:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Keep your existing project card styles */
+.project-title {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+
+
+.project-description {
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Add these styles to your main.css */
+
+/* Container for the entire page content */
+/* Make the main container wider */
+.page-container {
+  max-width: 1400px; /* Increased from default ~800px */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Make sections full width within container */
+.section {
+  width: 100%;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Image container styling */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Individual image item styling */
+.image-item {
+  flex: 0 0 calc(33.333% - 30px);
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Rounded corners for images */
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Adjust this value for more/less rounding */
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Makes images square */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Text styling under images */
+.image-item h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.image-item p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Special styling for advisory board */
+.highlight {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+/* Partners section specific styling */
+/* Partner logo container */
+.image-container3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between logos */
+  margin: 30px 0;
+}
+
+/* Partner logo items */
+.image-item2, .image-item3, .image-item4 {
+  width: 200px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Partner logo images */
+.image-item2 img, 
+.image-item3 img, 
+.image-item4 img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+
+/* Alumni Section */
+.image-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.image-item {
+  flex: 0 0 calc(20% - 30px); /* Adjust width as needed */
+  max-width: 200px;
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* For leadership and alumni names */
+.image-item h3, 
+.image-item h4 {
+  white-space: pre-line; /* Respect line breaks */
+  margin-bottom: 0.5rem;
+}
+
+.image-item p {
+  margin: 3px 0;
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .image-item {
+      flex: 0 0 calc(25% - 30px);
+  }
+}
+
+@media (max-width: 900px) {
+  .image-item {
+      flex: 0 0 calc(33.333% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .image-item {
+      flex: 0 0 calc(50% - 30px);
+  }
+}
+
+
+
+/* Slideshow Container */
+.project-slideshow {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  min-height: 650px;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+}
+
+/* Project Slide */
+.project-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Content Styling */
+.project-slide img {
+  width: 65%;
+  max-height: 200px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 15px;
+  display: block;
+  object-fit: contain;
+}
+
+.button-container {
+  margin-top: auto; /* Pushes buttons to bottom */
+}
+
+/* Arrow Buttons */
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.prev-arrow {
+  left: -60px;
+}
+
+.next-arrow {
+  right: -60px;
+}
+
+.slideshow-arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .project-slideshow,
+  .slideshow-wrapper {
+      min-height: 700px;
+  }
+  
+  .slideshow-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+  }
+  
+  .prev-arrow {
+      left: -10px;
+  }
+  
+  .next-arrow {
+      right: -10px;
+  }
+  
+  .project-slide img {
+      width: 80%;
+  }
+}
+
+/* ===== Navigation Styles ===== */
+.navbar {
+  padding: 1.5rem 1.5rem; /* Increased from 0 to add vertical space */
+  min-height: 70px; /* Optional: Set minimum height */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Desktop Navigation */
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-link {
+  padding: 1.5rem 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  position: relative;
+  font-size: 1.1rem; /* Optional: Increase font size */
+}
+.nav-link:hover {
+  color: #0066cc;
+}
+
+.nav-item.active .nav-link {
+  color: #0066cc;
+  border-bottom: 2px solid #0066cc;
+}
+
+/* Mobile Menu Button - Hidden by Default */
+.mobile-menu-btn {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  background: #f8f8f8;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+.mobile-menu-btn:hover {
+  color: #0066cc;
+}
+
+/* Mobile Navigation - Hidden by Default */
+.navbar-nav.mobile {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: #f8f8f8;
+}
+
+.navbar-nav.mobile .nav-item {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-nav.mobile .nav-link {
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-nav.mobile .nav-item.active .nav-link {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: #0066cc;
+  border-bottom: none;
+}
+
+/* ===== Mobile Responsive Styles ===== */
+@media (max-width: 768px) {
+  /* Navigation */
+  .navbar {
+    padding: 0;
+    position: sticky;
+  }
+  
+  /* Hide desktop nav */
+  .navbar-nav:not(.mobile) {
+    display: none;
+  }
+  
+  /* Show mobile button */
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  /* Show mobile nav when active */
+  .navbar-nav.mobile.active {
+    display: flex;
+  }
+  
+  /* Adjust other elements for mobile */
+  .page-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .footer-logo {
+    max-width: 40px;
+  }
+}
+
+/* Desktop Styles - Ensure mobile elements are hidden */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .navbar-nav.mobile {
+    display: none !important;
+  }
+}

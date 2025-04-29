@@ -1,0 +1,195 @@
+---
+layout: default
+title: Home
+subtitle: Welcome to our creative space
+---
+<style>
+  .mailing-list-btn {
+    display: inline-block;
+    margin: 30px 0;
+    padding: 12px 30px;
+    background-color: #00d8ff;
+    color: #0f1923;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 216, 255, 0.5);
+  }
+  
+  .mailing-list-btn:hover {
+    background-color: #0f1923;
+    color: #00d8ff;
+    border: 1px solid #00d8ff;
+    box-shadow: 0 0 20px rgba(0, 216, 255, 0.8);
+    transform: translateY(-2px);
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .particle-banner {
+  background: #0f1923;
+  color: #00d8ff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0; /* Changed from margin-bottom: 40px */
+  font-family: 'Courier New', monospace;
+  border-bottom: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box; /* Add this */
+  padding: 100px 20px; /* Doubled from 80px to make it taller */
+  min-height: 400px; /* Set minimum height */
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
+}
+  .particle-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .particle-banner p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    color: #a8b2bf;
+  }
+  
+  .particle {
+    position: absolute;
+    background: #00d8ff;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: float 15s infinite linear;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+  }
+  .banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.banner-logo {
+  max-width: 150px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 10px rgba(0, 216, 255, 0.7));
+  animation: pulse 2s infinite alternate;
+}
+
+
+</style>
+
+<!-- Place this right after your navigation bar in the HTML -->
+
+  <div class="particle-banner">
+    <div class="banner-content">
+      <img src="{{ 'assets/css/paiWhite.png' | relative_url }}" 
+           alt="Logo" 
+           class="banner-logo">
+   
+    </div>
+  </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.querySelector('.particle-banner');
+    
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      const size = Math.random() * 5 + 2;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      
+      const duration = Math.random() * 20 + 10;
+      particle.style.animationDuration = duration + 's';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      
+      banner.appendChild(particle);
+      
+      // Remove particle after animation completes to prevent DOM overload
+      setTimeout(() => {
+        particle.remove();
+      }, duration * 1000);
+    }
+    
+    // Create initial particles
+    for (let i = 0; i < 50; i++) {
+      createParticle();
+    }
+    
+    // Continue creating particles
+    setInterval(createParticle, 300);
+  });
+</script>
+<style>
+  .centered-logo {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .centered-logo img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .home-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+</style>
+
+<div class="btn-container">
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvQrj3LDRySs8k2ZipleOEV2rcRLqqii4oTK7X0r1nCe3q9g/viewform" class="mailing-list-btn" target="_blank">
+    Join Our Mailing List
+  </a>
+</div>
+
+<div class="home-content">
+  <h2>Software Engineering. Data Science. AI/ML. Product Management. Entrepreneurship.</h2>
+
+  <p>P-ai is building the modern incubator for CS projects and ideas—providing opportunities in pre-professional software education at the 5C Claremont College Consortium. We enable students to engage on-campus with the ever-expanding field of computing: featuring interdisciplinary projects in tech, finance, health, science, and more.</p>
+
+  <p>Our core initiative is Project Teams: every semester, student and industry leaders choose to lead self-designed project teams of their own choosing as Product Managers (PMs). Teams fall in one of our two divisions: SWE or DS/AI. P-ai club members can then join specific teams as Project Members, working together with their group throughout the semester to build something technical. 
+
+</p>
+  
+  <h3>Our Mission</h3>
+  <p>P-ai also hosts general club workshops, panels, and events to develop a professional software skillset and examine the latest research/applications and their respective ethical implications, in which students will acquire a breadth of knowledge beyond enhancing technical competencies.</p>
+
+  <p>P-ai will strive to establish a culture of proactive curiosity-driven learning in addition to practicing interdisciplinary communication. Ultimately, P-ai’s approach will offer a framework of informed decision-making that is beneficial to all careers.</p> 
+  <p>You don’t need CS Experience to join the club! The club’s General Membership is open to all - sign up for our mailing list so you can get info on our events and workshops.</p>
+  
+</div>

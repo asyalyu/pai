@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- For modern browsers (PNG format) -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    margin-bottom: 0 !important;
+    font-family: 'Courier New', monospace;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  
+  /* Ensure the banner starts immediately after nav */
+  .content {
+    padding-top: 0;
+    margin-top: 0;
+  }
+    .footer-logo {
+      max-width: 50px; /* Adjust size as needed */
+      height: auto;
+      display: block;
+      margin: 20px auto; /* Centers the logo and adds spacing */
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px 0;
+      border-top: none; /* Optional divider */
+    }
+
+  </style>
+</head>
+<body>
+ <!-- Navigation -->
+<nav class="navbar">
+  <button class="mobile-menu-btn">☰ Menu</button>
+  <ul class="navbar-nav">
+    {% for link in site.navigation %}
+    <li class="nav-item {% if page.url == link.url or (page.url == '/' and link.url == '/index.html') %}active{% endif %}">
+        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <!-- Mobile version of the menu -->
+  <ul class="navbar-nav mobile">
+    {% for link in site.navigation %}
+      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+
+  <!-- Main Content -->
+  <main class="content">
+    {{ content }}
+  </main>
+
+  <!-- Footer with Logo -->
+  <footer class="site-footer">
+    <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" alt="Site Logo" class="footer-logo">
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      const mobileMenu = document.querySelector('.navbar-nav.mobile');
+      
+      // Toggle mobile menu when button is clicked
+      mobileBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        this.textContent = mobileMenu.classList.contains('active') ? '✕ Close' : '☰ Menu';
+      });
+      
+      // Hide desktop nav on mobile
+      if (window.innerWidth <= 768) {
+        document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
+      }
+      
+      // Update on window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          document.querySelector('.navbar-nav:not(.mobile)').style.display = 'flex';
+          mobileMenu.style.display = 'none';
+          mobileBtn.textContent = '☰ Menu';
+        } else {
+          document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
+        }
+      });
+    });
+  </script>  
+</body>
+</html>
