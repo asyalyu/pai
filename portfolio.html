@@ -855,8 +855,8 @@ title: Portfolio
       max-width: 700px;
   }
   
-  /* Slideshow Styles */
-  .project-slideshow {
+  /* Updated Project Slideshow Styles */
+.project-slideshow {
     position: relative;
     max-width: 800px;
     width: 90%;
@@ -866,7 +866,8 @@ title: Portfolio
 .slideshow-wrapper {
     position: relative;
     overflow: hidden;
-    height: 650px; /* Fixed height for scrolling */
+    height: auto;
+    min-height: 650px;
 }
 
 .project-slide {
@@ -881,10 +882,12 @@ title: Portfolio
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow-y: auto; /* Enable scrolling */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    max-width: 800px; /* or whatever maximum width you prefer */
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .project-slide.active {
@@ -892,16 +895,23 @@ title: Portfolio
     z-index: 1;
 }
 
-/* Image Styles */
-.project-slide img {
-    width: 65%;
-    max-height: 200px;
-    height: auto;
-    border-radius: 12px;
-    margin: 0 auto 15px;
-    display: block;
-    object-fit: contain;
+.project-title {
+    color: #0066cc;
+    margin: 15px 0;
+    font-size: 1.5em;
+    text-align: center;
 }
+
+.project-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: left;
+    margin: 10px auto;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
 .project-description ul {
     padding-left: 20px;
     margin: 10px 0;
@@ -915,23 +925,6 @@ title: Portfolio
     word-break: break-word;
 }
 
-/* Text Styles */
-.project-title {
-    color: #0066cc;
-    margin: 15px 0;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.project-description {
-  word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    text-align: left;
-    margin: 10px 0;
-    line-height: 1.5;
-}
-
 .project-meta {
     margin: 8px 0;
     font-size: 0.95em;
@@ -939,6 +932,42 @@ title: Portfolio
     font-weight: bold;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-slide {
+        padding: 15px;
+    }
+    
+    .project-title {
+        font-size: 1.3em;
+    }
+    
+    .project-description {
+        font-size: 0.95em;
+    }
+    
+    .slideshow-wrapper {
+        min-height: 700px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-slide {
+        padding: 10px;
+    }
+    
+    .project-title {
+        font-size: 1.2em;
+    }
+    
+    .project-description {
+        font-size: 0.9em;
+    }
+    
+    .project-description ul {
+        padding-left: 15px;
+    }
+}
 /* Button Styles */
 .button-container {
     display: flex;
