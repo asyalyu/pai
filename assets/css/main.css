@@ -411,8 +411,7 @@ body {
 
 /* ===== Navigation Styles ===== */
 .navbar {
-  padding: 1.5rem 1.5rem; /* Increased from 0 to add vertical space */
-  min-height: 70px; /* Optional: Set minimum height */
+  
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -438,13 +437,13 @@ body {
 }
 
 .nav-link {
-  padding: 1.5rem 1.5rem;
+
   text-decoration: none;
   color: #333;
   font-weight: 500;
   display: block;
   position: relative;
-  font-size: 1.1rem; /* Optional: Increase font size */
+ 
 }
 .nav-link:hover {
   color: #0066cc;
