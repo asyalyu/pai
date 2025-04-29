@@ -203,14 +203,10 @@ title: This Semester
         max-width: 700px;
     }
     
-    /* Button Styles */
     .button-container {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin: 20px 0;
-        flex-wrap: wrap;
-    }
+    margin-top: auto; /* Push buttons to bottom */
+    padding-top: 20px; /* Add some space above buttons */
+}
     
     .button1, .button {
         padding: 10px 20px;
@@ -249,24 +245,28 @@ title: This Semester
     }
     
     .slideshow-wrapper {
-        position: relative;
-        overflow: hidden;
-        min-height: 650px; /* Adjusted for better content fit */
-    }
+    position: relative;
+    overflow: hidden;
+    height: 650px; /* Fixed height instead of min-height */
+}
     
     .project-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Take full height of container */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
     .project-slide.active {
         position: relative;
         opacity: 1;
@@ -274,14 +274,14 @@ title: This Semester
     
     /* Image Styles */
     .project-slide img {
-        width: 65%;
-        height: auto;
-        border-radius: 12px;
-        margin: 15px auto;
-        display: block;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    
+    width: 65%;
+    max-height: 200px; /* Limit image height */
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto 15px; /* Adjusted margins */
+    display: block;
+    object-fit: contain;
+}
     /* Text Styles */
     .project-title {
         color: #0066cc;
