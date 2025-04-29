@@ -1,6 +1,8 @@
+---
 layout: default
 title: FAQ & Contact
 ---
+
 <div class="page-container">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -63,7 +65,7 @@ title: FAQ & Contact
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             max-width: 700px;
             border: 1px solid black;
             width: 100%;
@@ -86,7 +88,7 @@ title: FAQ & Contact
             font-weight: 600;
             font-size: 16px;
             color: black;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border-radius: 12px 12px 0 0;
         }
         
@@ -108,15 +110,16 @@ title: FAQ & Contact
             border-radius: 0 0 12px 12px;
         }
         
-        
         .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 500px;
+            max-height: 1000px;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 0 20px 20px;
         }
         
         .faq-toggle {
             font-size: 1.3em;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease-out;
             color: black;
         }
         
@@ -214,17 +217,12 @@ title: FAQ & Contact
             }
             
             .faq-item.active .faq-answer {
-                padding: 15px;
+                padding: 0 15px 15px;
             }
             
             .contact-form input,
             .contact-form textarea {
                 padding: 10px 12px;
-            }
-            
-            /* Ensure answers are fully hidden on mobile */
-            .faq-answer {
-                padding: 0;
             }
         }
         
@@ -266,12 +264,12 @@ title: FAQ & Contact
         <h2>FAQ</h2>
         
         <div class="faq-list">
-            {% for item in site.data.faq %}
+            {% for item in site.data.faq.items %}
             <div class="faq-item">
                 <button class="faq-question">{{ item.question }}
                     <span class="faq-toggle">+</span>
                 </button>
-                <div class="faq-answer">{{ item.answer }}</div>
+                <div class="faq-answer">{{ item.answer | markdownify }}</div>
             </div>
             {% endfor %}
         </div>
@@ -298,23 +296,20 @@ title: FAQ & Contact
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             
-            // First close all FAQ answers
-            faqItems.forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Then set up click handlers
+            // Set up click handlers with optimized performance
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                    
+                question.addEventListener('click', function() {
+                    // Close all other items first
                     faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                        if (otherItem !== item) {
                             otherItem.classList.remove('active');
                         }
                     });
+                    
+                    // Toggle the clicked item
+                    item.classList.toggle('active');
                 });
             });
         });
