@@ -55,7 +55,7 @@ button {
       padding: 1rem;
       background: #ffffff00;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      
     }
 
     .archive-section h2 {
@@ -852,25 +852,53 @@ button {
 </body>
 
 <style>
-  /* Centering and Layout */
-  .projects-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      padding: 20px 0;
-  }
-  
-  .centered-content {
-      max-width: 900px;
-      width: 100%;
-      text-align: center;
-      padding: 0 20px;
-  }
-  
-  .text {
-      margin: 20px auto;
-      max-width: 700px;
-  }
+  /* Center the dropdown container and its contents */
+.project-dropdown {
+    margin: 30px auto; /* Center horizontally */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Center text */
+    width: 100%;
+}
+
+/* Style the label */
+.project-dropdown label {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Style the select element */
+.project-dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-align-last: center; /* For Firefox */
+    margin: 0 auto; /* Center the select element */
+}
+
+/* Center dropdown options text */
+.project-dropdown select option {
+    text-align: center;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.project-dropdown select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: center;
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .project-dropdown select {
+        text-align: center;
+    }
+}
   
   /* Updated Project Slideshow Styles */
 .project-slideshow {
@@ -898,7 +926,6 @@ button {
     background: rgba(255, 255, 255, 0);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
