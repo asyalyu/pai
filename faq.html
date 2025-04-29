@@ -128,6 +128,7 @@ title: FAQ & Contact
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center; /* This centers all text and inline elements */
 }
     
     .contact-form h2 {
@@ -142,6 +143,7 @@ title: FAQ & Contact
     gap: 20px;
     width: 100%; /* Ensure form takes full width of container */
     margin: 0 auto; /* Center the form grid */
+    max-width: 400px; /* Constrain the form inputs to a narrower width */
 }
     
     .contact-form label {
@@ -149,6 +151,7 @@ title: FAQ & Contact
         margin-bottom: 8px;
         font-weight: 500;
         color: #555;
+        text-align: center; /* Center the labels */
     }
     
     .contact-form input,
@@ -159,6 +162,8 @@ title: FAQ & Contact
         border-radius: 8px;
         font-size: 16px;
         transition: border-color 0.3s ease;
+        margin: 0 auto; /* Center the input fields */
+    display: block; /* Needed for margin:auto to work */
     }
     
     .contact-form input:focus,
@@ -184,6 +189,7 @@ title: FAQ & Contact
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        
     }
     
     .send-button:hover {
