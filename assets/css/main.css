@@ -73,7 +73,7 @@ body {
   color: #007bff;
 }
 
-/* Orange Theme */
+/* orange Theme */
 body.alternate-theme .nav-link:hover,
 body.alternate-theme .nav-item.active .nav-link {
   color: #ff5733;
@@ -85,28 +85,39 @@ body.second-alternate-theme .nav-item.active .nav-link {
   color: #28a745;
 }
 
-/* Purple Theme */
+/* red Theme */
 body.third-alternate-theme .nav-link:hover,
 body.third-alternate-theme .nav-item.active .nav-link {
-  color: #9c27b0;
+  color: #df3232;
+}
+
+/* yelloe Theme */
+body.third-alternate-theme .nav-link:hover,
+body.third-alternate-theme .nav-item.active .nav-link {
+  color: #ebda27;
 }
 
 /* Particle Background Colors */
 .particle {
-  background: #00d8ff;
+  color: #007bff;
 }
 
 body.alternate-theme .particle {
-  background: #ff5733;
+  color: #ff5733;
 }
 
 body.second-alternate-theme .particle {
-  background: #28a745;
+  color: #28a745;
 }
 
 body.third-alternate-theme .particle {
-  background: #9c27b0;
+  color: #df3232;
 }
+
+body.third-alternate-theme .particle {
+  color: #ebda27;
+}
+
 
 /* Theme Toggle Elements */
 .theme-toggle {
