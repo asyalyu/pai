@@ -10,6 +10,13 @@ title: FAQ & Contact
         body {
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        * {
+            box-sizing: border-box;
         }
         
         .social-buttons {
@@ -17,6 +24,7 @@ title: FAQ & Contact
             justify-content: center;
             gap: 20px;
             margin: 30px 0;
+            flex-wrap: wrap;
         }
         
         .social-button {
@@ -43,10 +51,12 @@ title: FAQ & Contact
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
         }
         
         .faq-list {
             margin: 20px 0;
+            width: 100%;
         }
         
         .faq-item {
@@ -57,6 +67,7 @@ title: FAQ & Contact
             transition: all 0.3s ease;
             max-width: 700px;
             border: 1px solid black;
+            width: 100%;
         }
         
         .faq-item:hover {
@@ -115,7 +126,7 @@ title: FAQ & Contact
             border: 1px solid black;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            width: 90%;
+            width: calc(100% - 30px);
         }
         
         .contact-form form {
@@ -142,6 +153,7 @@ title: FAQ & Contact
             font-size: 16px;
             transition: border-color 0.3s ease;
             margin: 0 auto;
+            max-width: 100%;
         }
         
         .contact-form textarea {
@@ -179,10 +191,49 @@ title: FAQ & Contact
             .contact-form {
                 padding: 20px 15px;
                 margin: 20px 15px;
+                width: calc(100% - 30px);
             }
             
             .social-buttons {
                 gap: 15px;
+            }
+            
+            .contact-form form {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .faq-question,
+            .faq-answer {
+                padding: 15px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 15px;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                padding: 10px 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .social-button {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .faq-question {
+                font-size: 15px;
+                padding: 12px 15px;
+            }
+            
+            .send-button {
+                width: 130px;
+                height: 45px;
+                font-size: 15px;
             }
         }
     </style>
