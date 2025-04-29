@@ -1,21 +1,22 @@
-- question: "When is the recruitment timeline?"
-  answer: "Recruitment usually happens during the first few weeks of each semester."
-
-- question: "How does applying to leadership positions work?"
-  answer: "Applications for leadership positions are released at the end of each semester, with recruitment occurring over the break."
-
-- question: "When are project managers and project members recruited?"
-  answer: "Project Managers: Recruited during the first week of each semester. \n Project Members: Recruited early in the fall semester, with applications announced via Instagram and LinkedIn." 
+items: 
+  - question: "When is the recruitment timeline?"
+    answer: "Recruitment usually happens during the first few weeks of each semester."
   
-- question: "What are the advantages of being a project manager?"
-  answer: "Project managers gain leadership experience, people management skills, and hands-on experience with agile methodology and product management."
+  - question: "How does applying to leadership positions work?"
+    answer: "Applications for leadership positions are released at the end of each semester, with recruitment occurring over the break."
 
-- question: "What types of projects are ideal for P-ai?"
-  answer: "Either software engineering (SWE) or AI projects, preferably with a social impact focus."
+  - question: "When are project managers and project members recruited?"
+    answer: "Project Managers: Recruited during the first week of each semester. \n Project Members: Recruited early in the fall semester, with applications announced via Instagram and LinkedIn." 
+    
+  - question: "What are the advantages of being a project manager?"
+    answer: "Project managers gain leadership experience, people management skills, and hands-on experience with agile methodology and product management."
 
-- question: "What makes a good project member or manager?"
-  answer: "Good Project Members: Eager to learn, self-motivated, and team-oriented \n Good Project Managers: Technically competent with strong team management skills."
+  - question: "What types of projects are ideal for P-ai?"
+    answer: "Either software engineering (SWE) or AI projects, preferably with a social impact focus."
 
-- question: "What’s key to success in P-ai?"
-  answer: "Self-initiative, eagerness to learn, and a collaborative mindset are crucial for success in P-ai."
+  - question: "What makes a good project member or manager?"
+    answer: "Good Project Members: Eager to learn, self-motivated, and team-oriented \n Good Project Managers: Technically competent with strong team management skills."
+
+  - question: "What’s key to success in P-ai?"
+    answer: "Self-initiative, eagerness to learn, and a collaborative mindset are crucial for success in P-ai."
 
