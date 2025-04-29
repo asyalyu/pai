@@ -856,9 +856,10 @@ title: Portfolio
   }
   
   /* Slideshow Styles */
-.project-slideshow {
+  .project-slideshow {
     position: relative;
     max-width: 800px;
+    width: 90%;
     margin: 30px auto;
 }
 
@@ -883,6 +884,7 @@ title: Portfolio
     overflow-y: auto; /* Enable scrolling */
     display: flex;
     flex-direction: column;
+    max-width: 800px; /* or whatever maximum width you prefer */
 }
 
 .project-slide.active {
@@ -900,6 +902,18 @@ title: Portfolio
     display: block;
     object-fit: contain;
 }
+.project-description ul {
+    padding-left: 20px;
+    margin: 10px 0;
+    text-align: left;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.project-description li {
+    margin-bottom: 8px;
+    word-break: break-word;
+}
 
 /* Text Styles */
 .project-title {
@@ -910,6 +924,10 @@ title: Portfolio
 }
 
 .project-description {
+  word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: left;
     margin: 10px 0;
     line-height: 1.5;
 }
@@ -994,8 +1012,11 @@ title: Portfolio
     }
     
     .slideshow-wrapper {
-        height: 700px;
-    }
+    position: relative;
+    overflow: hidden;
+    height: auto; /* Change from fixed height to auto */
+    min-height: 650px; /* Set a minimum height instead */
+}
     
     .project-slide img {
         width: 80%;
