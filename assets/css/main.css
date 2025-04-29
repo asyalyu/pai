@@ -92,8 +92,8 @@ body.third-alternate-theme .nav-item.active .nav-link {
 }
 
 /* yelloe Theme */
-body.third-alternate-theme .nav-link:hover,
-body.third-alternate-theme .nav-item.active .nav-link {
+body.fourth-alternate-theme .nav-link:hover,
+body.fourth-alternate-theme .nav-item.active .nav-link {
   color: #ebda27;
 }
 
@@ -114,7 +114,7 @@ body.third-alternate-theme .particle {
   color: #df3232;
 }
 
-body.third-alternate-theme .particle {
+body.fourth-alternate-theme .particle {
   color: #ebda27;
 }
 
