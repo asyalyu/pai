@@ -92,10 +92,10 @@ title: FAQ & Contact
         }
         
         .faq-answer {
-            padding: 0 20px;
+            padding: 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
+            transition: max-height 0.4s ease;
             background: white;
             color: black;
             line-height: 1.6;
@@ -203,8 +203,7 @@ title: FAQ & Contact
                 padding: 0 10px;
             }
             
-            .faq-question,
-            .faq-answer {
+            .faq-question {
                 padding: 15px;
             }
             
@@ -215,6 +214,11 @@ title: FAQ & Contact
             .contact-form input,
             .contact-form textarea {
                 padding: 10px 12px;
+            }
+            
+            /* Ensure answers are fully hidden on mobile */
+            .faq-answer {
+                padding: 0;
             }
         }
         
@@ -288,6 +292,12 @@ title: FAQ & Contact
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             
+            // First close all FAQ answers
+            faqItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Then set up click handlers
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 

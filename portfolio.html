@@ -12,8 +12,35 @@ body, h1, h2, h3, h4, p, a, li, label, select, option,
 }
 
 /* Ensure dropdown text also uses Courier */
+/* Updated Dropdown Styles */
 .project-dropdown select {
-    font-family: 'Courier New', Courier, monospace !important;
+    padding: 12px 20px; /* Bigger padding */
+    font-size: 18px; /* Larger font */
+    font-weight: bold; /* Bolder text */
+    border-radius: 12px; /* Rounded edges */
+    border: 2px solid black; /* Thicker border */
+    cursor: pointer; /* Pointer cursor */
+    background-color: white;
+    width: 300px; /* Fixed width */
+    text-align: center;
+    text-align-last: center;
+    margin-top: 10px; /* Space from label */
+}
+
+.project-dropdown label {
+    font-size: 20px; /* Larger label */
+    font-weight: bold; /* Bolder label */
+    margin-bottom: 15px; /* More spacing */
+}
+
+/* Dropdown hover/focus effects */
+.project-dropdown select:hover {
+    background-color: #f5f5f5;
+}
+
+.project-dropdown select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Make sure all buttons use Courier */
@@ -861,14 +888,6 @@ button {
     align-items: center; /* Center children horizontally */
     text-align: center; /* Center text */
     width: 100%;
-}
-
-/* Style the label */
-.project-dropdown label {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
 }
 
 /* Style the select element */
