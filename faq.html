@@ -124,10 +124,8 @@ title: FAQ & Contact
     background: white;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    width: 90%; /* Add this to ensure it doesn't touch edges on mobile */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: calc(100% - 40px); /* This prevents horizontal scrolling */
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
     
     .contact-form h2 {
@@ -140,8 +138,9 @@ title: FAQ & Contact
     .contact-form form {
     display: grid;
     gap: 20px;
-    width: 100%; /* Ensure form takes full width of container */
-    margin: 0 auto; /* Center the form grid */
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%; /* Prevent form from overflowing */
 }
     
     .contact-form label {
@@ -203,6 +202,13 @@ title: FAQ & Contact
             gap: 15px;
         }
     }
+    .form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 </style>
 
 <!-- Social Media Links (Icon Only Version) -->
@@ -235,6 +241,7 @@ title: FAQ & Contact
 </div>
 
 <!-- Contact Form -->
+<div class="form-container">
 <div class="contact-form">
     <h2>Contact Us</h2>
     <form action="https://formspree.io/f/mzzdodwv" method="POST">
@@ -249,6 +256,7 @@ title: FAQ & Contact
         
         <button type="submit" class="send-button">Send Message</button>
     </form>
+</div>
 </div>
 
 <script>
