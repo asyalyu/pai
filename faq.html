@@ -118,13 +118,14 @@ title: FAQ & Contact
     
     /* Stylish Contact Form */
     .contact-form {
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 30px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    width: 90%; /* Add this to ensure it doesn't touch edges on mobile */
+}
     
     .contact-form h2 {
         color: #6e48aa;
@@ -134,9 +135,11 @@ title: FAQ & Contact
     }
     
     .contact-form form {
-        display: grid;
-        gap: 20px;
-    }
+    display: grid;
+    gap: 20px;
+    width: 100%; /* Ensure form takes full width of container */
+    margin: 0 auto; /* Center the form grid */
+}
     
     .contact-form label {
         display: block;
