@@ -9,25 +9,7 @@
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <style>
-    /* Default theme particles */
-  body .particle {
-    background: #00d8ff;
-  }
-  
-  /* Orange theme particles */
-  body.alternate-theme .particle {
-    background: #ff5733;
-  }
-  
-  /* Green theme particles */
-  body.second-alternate-theme .particle {
-    background: #28a745;
-  }
-  
-  /* Purple theme particles */
-  body.third-alternate-theme .particle {
-    background: #9c27b0;
-  }
+    /* Base Styles */
     body {
       margin: 0;
       padding: 0;
@@ -38,10 +20,8 @@
       font-family: 'Courier New', monospace;
       font-weight: bolder;
       font-size: 1.1rem;
-      text-decoration: none;
     }
     
-    /* Ensure the banner starts immediately after nav */
     .content {
       padding-top: 0;
       margin-top: 0;
@@ -53,25 +33,24 @@
       display: block;
       margin: 20px auto;
     }
-
+  
     .site-footer {
       text-align: center;
       padding: 20px 0;
       border-top: none;
     }
-
-    /* Navigation links - remove all underlines by default */
+  
+    /* Navigation Links */
     .nav-item a {
       text-decoration: none !important;
-    }
-
-    /* Active page indicator */
-    .nav-item.active a {
       position: relative;
-      color: inherit; /* Inherit color from theme */
+    }
+  
+    /* Active Page Indicator - Single Underline Solution */
+    .nav-item.active a {
+      color: inherit;
     }
     
-    /* Our custom underline - only this one should show */
     .nav-item.active a::after {
       content: '';
       position: absolute;
@@ -79,11 +58,58 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: currentColor; /* Will use the current text color */
+      background-color: currentColor;
       display: block;
     }
-
-    /* Theme toggle button styles */
+  
+    /* Mobile Active Item */
+    .navbar-nav.mobile .nav-item.active a::after {
+      bottom: 0;
+    }
+  
+    /* Theme Colors */
+    /* Default Theme */
+    body .nav-item a:hover,
+    body .nav-item.active a {
+      color: #007bff;
+    }
+  
+    /* Orange Theme */
+    body.alternate-theme .nav-item a:hover,
+    body.alternate-theme .nav-item.active a {
+      color: #ff5733;
+    }
+  
+    /* Green Theme */
+    body.second-alternate-theme .nav-item a:hover,
+    body.second-alternate-theme .nav-item.active a {
+      color: #28a745;
+    }
+  
+    /* Purple Theme */
+    body.third-alternate-theme .nav-item a:hover,
+    body.third-alternate-theme .nav-item.active a {
+      color: #9c27b0;
+    }
+  
+    /* Particle Background Colors */
+    body .particle {
+      background: #00d8ff;
+    }
+    
+    body.alternate-theme .particle {
+      background: #ff5733;
+    }
+    
+    body.second-alternate-theme .particle {
+      background: #28a745;
+    }
+    
+    body.third-alternate-theme .particle {
+      background: #9c27b0;
+    }
+  
+    /* Theme Toggle Button */
     .theme-toggle {
       position: fixed;
       bottom: 20px;
@@ -99,8 +125,8 @@
       z-index: 1000;
       display: none;
     }
-
-    /* Theme menu popup */
+  
+    /* Theme Menu Popup */
     .theme-menu {
       position: fixed;
       bottom: 60px;
@@ -114,11 +140,11 @@
       display: none;
       flex-direction: column;
     }
-
+  
     .theme-menu.show {
       display: flex;
     }
-
+  
     .theme-option {
       padding: 8px 12px;
       margin: 2px 0;
@@ -127,48 +153,16 @@
       transition: background-color 0.2s;
       text-decoration: none !important;
     }
-
+  
     .theme-option:hover {
       background-color: #f0f0f0;
     }
-
-    /* Show only on desktop */
+  
+    /* Desktop Only */
     @media (min-width: 769px) {
       .theme-toggle {
         display: block;
       }
-    }
-
-    /* Default theme */
-    .nav-item a:hover {
-      color: #007bff;
-    }
-    body .nav-item.active a {
-      color: #007bff;
-    }
-
-    /* Orange theme */
-    body.alternate-theme .nav-item a:hover {
-      color: #ff5733;
-    }
-    body.alternate-theme .nav-item.active a {
-      color: #ff5733;
-    }
-
-    /* Green theme */
-    body.second-alternate-theme .nav-item a:hover {
-      color: #28a745;
-    }
-    body.second-alternate-theme .nav-item.active a {
-      color: #28a745;
-    }
-
-    /* Purple theme */
-    body.third-alternate-theme .nav-item a:hover {
-      color: #9c27b0;
-    }
-    body.third-alternate-theme .nav-item.active a {
-      color: #9c27b0;
     }
   </style>
 </head>
