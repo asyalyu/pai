@@ -63,7 +63,7 @@ title: FAQ & Contact
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             max-width: 700px;
             border: 1px solid black;
             width: 100%;
@@ -86,21 +86,15 @@ title: FAQ & Contact
             font-weight: 600;
             font-size: 16px;
             color: black;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border-radius: 12px 12px 0 0;
         }
         
         .faq-answer {
-            padding: 0 20px;
+            padding: 0;
             max-height: 0;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: 
-                max-height 0.25s ease,
-                opacity 0.2s ease,
-                transform 0.2s ease,
-                padding 0.2s ease;
+            transition: max-height 0.4s ease;
             background: white;
             color: black;
             line-height: 1.6;
@@ -109,15 +103,13 @@ title: FAQ & Contact
         }
         
         .faq-item.active .faq-answer {
-            max-height: 1000px;
-            opacity: 1;
-            transform: translateY(0);
-            padding: 0 20px 20px;
+            padding: 20px;
+            max-height: 500px;
         }
         
         .faq-toggle {
             font-size: 1.3em;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
             color: black;
         }
         
@@ -215,12 +207,17 @@ title: FAQ & Contact
             }
             
             .faq-item.active .faq-answer {
-                padding: 0 15px 15px;
+                padding: 15px;
             }
             
             .contact-form input,
             .contact-form textarea {
                 padding: 10px 12px;
+            }
+            
+            /* Ensure answers are fully hidden on mobile */
+            .faq-answer {
+                padding: 0;
             }
         }
         
@@ -294,22 +291,23 @@ title: FAQ & Contact
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             
-            // Set up click handlers
+            // First close all FAQ answers
+            faqItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Then set up click handlers
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
                 question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
+                    item.classList.toggle('active');
                     
-                    // Close all items first
                     faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
                     });
-                    
-                    // If this wasn't active, open it
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
                 });
             });
         });
