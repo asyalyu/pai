@@ -11,146 +11,123 @@ title: People
     <title>People</title>
     <link rel="stylesheet" href="main.css">
     <style>
-        /* Wider image sections */
-.image-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.content-width {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Image containers */
-.image-container,
-.image-container2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px; /* Increased gap */
-  padding: 30px 0;
-}
-
-/* Partner logo container */
-.image-container3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 40px 0;
-}
-
-/* Profile items */
-.image-item {
-  width: calc(25% - 40px); /* Adjusted for new gap */
-  min-width: 250px;
-}
-
-/* Partner logo items */
-.image-item2 {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-/* Make images larger within their containers */
-.image-item img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-}
-
+        /* Base Styles */
         body {
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
             font-size: 18px;
             line-height: 1.6;
+            color: #333;
         }
     
+        /* Layout Containers */
         .page-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
     
+        .content-width {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+    
+        /* Full-width Image Sections */
+        .image-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin: 40px -50vw;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+    
+        /* Section Spacing */
+        .section {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    
+        /* Typography */
         h1, h2, h3, h4 {
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
+            margin-top: 0;
         }
-        
+    
         h1 {
             font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
-        
+    
         h2 {
             font-size: 2rem;
+            margin-bottom: 1.25rem;
         }
-        
+    
         h3, h4 {
             font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
     
-        .section {
-            width: 100%;
-            margin-bottom: 40px;
-        }
-    
-        /* Image containers */
+        /* Image Grid Containers */
         .image-container,
         .image-container2,
         .image-container3 {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            width: 100%;
-            margin: 30px 0;
+            gap: 40px;
+            padding: 30px 0;
+            margin: 0;
         }
     
-        /* Profile items */
+        /* Profile Items */
         .image-item {
-            width: calc(25% - 30px);
+            width: calc(25% - 40px);
             min-width: 250px;
             text-align: center;
         }
     
         .image-item img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 8px;
+            display: block;
+            margin: 0 auto;
         }
     
         .image-item h3, 
         .image-item h4 {
             white-space: pre-line;
-            margin: 10px 0 5px;
+            margin: 15px 0 8px;
         }
     
         .image-item p {
-            margin: 5px 0;
+            margin: 6px 0;
+            line-height: 1.5;
         }
     
-        /* Partner logos */
+        /* Partner Logo Section */
+        .image-container3 {
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+    
         .image-item2 {
-            width: 300px;
-            height: 150px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 10px 0;
         }
     
         .image-item2 img {
@@ -158,18 +135,69 @@ title: People
             max-height: 100%;
             object-fit: contain;
         }
+    
+        /* Advisory Board & Text Sections */
+        .highlight {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 8px;
+        }
+    
+        .highlight p {
+            margin: 12px 0;
+        }
+    
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+    
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .image-item {
+                width: calc(33.33% - 40px);
+            }
+        }
+    
+        @media (max-width: 900px) {
+            .image-item {
+                width: calc(50% - 40px);
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    
+        @media (max-width: 600px) {
+            .image-item {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .image-item2 {
+                min-width: 150px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="page-container">
-        <!-- P-ai Leadership -->
-        <div class="image-section">
-            <div class="content-width">
-              <div class="image-container">
-      
-            <h1>Meet the P-ai Leadership</h1>
-         
+    <div class="image-section">
+        <div class="content-width">
+          <h1>Meet the P-ai Leadership</h1> <!-- Moved inside content-width -->
+          <div class="image-container">
 
         <div class="image-item">
             <a href="https://www.linkedin.com/in/sae-furukawa-0314b71a3/" target="_blank"><img src="https://images.squarespace-cdn.com/content/v1/5d5aca05ce74150001a5af3e/df08961d-b330-4978-937b-ecc79c324683/29AE2008-7765-446B-BEFD-F770DED5A25C.jpeg?format=750w"/></a>
