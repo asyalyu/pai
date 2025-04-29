@@ -4,6 +4,22 @@ title: Portfolio
 ---
 <div class="page-container">
   <style>
+    /* Apply Courier font to all text elements */
+body, h1, h2, h3, h4, p, a, li, label, select, option,
+.text, .project-title, .project-description, 
+.project-meta, .slideshow-arrow, .button {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* Ensure dropdown text also uses Courier */
+.project-dropdown select {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* Make sure all buttons use Courier */
+button {
+    font-family: 'Courier New', Courier, monospace !important;
+}
     /* Dropdown styling for content area */
     .project-dropdown {
       margin: 30px;
