@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
   <!-- For modern browsers (PNG format) -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/css/inversepailogo.png' | relative_url }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <style>
     body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar {
-    margin-bottom: 0 !important;
-    font-family: 'Courier New', monospace;
-    font-weight: bolder;
-    font-size: 1.1rem;
-    text-decoration: none;
-  }
-  
-  /* Ensure the banner starts immediately after nav */
-  .content {
-    padding-top: 0;
-    margin-top: 0;
-  }
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar {
+      margin-bottom: 0 !important;
+      font-family: 'Courier New', monospace;
+      font-weight: bolder;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    
+    /* Ensure the banner starts immediately after nav */
+    .content {
+      padding-top: 0;
+      margin-top: 0;
+    }
+    
     .footer-logo {
       max-width: 50px; /* Adjust size as needed */
       height: auto;
@@ -40,29 +41,66 @@
       border-top: none; /* Optional divider */
     }
 
+    /* Theme toggle button styles */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 8px 12px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      z-index: 1000;
+      display: none; /* Hidden by default */
+    }
+
+    /* Show only on desktop */
+    @media (min-width: 769px) {
+      .theme-toggle {
+        display: block;
+      }
+    }
+
+    /* Default theme */
+    .nav-item a:hover {
+      color: #007bff; /* Default blue hover color */
+    }
+
+    /* Alternative theme */
+    body.alternate-theme .nav-item a:hover {
+      color: #ff5733; /* Orange hover color */
+    }
+
+    /* Add more themes as needed */
+    body.second-alternate-theme .nav-item a:hover {
+      color: #28a745; /* Green hover color */
+    }
   </style>
 </head>
 <body>
- <!-- Navigation -->
-<nav class="navbar">
-  <button class="mobile-menu-btn">☰ Menu</button>
-  <ul class="navbar-nav">
-    {% for link in site.navigation %}
-    <li class="nav-item {% if page.url == link.url or (page.url == '/' and link.url == '/index.html') %}active{% endif %}">
-        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  <!-- Mobile version of the menu -->
-  <ul class="navbar-nav mobile">
-    {% for link in site.navigation %}
-      <li class="nav-item {% if page.url == link.url %}active{% endif %}">
-        <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
-
+  <!-- Navigation -->
+  <nav class="navbar">
+    <button class="mobile-menu-btn">☰ Menu</button>
+    <ul class="navbar-nav">
+      {% for link in site.navigation %}
+      <li class="nav-item {% if page.url == link.url or (page.url == '/' and link.url == '/index.html') %}active{% endif %}">
+          <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <!-- Mobile version of the menu -->
+    <ul class="navbar-nav mobile">
+      {% for link in site.navigation %}
+        <li class="nav-item {% if page.url == link.url %}active{% endif %}">
+          <a class="nav-link" href="{{ link.url | relative_url }}">{{ link.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <main class="content">
@@ -74,8 +112,12 @@
     <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" alt="Site Logo" class="footer-logo">
   </footer>
 
+  <!-- Theme toggle button -->
+  <button class="theme-toggle" id="themeToggle">Change Theme</button>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu functionality
       const mobileBtn = document.querySelector('.mobile-menu-btn');
       const mobileMenu = document.querySelector('.navbar-nav.mobile');
       
@@ -100,6 +142,41 @@
           document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
         }
       });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+      
+      // Available theme classes
+      const themes = ['', 'alternate-theme', 'second-alternate-theme'];
+      let currentTheme = 0;
+      
+      // Load saved theme from localStorage
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        body.className = savedTheme;
+        currentTheme = themes.indexOf(savedTheme);
+      }
+      
+      // Toggle through themes
+      themeToggle.addEventListener('click', function() {
+        currentTheme = (currentTheme + 1) % themes.length;
+        body.className = themes[currentTheme];
+        
+        // Save to localStorage
+        localStorage.setItem('theme', body.className);
+        
+        // Update button text based on theme
+        updateButtonText();
+      });
+      
+      function updateButtonText() {
+        const themeNames = ['Default', 'Orange', 'Green'];
+        themeToggle.textContent = `Theme: ${themeNames[currentTheme]}`;
+      }
+      
+      // Initialize button text
+      updateButtonText();
     });
   </script>  
 </body>
