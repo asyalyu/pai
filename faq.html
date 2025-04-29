@@ -73,20 +73,20 @@ title: FAQ & Contact
     }
     
     .faq-question {
-        width: 100%;
-        padding: 18px 20px;
-        text-align: left;
-        background: linear-gradient(to right, #f8f8f8, #f0f0f0);
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        font-size: 16px;
-        color: #333;
-        transition: all 0.3s ease;
-    }
+    width: 100%;
+    padding: 18px 20px;
+    text-align: left;
+    background: transparent; /* Changed from gradient to transparent */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
     
     .faq-question:hover {
         background: linear-gradient(to right, #f0f0f0, #e8e8e8);
@@ -121,22 +121,23 @@ title: FAQ & Contact
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
-    background: white;
+    background: black; /* Changed from white to black */
+    color: white; /* Add this to make text visible */
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    width: 90%; /* Add this to ensure it doesn't touch edges on mobile */
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* This centers all text and inline elements */
+    text-align: center;
+} 
+.contact-form h2 {
+    color: #6e48aa;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
 }
-    
-    .contact-form h2 {
-        color: #6e48aa;
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 28px;
-    }
+
     
     .contact-form form {
     display: grid;
@@ -233,8 +234,8 @@ title: FAQ & Contact
 </div>
 
 <!-- Contact Form -->
+<h2 style="text-align: center; color: #6e48aa; margin-top: 40px;">Contact Us</h2>
 <div class="contact-form">
-    <h2>Contact Us</h2>
     <form action="https://formspree.io/f/mzzdodwv" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
