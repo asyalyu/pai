@@ -29,16 +29,31 @@
     }
     
     .footer-logo {
-      max-width: 50px; /* Adjust size as needed */
+      max-width: 50px;
       height: auto;
       display: block;
-      margin: 20px auto; /* Centers the logo and adds spacing */
+      margin: 20px auto;
     }
 
     .site-footer {
       text-align: center;
       padding: 20px 0;
-      border-top: none; /* Optional divider */
+      border-top: none;
+    }
+
+    /* Active page indicator */
+    .nav-item.active a {
+      position: relative;
+    }
+    
+    .nav-item.active a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #007bff; /* Default color */
     }
 
     /* Theme toggle button styles */
@@ -55,7 +70,38 @@
       font-family: 'Courier New', monospace;
       font-weight: bold;
       z-index: 1000;
-      display: none; /* Hidden by default */
+      display: none;
+    }
+
+    /* Theme menu popup */
+    .theme-menu {
+      position: fixed;
+      bottom: 60px;
+      left: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+    }
+
+    .theme-menu.show {
+      display: flex;
+    }
+
+    .theme-option {
+      padding: 8px 12px;
+      margin: 2px 0;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background-color 0.2s;
+    }
+
+    .theme-option:hover {
+      background-color: #f0f0f0;
     }
 
     /* Show only on desktop */
@@ -67,17 +113,46 @@
 
     /* Default theme */
     .nav-item a:hover {
-      color: #007bff; /* Default blue hover color */
+      color: #007bff;
+    }
+    body .nav-item.active a {
+      color: #007bff;
+    }
+    body .nav-item.active a::after {
+      background-color: #007bff;
     }
 
-    /* Alternative theme */
+    /* Orange theme */
     body.alternate-theme .nav-item a:hover {
-      color: #ff5733; /* Orange hover color */
+      color: #ff5733;
+    }
+    body.alternate-theme .nav-item.active a {
+      color: #ff5733;
+    }
+    body.alternate-theme .nav-item.active a::after {
+      background-color: #ff5733;
     }
 
-    /* Add more themes as needed */
+    /* Green theme */
     body.second-alternate-theme .nav-item a:hover {
-      color: #28a745; /* Green hover color */
+      color: #28a745;
+    }
+    body.second-alternate-theme .nav-item.active a {
+      color: #28a745;
+    }
+    body.second-alternate-theme .nav-item.active a::after {
+      background-color: #28a745;
+    }
+
+    /* Purple theme (added as example) */
+    body.third-alternate-theme .nav-item a:hover {
+      color: #9c27b0;
+    }
+    body.third-alternate-theme .nav-item.active a {
+      color: #9c27b0;
+    }
+    body.third-alternate-theme .nav-item.active a::after {
+      background-color: #9c27b0;
     }
   </style>
 </head>
@@ -112,8 +187,14 @@
     <img src="{{ 'assets/css/inversepailogo.png' | relative_url }}" alt="Site Logo" class="footer-logo">
   </footer>
 
-  <!-- Theme toggle button -->
-  <button class="theme-toggle" id="themeToggle">Change Theme</button>
+  <!-- Theme toggle elements -->
+  <button class="theme-toggle" id="themeToggle">Themes</button>
+  <div class="theme-menu" id="themeMenu">
+    <div class="theme-option" data-theme="">Default</div>
+    <div class="theme-option" data-theme="alternate-theme">Orange</div>
+    <div class="theme-option" data-theme="second-alternate-theme">Green</div>
+    <div class="theme-option" data-theme="third-alternate-theme">Purple</div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -121,18 +202,15 @@
       const mobileBtn = document.querySelector('.mobile-menu-btn');
       const mobileMenu = document.querySelector('.navbar-nav.mobile');
       
-      // Toggle mobile menu when button is clicked
       mobileBtn.addEventListener('click', function() {
         mobileMenu.classList.toggle('active');
         this.textContent = mobileMenu.classList.contains('active') ? '✕ Close' : '☰ Menu';
       });
       
-      // Hide desktop nav on mobile
       if (window.innerWidth <= 768) {
         document.querySelector('.navbar-nav:not(.mobile)').style.display = 'none';
       }
       
-      // Update on window resize
       window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
           document.querySelector('.navbar-nav:not(.mobile)').style.display = 'flex';
@@ -143,40 +221,68 @@
         }
       });
 
-      // Theme toggle functionality
+      // Theme functionality
       const themeToggle = document.getElementById('themeToggle');
+      const themeMenu = document.getElementById('themeMenu');
       const body = document.body;
+      const themeOptions = document.querySelectorAll('.theme-option');
       
-      // Available theme classes
-      const themes = ['', 'alternate-theme', 'second-alternate-theme'];
-      let currentTheme = 0;
+      // Available themes
+      const themes = {
+        '': 'Default',
+        'alternate-theme': 'Orange',
+        'second-alternate-theme': 'Green',
+        'third-alternate-theme': 'Purple'
+      };
       
       // Load saved theme from localStorage
       const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
+      if (savedTheme && themes.hasOwnProperty(savedTheme)) {
         body.className = savedTheme;
-        currentTheme = themes.indexOf(savedTheme);
+        updateActiveThemeButton(savedTheme);
       }
       
-      // Toggle through themes
-      themeToggle.addEventListener('click', function() {
-        currentTheme = (currentTheme + 1) % themes.length;
-        body.className = themes[currentTheme];
-        
-        // Save to localStorage
-        localStorage.setItem('theme', body.className);
-        
-        // Update button text based on theme
-        updateButtonText();
+      // Toggle theme menu visibility
+      themeToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        themeMenu.classList.toggle('show');
       });
       
-      function updateButtonText() {
-        const themeNames = ['Default', 'Orange', 'Green'];
-        themeToggle.textContent = `Theme: ${themeNames[currentTheme]}`;
-      }
+      // Close theme menu when clicking outside
+      document.addEventListener('click', function() {
+        themeMenu.classList.remove('show');
+      });
       
-      // Initialize button text
-      updateButtonText();
+      // Prevent menu from closing when clicking inside it
+      themeMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+      
+      // Handle theme selection
+      themeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const themeClass = this.getAttribute('data-theme');
+          body.className = themeClass;
+          localStorage.setItem('theme', themeClass);
+          updateActiveThemeButton(themeClass);
+          themeMenu.classList.remove('show');
+        });
+      });
+      
+      function updateActiveThemeButton(themeClass) {
+        themeToggle.textContent = `Theme: ${themes[themeClass]}`;
+        
+        // Update active state for all options
+        themeOptions.forEach(option => {
+          if (option.getAttribute('data-theme') === themeClass) {
+            option.style.fontWeight = 'bold';
+            option.style.backgroundColor = '#e0e0e0';
+          } else {
+            option.style.fontWeight = 'normal';
+            option.style.backgroundColor = 'transparent';
+          }
+        });
+      }
     });
   </script>  
 </body>
