@@ -88,7 +88,7 @@ body.second-alternate-theme .nav-item.active .nav-link {
 /* red Theme */
 body.third-alternate-theme .nav-link:hover,
 body.third-alternate-theme .nav-item.active .nav-link {
-  color: #df3232;
+  color: #b11a1a;
 }
 
 /* yelloe Theme */
@@ -111,7 +111,7 @@ body.second-alternate-theme .particle {
 }
 
 body.third-alternate-theme .particle {
-  color: #df3232;
+  color: #b11a1a;
 }
 
 body.fourth-alternate-theme .particle {
