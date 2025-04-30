@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Matcher Widget</title>
+  <style>
+    :root {
+      --primary: #0F1923;
+      --secondary: #ffffff;
+      --ai-color: #0F1923;
+      --user-color: #27ae60;
+      --text-color: #0F1923;
+      --bubble-bg: #e6ecf3;
+      --user-bubble-bg: #d1f2e0;
+      --button-hover: #1a2a39;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #resume-matcher-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    #resume-matcher-widget {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 400px;              /* Increased width */
+      height: 500px;             /* Increased height */
+      z-index: 1000;
+      border: 2px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chatbox {
+      border: 1px solid var(--primary);
+      padding: 10px;
+      background: #fdfdfd;
+      overflow-y: auto;
+      flex-grow: 1;             /* Fills remaining vertical space */
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    #resume-matcher-widget h1 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    #pdfUpload {
+      margin: 10px 0;
+    }
+
+    #uploadBtn {
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #uploadBtn:hover {
+      background-color: var(--button-hover);
+    }
+
+    #chatbox {
+      border: 1px solid var(--primary);
+      padding: 10px;
+      background: #fdfdfd;
+      overflow-y: auto;
+      flex: 1;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .message {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    .ai {
+      color: var(--ai-color);
+    }
+
+    .user {
+      color: var(--user-color);
+      text-align: right;
+    }
+
+    .message span {
+      display: inline-block;
+      background-color: var(--bubble-bg);
+      padding: 6px 10px;
+      border-radius: 8px;
+      max-width: 80%;
+      color: var(--text-color);
+    }
+
+    .user span {
+      background-color: var(--user-bubble-bg);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toggle Button -->
+<button id="resume-matcher-toggle">💬</button>
+
+<!-- Floating Widget -->
+<div id="resume-matcher-widget">
+  <h1>Resume Matcher</h1>
+  <input type="file" id="pdfUpload" accept="application/pdf" />
+  <button id="uploadBtn">Upload</button>
+  <div id="chatbox">
+    <div class="message ai"><span>p-ai: Hello! My name is p-ai, which stands for placement-ai (not to be confused with pomona-ai). Please upload your resume above so I can match you with the best project!</span></div>
+  </div>
+</div>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+  let selectedFile;
+  const chatbox = document.getElementById('chatbox');
+  const widget = document.getElementById('resume-matcher-widget');
+  const toggleButton = document.getElementById('resume-matcher-toggle');
+
+  toggleButton.addEventListener('click', () => {
+    widget.style.display = (widget.style.display === 'none' || widget.style.display === '') ? 'flex' : 'none';
+  });
+
+  function addMessage(sender, text) {
+    const msg = document.createElement('div');
+    msg.className = `message ${sender}`;
+    const content = document.createElement('span');
+    content.textContent = `${sender === 'ai' ? 'p-ai' : 'You'}: ${text}`;
+    msg.appendChild(content);
+    chatbox.appendChild(msg);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+
+  document.getElementById('pdfUpload').addEventListener('change', (e) => {
+    selectedFile = e.target.files[0];
+  });
+
+  document.getElementById('uploadBtn').addEventListener('click', async () => {
+    if (!selectedFile || selectedFile.type !== "application/pdf") {
+      addMessage('ai', "Please upload a valid PDF file.");
+      return;
+    }
+
+    addMessage('user', `Uploaded ${selectedFile.name}`);
+    addMessage('ai', "Reading your resume...");
+
+    const fileReader = new FileReader();
+    fileReader.onload = async function () {
+      const typedArray = new Uint8Array(this.result);
+      const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
+
+      let fullText = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map(item => item.str).join(' ');
+        fullText += pageText + '\n';
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/match', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ resume: fullText }),
+        });
+
+        const data = await response.json();
+        if (data.bestMatch) {
+          addMessage('ai', `You're a great fit for "${data.bestMatch}"`);
+          addMessage('ai', `${data.explanation}`);
+        } else {
+          addMessage('ai', "⚠️ sorry, p-ai couldn't find a match.");
+        }
+      } catch (error) {
+        addMessage('ai', `❌ Error contacting server: ${error.message}`);
+      }
+    };
+
+    fileReader.readAsArrayBuffer(selectedFile);
+  });
+</script>
+</body>
+</html>

@@ -1,16 +1,109 @@
+<!--
+  In order for this code to work, you need to plug in the actual API key on line 28. Ask ella and she will send it to you!!
+  note: it is def worth looking into how to securely embed the API key before launching the website 
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snatching emails</title>
+    <title>Subscribe to Newsletter</title>
 </head>
 <body>
-    <h1>subscribe to mailing list !!!</h1>
-    <form action="add_email.php" method="POST">
-        <label for="email">email here:</label>
+    <h2>join our mailing list :3</h2>
+    <form id="brevoForm">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">email:</label>
         <input type="email" id="email" name="email" required>
+        <br><br>
         <button type="submit">subscribe</button>
     </form>
+
+    <p id="responseMessage"></p>
+
+    <script>
+        const API_KEY = "api-key";  // Replace with your actual API key
+        const BASE_URL = "https://api.brevo.com/v3";
+        const MAX_SUBSCRIBERS = 4;  // Limit per list
+        let currentListId = 2;  // Start with your existing list ID
+
+        document.getElementById("brevoForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            try {
+                // Step 1: Get the number of subscribers in the current list
+                const count = await getSubscriberCount(currentListId);
+                console.log(`Current subscriber count: ${count}`);
+
+                // Step 2: If the list is full, create a new one and update currentListId
+                if (count >= MAX_SUBSCRIBERS) {
+                    currentListId = await createNewList();
+                    console.log(`New List Created with ID: ${currentListId}`);
+                }
+
+                // Step 3: Add the user to the current list
+                await addSubscriber(name, email, currentListId);
+                document.getElementById("responseMessage").innerText = "Successfully subscribed!";
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("responseMessage").innerText = "Error: " + error.message;
+            }
+        });
+
+        // Function to check the number of subscribers in a list
+        async function getSubscriberCount(listId) {
+            const response = await fetch(`${BASE_URL}/contacts/lists/${listId}/contacts`, {
+                method: "GET",
+                headers: { "api-key": API_KEY }
+            });
+            const data = await response.json();
+            return data.totalResults || 0;  // Make sure to handle the response correctly
+        }
+
+        // Function to create a new list when the old one is full
+        async function createNewList() {
+            const newListName = `List ${Date.now()}`;  // Unique name for the new list
+            const response = await fetch(`${BASE_URL}/contacts/lists`, {
+                method: "POST",
+                headers: {
+                    "api-key": API_KEY,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: newListName,
+                    folderId: 1  // Ensure the folderId is correct, if required by your setup
+                })
+            });
+            const data = await response.json();
+            return data.id;  // Return new list ID
+        }
+
+        // Function to add a subscriber to a list
+        async function addSubscriber(name, email, listId) {
+            const response = await fetch(`${BASE_URL}/contacts`, {
+                method: "POST",
+                headers: {
+                    "api-key": API_KEY,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    attributes: { NAME: name },
+                    listIds: [listId],
+                    updateEnabled: true
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to add subscriber");
+            }
+        }
+    </script>
 </body>
 </html>
