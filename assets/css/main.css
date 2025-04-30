@@ -99,25 +99,28 @@ body.fourth-alternate-theme .nav-item.active .nav-link {
 
 /* Particle Background Colors */
 .particle {
-  color: #007bff;
+  background: #007bff; /* Pomona blue */
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 body.alternate-theme .particle {
-  color: #ff5733;
+  background: #ff5733 !important; /* Pitzer orange */
 }
 
 body.second-alternate-theme .particle {
-  color: #28a745;
+  background: #28a745 !important; /* Scripps green */
 }
 
 body.third-alternate-theme .particle {
-  color: #b11a1a;
+  background: #b11a1a !important; /* CMC red */
 }
 
 body.fourth-alternate-theme .particle {
-  color: #ebda27;
+  background: #ebda27 !important; /* Mudd yellow */
 }
-
 
 /* Theme Toggle Elements */
 .theme-toggle {

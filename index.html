@@ -114,6 +114,7 @@ title: Home
     document.addEventListener('DOMContentLoaded', function() {
       const banner = document.querySelector('.particle-banner');
       let particles = [];
+      let particleInterval;
       
       function createParticle() {
         const particle = document.createElement('div');
@@ -129,41 +130,42 @@ title: Home
         const duration = Math.random() * 20 + 10;
         particle.style.animationDuration = duration + 's';
         particle.style.animationDelay = Math.random() * 5 + 's';
+        particle.style.animationName = 'float';
         
         banner.appendChild(particle);
         particles.push(particle);
         
-        // Remove particle after animation completes
         setTimeout(() => {
           particle.remove();
           particles = particles.filter(p => p !== particle);
         }, duration * 1000);
       }
       
-      // Create initial particles
-      for (let i = 0; i < 50; i++) {
-        createParticle();
-      }
-      
-      // Continue creating particles
-      const particleInterval = setInterval(createParticle, 300);
-      
-      // Function to update all particles when theme changes
-      window.updateParticles = function() {
-        // Remove all existing particles
-        particles.forEach(particle => particle.remove());
+      function initParticles() {
+        // Clear existing particles
+        particles.forEach(p => p.remove());
         particles = [];
         
-        // Create new particles with current theme color
+        // Create initial particles
         for (let i = 0; i < 50; i++) {
           createParticle();
         }
-      };
+        
+        // Start continuous creation
+        if (particleInterval) clearInterval(particleInterval);
+        particleInterval = setInterval(createParticle, 300);
+      }
       
-      // Cleanup on page navigation
+      // Initialize particles
+      initParticles();
+      
+      // Make this function available globally for theme changes
+      window.updateParticles = initParticles;
+      
+      // Cleanup
       window.addEventListener('beforeunload', function() {
         clearInterval(particleInterval);
-        particles.forEach(particle => particle.remove());
+        particles.forEach(p => p.remove());
       });
     });
   </script>

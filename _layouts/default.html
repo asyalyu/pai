@@ -104,18 +104,19 @@
         e.stopPropagation();
       });
       
-      // Theme selection
-      themeOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          const themeClass = this.getAttribute('data-theme');
-          body.className = themeClass;
-          localStorage.setItem('theme', themeClass);
-          updateActiveThemeButton(themeClass);
-          themeMenu.classList.remove('show');
-          if (typeof updateParticles === 'function') updateParticles();
-        });
-      });
-      
+      // Inside your theme selection handler
+themeOptions.forEach(option => {
+  option.addEventListener('click', function() {
+    const themeClass = this.getAttribute('data-theme');
+    body.className = themeClass;
+    localStorage.setItem('theme', themeClass);
+    updateActiveThemeButton(themeClass);
+    themeMenu.classList.remove('show');
+    
+    // This line updates the particles:
+    if (typeof updateParticles === 'function') updateParticles();
+  });
+});
       function updateActiveThemeButton(themeClass) {
         themeToggle.textContent = `Theme: ${themes[themeClass]}`;
         themeOptions.forEach(option => {
