@@ -1126,44 +1126,107 @@ button {
 </style>
 
 <script>
- document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.project-slideshow').forEach(slideshow => {
-        const slides = slideshow.querySelectorAll('.project-slide');
-        const prevBtn = slideshow.querySelector('.prev-arrow');
-        const nextBtn = slideshow.querySelector('.next-arrow');
-        let currentSlide = 0;
-        
-        // Initialize slides
-        slides.forEach((slide, index) => {
-            if (index !== 0) {
-                slide.style.opacity = '0';
-                slide.style.zIndex = '0';
-            }
-        });
-        
-        function showSlide(index) {
-            slides[currentSlide].style.opacity = '0';
-            slides[currentSlide].style.zIndex = '0';
-            slides[index].style.opacity = '1';
-            slides[index].style.zIndex = '1';
-            currentSlide = index;
-        }
-        
-        nextBtn.addEventListener('click', () => {
-            let nextIndex = (currentSlide + 1) % slides.length;
-            showSlide(nextIndex);
-        });
-        
-        prevBtn.addEventListener('click', () => {
-            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(prevIndex);
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight') showSlide((currentSlide + 1) % slides.length);
-            else if (e.key === 'ArrowLeft') showSlide((currentSlide - 1 + slides.length) % slides.length);
-        });
-    });
-});
+  document.addEventListener('DOMContentLoaded', function() {
+      // Handle semester dropdown selection
+      const projectSelect = document.getElementById('projectSelect');
+      const archiveSections = document.querySelectorAll('.archive-section');
+      
+      projectSelect.addEventListener('change', function() {
+          const selectedSemester = this.value;
+          
+          // Hide all archive sections
+          archiveSections.forEach(section => {
+              section.style.display = 'none';
+          });
+          
+          // Show selected archive section and initialize its slideshow
+          if (selectedSemester) {
+              const selectedSection = document.querySelector(`.archive-section[data-semester="${selectedSemester}"]`);
+              if (selectedSection) {
+                  selectedSection.style.display = 'block';
+                  initializeSlideshow(selectedSection.querySelector('.project-slideshow'));
+              }
+          }
+      });
+      
+      // Initialize all slideshows
+      function initializeSlideshow(slideshow) {
+          if (!slideshow) return;
+          
+          const slides = slideshow.querySelectorAll('.project-slide');
+          const prevBtn = slideshow.querySelector('.prev-arrow');
+          const nextBtn = slideshow.querySelector('.next-arrow');
+          let currentSlide = 0;
+          
+          // Initialize slides - show first, hide others
+          slides.forEach((slide, index) => {
+              if (index === 0) {
+                  slide.style.opacity = '1';
+                  slide.style.zIndex = '1';
+              } else {
+                  slide.style.opacity = '0';
+                  slide.style.zIndex = '0';
+              }
+          });
+          
+          function showSlide(index) {
+              slides[currentSlide].style.opacity = '0';
+              slides[currentSlide].style.zIndex = '0';
+              slides[index].style.opacity = '1';
+              slides[index].style.zIndex = '1';
+              currentSlide = index;
+          }
+          
+          // Set up event listeners
+          nextBtn.addEventListener('click', () => {
+              let nextIndex = (currentSlide + 1) % slides.length;
+              showSlide(nextIndex);
+          });
+          
+          prevBtn.addEventListener('click', () => {
+              let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+              showSlide(prevIndex);
+          });
+      }
+      
+      // Initialize all slideshows on page load (for any visible sections)
+      document.querySelectorAll('.project-slideshow').forEach(slideshow => {
+          initializeSlideshow(slideshow);
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+          const activeSlideshow = document.querySelector('.archive-section[style="display: block;"] .project-slideshow');
+          if (!activeSlideshow) return;
+          
+          const slides = activeSlideshow.querySelectorAll('.project-slide');
+          const currentSlide = Array.from(slides).findIndex(slide => 
+              getComputedStyle(slide).opacity === '1'
+          );
+          
+          if (e.key === 'ArrowRight') {
+              let nextIndex = (currentSlide + 1) % slides.length;
+              showSlide(nextIndex);
+          } else if (e.key === 'ArrowLeft') {
+              let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+              showSlide(prevIndex);
+          }
+      });
+      
+      function showSlide(index) {
+          const activeSlideshow = document.querySelector('.archive-section[style="display: block;"] .project-slideshow');
+          if (!activeSlideshow) return;
+          
+          const slides = activeSlideshow.querySelectorAll('.project-slide');
+          const currentSlide = Array.from(slides).findIndex(slide => 
+              getComputedStyle(slide).opacity === '1'
+          );
+          
+          slides[currentSlide].style.opacity = '0';
+          slides[currentSlide].style.zIndex = '0';
+          slides[index].style.opacity = '1';
+          slides[index].style.zIndex = '1';
+      }
+  });
   </script>
   </div>
