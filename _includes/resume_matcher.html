@@ -191,7 +191,7 @@
       }
 
       try {
-        const response = await fetch('https://pai-resume-matching-backend.onrender.com', {
+        const response = await fetch('https://pai-resume-matching-backend.onrender.com/match', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ resume: fullText }),
