@@ -20,8 +20,8 @@
         Contact
       </a>
       
-      <!-- Proposal Link - Fixed Syntax -->
-      {% assign proposal_link = slide["link to proposal"] | default: "#" %}
+      <!-- Proposal Link - Now using "proposal" key -->
+      {% assign proposal_link = slide.proposal | default: "#" %}
       <a href="{{ proposal_link }}" class="button" {% if proposal_link != "#" %}target="_blank"{% endif %}>
         Full Proposal
       </a>
