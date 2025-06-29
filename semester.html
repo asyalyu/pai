@@ -16,24 +16,32 @@ title: This Semester
         <p class="text">For member requirements, check out each project's full proposal!</p>
 
         <!-- Project Slideshow Container -->
-        <div class="project-slideshow">
-            <button class="slideshow-arrow prev-arrow">❮</button>
-            
-            <div class="slideshow-wrapper">
-              {% assign projects = site.data.projects %}
-              {% for project in projects %}
-                <div class="project-slide {% if forloop.first %}active{% endif %}">
-                  {% include project_slide.html slide=project %}
-                </div>
-              {% endfor %}
-            </div>
-            
-            <button class="slideshow-arrow next-arrow">❯</button>
+<div class="project-slideshow">
+    <button class="slideshow-arrow prev-arrow">❮</button>
+    
+    <div class="slideshow-wrapper">
+      {% for slide in site.data.projects %}
+        <div class="project-slide {% if forloop.first %}active{% endif %}">
+          <h3 class="project-title">{{ slide.title }}</h3>
+          <p class="project-description"><b>{{ slide.short_description }}</b></p>
+          <p class="project-description">{{ slide.description }}</p>
+          <p class="project-meta"><b>PM:</b> {{ slide.Leads }}</p>
+          <p class="project-meta"><b>Team Size:</b> {{ slide["Team size"] }}</p>
+          <div class="button-container">
+            <a href="mailto:{{ slide['Leader emails'] | replace: ', ', ',' }}?subject=P-ai%20Project" class="button" target="_blank">
+              Contact All
+            </a>
+            {% assign proposal_link = slide["link to proposal"] | default: "#" %}
+            <a href="{{ proposal_link }}" class="button" {% if proposal_link != "#" %}target="_blank"{% endif %}>
+              Full Proposal
+            </a>
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
-
+    
+    <button class="slideshow-arrow next-arrow">❯</button>
+</div>
 <style>
     /* Base Typography */
      h1, h2, h3, h4, p, a, .text, 
