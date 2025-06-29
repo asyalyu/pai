@@ -1,24 +1,28 @@
 <div class="project-slide">
     <h3 class="project-title">{{ slide.title }}</h3>
-    <!--<img src="{{ slide.image }}" alt="{{ slide.title }}">-->
     <p class="project-description"><b>{{ slide.short_description }}</b></p>
     <p class="project-description">{{ slide.description }}</p>
     
-    {% for lead in slide.leads %}
-      <p class="project-meta">
-        <b>{% if forloop.first %}Lead{% else %}Co-Lead{% endif %}:</b> 
-        {{ lead.name }}, {{ lead.class_year }}
-      </p>
-    {% endfor %}
+    <!-- Display Leads -->
+    <p class="project-meta">
+      <b>PM:</b> {{ slide.Leads }}
+    </p>
     
-    <p class="project-meta"><b>Team Size:</b> {{ slide.team_size }}</p>
+    <!-- Team Size -->
+    <p class="project-meta">
+      <b>Team Size:</b> {{ slide["Team size"] }}
+    </p>
     
     <div class="button-container">
-      {% assign emails = slide.leads | map: "email" | join: "," %}
-      <a href="mailto:{{ emails }}?subject=P-ai%20Project" class="button" target="_blank">
+      <!-- Contact Button - takes first email -->
+      {% assign first_email = slide["Leader emails"] | first %}
+      <a href="mailto:{{ first_email }}?subject=P-ai%20Project" class="button" target="_blank">
         Contact
       </a>
-      <a href="{{ slide.proposal_link }}" class="button" target="_blank">
+      
+      <!-- Proposal Link - Fixed Syntax -->
+      {% assign proposal_link = slide["link to proposal"] | default: "#" %}
+      <a href="{{ proposal_link }}" class="button" {% if proposal_link != "#" %}target="_blank"{% endif %}>
         Full Proposal
       </a>
     </div>
