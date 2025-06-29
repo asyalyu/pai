@@ -1,0 +1,46 @@
+[
+  {
+    "title": "title",
+    "short_description": "short description",
+    "description": "description",
+    "Leads": "Leader names",
+    "Leader emails": [
+      "Leader emails"
+    ],
+    "Team size": "Team size",
+    "link to proposal": "link to proposal"
+  },
+  {
+    "title": "pai",
+    "short_description": "s",
+    "description": "a",
+    "Leads": "asya ",
+    "Leader emails": [
+      "alku2022@mymail.pomona.edu"
+    ],
+    "Team size": "4",
+    "link to proposal": "https://docs.google.com/document/d/18wdMQ3zSTtQR3jLPjOlUDHy18rm01NnPl275_cOLvE8/edit?usp=sharing"
+  },
+  {
+    "title": "p-laylist",
+    "short_description": "w",
+    "description": "e",
+    "Leads": "Angelina Tsai, Any, Jane",
+    "Leader emails": [
+      "antsai@g.hmc.edu, kaldamtajima@g.hmc.edu, theadley@g.hmc.edu"
+    ],
+    "Team size": "w",
+    "link to proposal": "w"
+  },
+  {
+    "title": "w",
+    "short_description": "a",
+    "description": "a",
+    "Leads": "kevin, lusy",
+    "Leader emails": [
+      "asya03@gmail.com, alku2022@mymail.pomona.edu"
+    ],
+    "Team size": "",
+    "link to proposal": ""
+  }
+]

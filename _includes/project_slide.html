@@ -1,0 +1,25 @@
+<div class="project-slide">
+    <h3 class="project-title">{{ slide.title }}</h3>
+    <!--<img src="{{ slide.image }}" alt="{{ slide.title }}">-->
+    <p class="project-description"><b>{{ slide.short_description }}</b></p>
+    <p class="project-description">{{ slide.description }}</p>
+    
+    {% for lead in slide.leads %}
+      <p class="project-meta">
+        <b>{% if forloop.first %}Lead{% else %}Co-Lead{% endif %}:</b> 
+        {{ lead.name }}, {{ lead.class_year }}
+      </p>
+    {% endfor %}
+    
+    <p class="project-meta"><b>Team Size:</b> {{ slide.team_size }}</p>
+    
+    <div class="button-container">
+      {% assign emails = slide.leads | map: "email" | join: "," %}
+      <a href="mailto:{{ emails }}?subject=P-ai%20Project" class="button" target="_blank">
+        Contact
+      </a>
+      <a href="{{ slide.proposal_link }}" class="button" target="_blank">
+        Full Proposal
+      </a>
+    </div>
+  </div>
