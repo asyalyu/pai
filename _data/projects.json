@@ -1,47 +1,38 @@
-	
 [
 {
 "title": "title",
 "short_description": "short description",
 "description": "description",
-"leads": "Leader names",
-"leader emails": [
-"Leader emails"
-],
-"team size": "Team size",
-"proposal": "link to proposal"
+"Leads": "Leader names",
+"Leader emails": "Leader emails",
+"Team size": "Team size",
+"link to proposal": "link to proposal"
 },
 {
 "title": "pai",
 "short_description": "s",
 "description": "a",
-"leads": "asya ",
-"leader emails": [
-"alku2022@mymail.pomona.edu"
-],
-"team size": "4",
-"proposal": "https://docs.google.com/document/d/18wdMQ3zSTtQR3jLPjOlUDHy18rm01NnPl275_cOLvE8/edit?usp=sharing"
+"Leads": "asya ",
+"Leader emails": "alku2022@mymail.pomona.edu",
+"Team size": "4",
+"link to proposal": "https://docs.google.com/document/d/18wdMQ3zSTtQR3jLPjOlUDHy18rm01NnPl275_cOLvE8/edit?usp=sharing"
 },
 {
 "title": "p-laylist",
 "short_description": "w",
 "description": "e",
-"leads": "Angelina Tsai, Any, Jane",
-"leader emails": [
-"antsai@g.hmc.edu, kaldamtajima@g.hmc.edu, theadley@g.hmc.edu"
-],
-"team size": "w",
-"proposal": "w"
+"Leads": "Angelina Tsai, Any, Jane",
+"Leader emails": "antsai@g.hmc.edu, kaldamtajima@g.hmc.edu, theadley@g.hmc.edu",
+"Team size": "w",
+"link to proposal": "w"
 },
 {
 "title": "w",
 "short_description": "a",
 "description": "a",
-"leads": "kevin, lusy",
-"leader emails": [
-"asya03@gmail.com, alku2022@mymail.pomona.edu"
-],
-"team size": "",
-"proposal": ""
+"Leads": "kevin, lusy",
+"Leader emails": "asya03@gmail.com, alku2022@mymail.pomona.edu",
+"Team size": "",
+"link to proposal": ""
 }
 ]

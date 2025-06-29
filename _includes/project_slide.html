@@ -1,29 +1,18 @@
-<div class="project-slide">
+{% for slide in site.data.projects %}
+  <div class="project-slide">
     <h3 class="project-title">{{ slide.title }}</h3>
     <p class="project-description"><b>{{ slide.short_description }}</b></p>
     <p class="project-description">{{ slide.description }}</p>
-    
-    <!-- Display Leads -->
-    <p class="project-meta">
-      <b>PM:</b> {{ slide.Leads }}
-    </p>
-    
-    <!-- Team Size -->
-    <p class="project-meta">
-      <b>Team Size:</b> {{ slide["Team size"] }}
-    </p>
-    
+    <p class="project-meta"><b>PM:</b> {{ slide.Leads }}</p>
+    <p class="project-meta"><b>Team Size:</b> {{ slide["Team size"] }}</p>
     <div class="button-container">
-      <!-- Contact Button - takes first email -->
-      {% assign first_email = slide["Leader emails"] | first %}
-      <a href="mailto:{{ first_email }}?subject=P-ai%20Project" class="button" target="_blank">
-        Contact
+      <a href="mailto:{{ slide['Leader emails'] | replace: ', ', ',' }}?subject=P-ai%20Project" class="button" target="_blank">
+        Contact All
       </a>
-      
-      <!-- Proposal Link - Now using "proposal" key -->
-      {% assign proposal_link = slide.proposal | default: "#" %}
+      {% assign proposal_link = slide["link to proposal"] | default: "#" %}
       <a href="{{ proposal_link }}" class="button" {% if proposal_link != "#" %}target="_blank"{% endif %}>
         Full Proposal
       </a>
     </div>
   </div>
+{% endfor %}
