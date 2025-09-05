@@ -27,9 +27,9 @@ title: This Semester
       {% for slide in site.data.projects %}
         <div class="project-slide {% if forloop.first %}active{% endif %}">
           <h3 class="project-title">{{ slide.title }}</h3>
-          <p class="project-description"><b>{{ slide.short_description }}</b></p>
+          <p class="project-description"><b>{{ slide["short description"] }}</b></p>
           <p class="project-description">{{ slide.description }}</p>
-          <p class="project-meta"><b>PM:</b> {{ slide.Leads }}</p>
+          <p class="project-meta"><b>PM:</b> {{ slide["Leader names"] }}</p>
           <p class="project-meta"><b>Team Size:</b> {{ slide["Team size"] }}</p>
           <div class="button-container">
             <a href="mailto:{{ slide['Leader emails'] | replace: ', ', ',' }}?subject=P-ai%20Project" class="button" target="_blank">
