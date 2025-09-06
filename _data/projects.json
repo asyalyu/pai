@@ -41,7 +41,7 @@
     "Leader names": "Aditi Gargeshwari (HMC '28, CS+Math",
     "Team size": "6-7 members",
     "Leader emails": "agargeshwari@g.hmc.edu",
-    "link to proposal": "https://drive.google.com/file/d/1wIuHRDMFbk1N_yIcKTbxWLZZa-weY9KM/view?usp=sharing"
+    "link to proposal": "https://docs.google.com/document/d/14ho7hKW_-Cj9dv4tN8mOLBujf9IllaLWNu9rItFOEMc/edit?tab=t.0"
     },
  {
    "title": "p-Tagsafe",
@@ -55,7 +55,7 @@
  {
    "title": "p-resents",
    "short description": "Optimizing gift-giving rules for friend groups",
-   "description": "There are many ways to give gifts during the holidays (Secret Santa, White Elephant or Dirty Santa, Grab Bag, and more), and groups often debate which format is “best.” Tools like drawnames.com help with name assignment, but they don’t answer the deeper question: which rules fit our group? p-resents simulates gift exchanges with AI-driven agents to recommend gift-giving rule sets tailored to a group’s traits: how similar people’s tastes are, how altruistic or competitive they are, and how well they know one another, among other traits.",
+   "description": "When's the last time you exchanged gifts with friends? Was it a Secret Santa? Or maybe a White Elephant? p-resents (name pending) aims to uncover the “best” way to exchange gifts by simulating different rule sets with AI-driven agents. These simulations generate recommendations tailored to your group’s unique traits (how similar everyone’s tastes are, how altruistic or competitive people tend to be, and how well members know one another) so that your next gift exchange is as fair and fun as possible.",
    "Leader names": "Samuel Wang (PO '26, CS+Econ); Liam Hochman (PO '26, CS)",
    "Team size": "5-6 members",
    "Leader emails": "swyk2022@mymail.pomona.edu, lbhh2022@mymail.pomona.edu",
@@ -64,7 +64,7 @@
  {
    "title": "p-lates5C",
    "short description": "5C dining hall food reviews and personalized recommendations",
-   "description": "“Where should we eat?” The age-old question echoes across the 5Cs daily. Too often, students pick a dining hall only to be left with a mid meal and miss out on better options elsewhere. Eating at the dining halls is central to student life, yet the current tools for navigating campus dining are unreliable, limited, and impersonal. p-lates will consolidate all 7 dining halls’ menus into a single platform that allows students to log and rate meals.",
+   "description": "“Where should we eat?” The age-old question echoes across the 5Cs daily. Too often, students pick a dining hall only to be left with a mid meal and miss out on better options elsewhere. Eating at the dining halls is central to student life, yet the current tools for navigating campus dining are unreliable, limited, and impersonal. p-lates will consolidate all 7 dining halls’ menus into a single platform that allows users to log and rate meals, view popular dishes, and see what friends are eating. By setting dietary preferences and rating dishes they’ve tried, users will receive increasingly personalized recommendations—suggesting which dining hall to visit or which dish best fits their tastes for a given meal.",
    "Leader names": "Jalen DeLoney (PO '27, CS+Econ); Paul Kim (HMC '27, CS+Econ)",
    "Team size": "4-5 members",
    "Leader emails": "jcdu2023@mymail.pomona.edu, paulkim@hmc.edu",
