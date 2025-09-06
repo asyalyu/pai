@@ -1,8 +1,8 @@
 [{
     "title": "p-TeamSync",
     "short description": "Course and Athletics Scheduling App for Pomona-Pitzer Student-Athletes",
-    "description": "Through a P-ai project, we can build on our spring Data Structures final by turning our existing code into a web app for student-athletes and coaches across Pomona/5Cs. TeamSync centralizes academic and athletic events in one system.",
-    "Leader names": "Tiernan Colby, ‘27, Math (CS Minor), XC/Track and Guy Fuchs, ‘27, Computer Science and Physics, Socce and Kai Parker, ‘27, Computer Science and Math, Swim" ,
+    "description": "TeamSync centralizes academic and athletic events in one system. In the spring, we created a program that allows users to build schedules with academic and athletic events, detect conflicts, and filter courses by department and number. The program supports both student-athletes and coaches and includes role-based access so coaches can view their athletes’ schedules. Coaches can view their own and their athletes’ schedules, add team and individual events, add athletes, and more. To turn this into a campus-ready web app for student-athletes and coaches, we need to add a few backend features and build the frontend. We want to partner with ASPC to bring this to more students or use this as a plug-in to hyperscheduler.",
+    "Leader names": "Tiernan Colby (PO '27, Math (CS Minor)); Guy Fuchs (PO '27, CS+Physics); Kai Parker (PO '27, CS+Math)" ,
     "Team size": "4-5 members",
     "Leader emails": " teca2023@mymail.pomona.edu, gfyi2023@mymail.pomona.edu, kwpb2023@mymail.pomona.edu",
     "link to proposal": "https://docs.google.com/document/d/14c095Su1p2c1b0M-VGUDEEnifLVk7pW_KRO_vW41Xp0/edit?tab=t.0"
@@ -11,8 +11,8 @@
     "title": "p-Audio",
     "short description": "Leveraging Deep Learning and Audio Processing for developing data efficient representations for Audio-DL tasks",
     "description": "This project is a research oriented project that involves using deep learning and audio processing to develop efficient representations of audio recordings for piloting audio deep learning tasks. Lot of similar research is done with computer vision deep learning tasks. There exist many ways in which we can represent images: a feature matrix extracted by feeding an image into a pretrained image-recognition model which portrays content of an image or a gram-matrix extracted by transposing two copies of such a feature matrix  which portrays the style of an image. Many tasks like image recognition, neural image style transfer, and others rely on using efficient image representations. Just as in computer vision, it is thus highly critical to develop such efficient audio representations for corresponding audio tasks such as audio recognition, perhaps neural “audio” style transfer? Or, speech to text, and many others. We will explore different representations based on ideas discussed amongst the team and apply them to sample deep learning tasks to observe how well they perform.",
-    "Leader names": "Sudharsan Gopalakrishnan HMC ‘27",
-    "Team size": "3-5 students",
+    "Leader names": "Sudharsan Gopalakrishnan (HMC '27, CS)",
+    "Team size": "3-5 members",
     "Leader emails": "sgopalakrishnan@g.hmc.edu",
     "link to proposal": "https://docs.google.com/document/d/1UXFroeVfXBNb0SHCOxIybPQTM4GDTanXR8WobLb1g48/edit?tab=t.0"
     },
@@ -20,8 +20,8 @@
     "title": "p-ArtLine",
     "short description": "An Interactive Exploration of Art History Through Space and Time",
     "description": "What did art look like in 15th-century Italy or 3rd-century Egypt? Artline is an interactive art history platform that allows users to explore art and artifacts throughout human history in a unified timeline. We started this project over the summer and built the first iteration, which we’re hoping to expand upon this fall with new members! Currently, the core product is a website where users can scroll through time and see artifacts from The Met Museum’s open-access collection that we’ve imported to our own database. We have also started to build out a feature where users can filter artifacts by medium, geography, and culture.",
-    "Leader names": "Kalyani Nair, Pomona ‘27, CS Major and Harper Noteboom, Pomona ‘27, CS Major",
-    "Team size": "4-6 people",
+    "Leader names": "Kalyani Nair (PO '27, CS); Harper Noteboom (PO '27, CS)",
+    "Team size": "4-6 members",
     "Leader emails": "ksne2023@mymail.pomona.edu, hjnf2022@mymail.pomona.edu",
     "link to proposal": "https://docs.google.com/document/d/1KgxuxBMWN19fqKh401601vSZ0HSSb-nC0NWNNu4lmGM/edit?tab=t.0"
     },
@@ -29,8 +29,8 @@
     "title": "p-Course",
     "short description": "Your AI Academic Advisor",
     "description": "We aim to create an AI academic advisor for students to get support in degree planning, as well as specific class schedule planning. Users will use natural language to input their schedule preferences such as time constraints and degree goals. Our AI agent will parse the official course catalogs of the 5C schools, and scrape RateMyProfessor, and the broader web to find the best fit for each student and their academic and career goals.",
-    "Leader names": "Kevin Xia (HMC ‘28 CS-Math), Dane Knudsen (CMC ‘28 Econ + CS) and Trusten Lehmann Karp (HMC ‘28 Engineering)",
-    "Team size": "7 students (3 Leads, 4 project Members)",
+    "Leader names": "Kevin Xia (HMC '28, CS+Math); Dane Knudsen (CMC '28, Econ+CS); Trusten Lehmann Karp (HMC '28, Engineering)",
+    "Team size": "4 members",
     "Leader emails": "kexia@g.hmc.edu, tlehmannkarp@g.hmc.edu, dknudsen28@cmc.edu",
     "link to proposal": "https://drive.google.com/file/d/1HVzn6Nl30ZL99hmCyPc7OGLB5h6BDolz/view?usp=sharing"
     },
@@ -38,9 +38,36 @@
     "title": "p-SciBowl",
     "short description": "An app to help streamline Science Bowl competition prep",
     "description": "National Science Bowl is a prestigious, fast-paced competition requiring quick recall, teamwork, and strategy. Current practice methods for high schoolers rely on DOE (Dept. of Energy)’s archived packets, manual timing, and makeshift moderators. This creates inefficiency, because students juggle these “mod” roles amidst their practice, and also eventually run into the same questions to which they know the answers. Existing “Science Bowl apps” mainly consolidate old packets without replicating a real competition rigorously enough.",
-    "Leader names": "Aditi Gargeshwari, Harvey Mudd co/2028, Math+CS",
-    "Team size": "6–7 students",
+    "Leader names": "Aditi Gargeshwari (HMC '28, CS+Math",
+    "Team size": "6-7 members",
     "Leader emails": "agargeshwari@g.hmc.edu",
     "link to proposal": "https://drive.google.com/file/d/1wIuHRDMFbk1N_yIcKTbxWLZZa-weY9KM/view?usp=sharing"
-    }
+    },
+ {
+   "title": "p-Tagsafe",
+   "short description": "Trademark-Safe Keywords for E-Commerce Listings",
+   "description": "This project builds an AI assistant that helps online sellers generate trademark-safe titles, tags, and descriptions for their product listings. Users upload a product photo or a short description; the system extracts candidate phrases, identifies the relevant Nice classes (e.g., Class 25 for apparel), checks against U.S. trademark records, flags risky terms, and proposes compliant, high-intent alternatives ready to paste into Etsy/Amazon/Shopify.",
+   "Leader names": "Taha Disbudak (PO '28, CS+Psychology)",
+   "Team size": "2-3 members",
+   "Leader emails": "mtdi2024@mymail.pomona.edu",
+   "link to proposal": "https://docs.google.com/document/d/17jF65JVDif1mcxcupfJMQpMvm5AFTaOarqxM8vXPdfU/edit?tab=t.0"
+   },
+ {
+   "title": "p-resents",
+   "short description": "Optimizing gift-giving rules for friend groups",
+   "description": "There are many ways to give gifts during the holidays (Secret Santa, White Elephant or Dirty Santa, Grab Bag, and more), and groups often debate which format is “best.” Tools like drawnames.com help with name assignment, but they don’t answer the deeper question: which rules fit our group? p-resents simulates gift exchanges with AI-driven agents to recommend gift-giving rule sets tailored to a group’s traits: how similar people’s tastes are, how altruistic or competitive they are, and how well they know one another, among other traits.",
+   "Leader names": "Samuel Wang (PO '26, CS+Econ); Liam Hochman (PO '26, CS)",
+   "Team size": "5-6 members",
+   "Leader emails": "swyk2022@mymail.pomona.edu, lbhh2022@mymail.pomona.edu",
+   "link to proposal": "https://docs.google.com/document/u/0/d/1XPw8U8kFi6Fq8Nb77ZjrMteSiorv5Zcsr0i09sN6e9I/edit?tab=t.0"
+   },
+ {
+   "title": "p-lates5C",
+   "short description": "5C dining hall food reviews and personalized recommendations",
+   "description": "“Where should we eat?” The age-old question echoes across the 5Cs daily. Too often, students pick a dining hall only to be left with a mid meal and miss out on better options elsewhere. Eating at the dining halls is central to student life, yet the current tools for navigating campus dining are unreliable, limited, and impersonal. p-lates will consolidate all 7 dining halls’ menus into a single platform that allows students to log and rate meals.",
+   "Leader names": "Jalen DeLoney (PO '27, CS+Econ); Paul Kim (HMC '27, CS+Econ)",
+   "Team size": "4-5 members",
+   "Leader emails": "jcdu2023@mymail.pomona.edu, paulkim@hmc.edu",
+   "link to proposal": "https://docs.google.com/document/d/1-wxagOf2f8p2a1iP-LymR35WAwiM-9ILLlrk0bSxENI/edit?tab=t.0"
+   }
 ]
