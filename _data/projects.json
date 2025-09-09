@@ -47,9 +47,9 @@
    "title": "p-Tagsafe",
    "short description": "Trademark-Safe Keywords for E-Commerce Listings",
    "description": "This project builds an AI assistant that helps online sellers generate trademark-safe titles, tags, and descriptions for their product listings. Users upload a product photo or a short description; the system extracts candidate phrases, identifies the relevant Nice classes (e.g., Class 25 for apparel), checks against U.S. trademark records, flags risky terms, and proposes compliant, high-intent alternatives ready to paste into Etsy/Amazon/Shopify.",
-   "Leader names": "Taha Disbudak (PO '28, CS+Psychology)",
+   "Leader names": "Taha Disbudak (PO '28, CS+Psychology); Zaan Saeed (HMC '28, CS+Physics)",
    "Team size": "2-3 members",
-   "Leader emails": "mtdi2024@mymail.pomona.edu",
+   "Leader emails": "mtdi2024@mymail.pomona.edu, zasaeed@hmc.edu",
    "link to proposal": "https://docs.google.com/document/d/17jF65JVDif1mcxcupfJMQpMvm5AFTaOarqxM8vXPdfU/edit?tab=t.0"
    },
  {
