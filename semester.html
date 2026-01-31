@@ -24,7 +24,7 @@ title: This Semester
     <button class="slideshow-arrow prev-arrow">❮</button>
     
     <div class="slideshow-wrapper">
-      {% for slide in site.data.projects %}
+      {% for slide in site.data.projectsSP26 %}
         <div class="project-slide {% if forloop.first %}active{% endif %}">
           <h3 class="project-title">{{ slide.title }}</h3>
           <p class="project-description"><b>{{ slide["short description"] }}</b></p>

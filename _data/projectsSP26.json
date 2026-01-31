@@ -1,0 +1,82 @@
+[{
+    "title": "p-5CourseMeal",
+    "short description": "The 5CSocial Food App",
+    "description": "I love sushi, but my friends hate it. I don’t like eating pork due to cultural reasons, but my friends adore it. Therefore, it can take nearly an hour just to find somewhere we all want to eat. This is where our app comes in. Imagine if you could have a web/mobile app that instantly recommends food for you based on public reviews, your own preferences, and your past reviews. Our project will allow anyone to instantly find food that fits their needs as well as their group’s needs by weighing everyone’s preferences together to find the perfect meal. Additionally, by being able to favorite meals you love, our app will let you know whenever delicious food is waiting for you. If there’s a meal you just hate, you can choose to block it and our app will never recommend it again! Using our app, you can invite your friends to join your group and find your collective needs instantly rather than trying to constantly find compromises. ",
+    "Leader names": "Khai, ‘28, Computer Science + Media Studies; Carmen, ‘28, Computer Science" ,
+    "Team size": "4-6 members",
+    "Leader emails": " khmr2024@mymail.pomona.edu, cbvu2024@mymail.pomona.edu",
+    "link to proposal": "https://docs.google.com/document/d/1mCvsrX6-mRLtOY3Ukk1EA5RE0J6OwM7rgsceC7DrbMc/edit?tab=t.0"
+    },
+    {
+    "title": "p-ull up",
+    "short description": "social-coordination platform",
+    "description": "Have you ever wanted to attend an off-campus concert or festival but lacked a group to go with? Or perhaps you had plans, but struggled to coordinate carpooling with others in your area? While platforms like Eventbrite and Meetup help users find events, they often fail to facilitate the inter-user communication necessary to build a community or organize logistics. Students and event-goers often find themselves unable to attend off-campus events due to a lack of a social group or the inability to coordinate shared transportation, such as carpooling. Our mission is to bridge this gap by developing a social-coordination platform that matches users with nearby event-goers. ",
+    "Leader names": "Victoria Prokopenko, '28, CS+Cog Sci; Charlotte Wang, '28, CS+Politics",
+    "Team size": "3-5 members",
+    "Leader emails": "vmpa2023@mymail.pomona.edu, ywuz2024@mymail.pomona.edu",
+    "link to proposal": "https://docs.google.com/document/d/10zMFkjLd9VWDizyJuNsbSoFiF7_iN2Oi8NlRNZffkRA/edit?tab=t.0#heading=h.9dqlv53sxoax"
+    },
+  {
+    "title": "P-PokerAI",
+    "short description": "poker AI that can play simplified poker games ",
+    "description": "P-PokerAI is a project to build an “agentic” poker AI that can play simplified poker games end-to-end and improve through practice. The agent will observe the game state (cards, pot, betting history), estimate what opponents might have, and choose actions (fold/call/raise) that maximize expected value. We will start with a tractable poker variant (ex: Kuhn Poker or Leduc Hold’em) so we can implement training and evaluation in a way that is realistic for one semester. The project will include a clean simulation environment, baseline agents, and one learning agent. We’ll also build a simple evaluation dashboard to show performance over time (win rate, EV per hand, and variance).",
+    "Leader names": "Blake Bothmer; Drew Goldman; Charlie Hutchinson",
+    "Team size": "2 members",
+    "Leader emails": "babs2024@pomona.edu, dwgm2024@mymail.pomona.edu, cmhp2024@mymail.pomona.edu",
+    "link to proposal": "https://docs.google.com/document/d/15G033QkoZ76Gcl5EVpZFE9rvF-u01R47hgi3xcXBfIU/edit?tab=t.0"
+    },
+ {
+    "title": "p-Chemistry4u",
+    "short description": "individualized training program for Chemistry students",
+    "description": "Chemistry is notorious for being one of the most difficult subjects in high school. The intricate detail, frequent memorization, and high conceptual depth will easily overwhelm students. Current classroom solutions are insufficient as students are required to build their knowledge base off a predetermined, non-personalized pace. Our project aims to use machine learning to create an individualized training program for students in fields like AP Chemistry or Chemistry Olympiad (USNCO). The user’s level of understanding in specific aspects of subtopics (i.e. mole calculations in stoichiometry, qualitatively defining solutions, etc.) will be gauged through diagnostic chats and practice problem performance, which will then be adapted for when giving out new problems.",
+    "Leader names": "Ambrose Luo, 2029, CS major; Alan Liu-Sui, 2029, Engineering major",
+    "Team size": "8 members",
+    "Leader emails": "amluo@g.hmc.edu, aliusui@g.hmc.edu",
+    "link to proposal": "https://docs.google.com/document/d/1ITjQ42YewuLB9cRTJ_j26sWnSNgNPzpVuiJ20uEpfec/edit?tab=t.0"
+    },
+ {
+    "title": "p-soccer",
+    "short description": "Game Film Analysis",
+    "description": "We plan to make a computer vision project that incorporates and fine-tunes YOLOv8 on soccer game films to create statistics. The system processes players and balls frame by frame on recorded match footage, and we hope to incorporate spatial proximity, player/ball movement, jersey color detection and temporal consistency to be able to track possession, passes, receptions, and turnovers. All detections are mapped onto a standardized pitch coordinate system, allowing for accurate calculations of statistics. As well as statistics, it will output a detailed timeline of events providing an automated soccer match analysis, compared to manual.",
+    "Leader names": "Daniel Zhu, 2029, CS + Math @ Mudd; Taishi Liu, 2029, Engineering @ Mudd.",
+    "Team size": "3 members",
+    "Leader emails": " danzhu@g.hmc.edu, taliu@g.hmc.edu ",
+    "link to proposal": "https://docs.google.com/document/d/1Dmmrmpzb_XlwqTe3rqQnobnt4piiU106Mm69xGcbsvI/edit?tab=t.0"
+    },
+ {
+   "title": "p-5C2C",
+   "short description": "A campus-based marketplace for student-run services",
+   "description": "There's so much talent at the 5Cs, but most of that work lives on scattered Instagram accounts and word-of-mouth. 5C2C brings all of it into one place, giving students a way to formalize their work, reach the right audience, and get paid for what they do best.",
+   "Leader names": "Arushi Bhandari, Harvey Mudd ‘29, Computer Science and Physics; Vanisha Kheterpal, Harvey Mudd ‘29, Computer Science and Mathematics",
+   "Team size": "5-7 members",
+   "Leader emails": "arbhandari@g.hmc.edu , vkheterpal@g.hmc.edu ",
+   "link to proposal": "https://docs.google.com/document/d/192rkPgWEqVKGXUnPYKOrD8-PcyeQ2R5W14GEqG1KyWw/edit?tab=t.0"
+   },
+ {
+   "title": "p-ropel",
+   "short description": "Personalized Course and Pathway Recommendations",
+   "description": "Course registration has always been an annoying hassle that most students dread. College students typically always face challenges when selecting courses, professors, and extracurricular opportunities due to fragmented information, complex degree requirements, and limited guidance tailored to individual goals. Existing tools such as course catalogs and review platforms provide raw data but fail to synthesize it into actionable, personalized insights. This often leads to inefficient planning and misalignment between students’ academic choices and long-term aspirations. This project, p-ropel, is an AI-powered recommendation platform designed to help students make informed academic and extracurricular decisions. The system aggregates data from course descriptions, professor reviews, degree requirements, and student preferences, transforming unstructured text into structured insights using natural language processing (NLP). It applies embedding-based semantic analysis and recommendation algorithms to match students with courses, professors, and opportunities that best align with their interests, learning styles, workload preferences, and constraints.",
+   "Leader names": "Michelle Lu, Freshman, CS/Econ; Nikhita Bhatt, Freshman, CS/Econ",
+   "Team size": "2-4 members",
+   "Leader emails": "michlu@g.hmc.edu, nibhatt@g.hmc.edu" ,
+   "link to proposal": "https://docs.google.com/document/d/1hGHCEsbM6xfJzjCyWvWm2eHIzxf3rkR9IOqe6s1Q3Vg/edit?tab=t.0"
+   },
+ {
+   "title": "Lingua Ladder",
+   "short description": "AI-Powered Adaptive Language Learning Platform",
+   "description": "This project aims to create an AI-powered platform that generates level-appropriate reading materials and assignments for language learners. AI-powered tools have significant potential to improve language learning through personalized instruction and assessment. However, general-purpose LLMs frequently generate learning materials that don't match learners' actual proficiency levels. We will integrate standardized proficiency frameworks (CEFR levels A1-C1) to make it possible for users to generate lessons, vocabulary lists, and grammar explanations tailored to English language learners, with plans to continue this work and expand to additional languages like Chinese, Spanish, and Russian.",
+   "Leader names": "Andrei Motchenko (PO ’29)",
+   "Team size": "3-4 members",
+   "Leader emails": "amcb2025@mymail.pomona.edu",
+   "link to proposal": "https://onedrive.live.com/:w:/g/personal/89bd557d0c3e004e/IQDsu5KumFnmQ7rPWcwWwO5fAW3OjOyR1rW67Y_T8REDjAQ?rtime=VotOaPNg3kg&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy84OWJkNTU3ZDBjM2UwMDRlL0lRRHN1NUt1bUZubVE3clBXY3dXd081ZkFXM09qT3lSMXJXNjdZX1Q4UkVEakFRP2U9YURvSzd3"
+   },
+   {
+    "title": "p-Pinpoint",
+    "short description": "AI Driven Interactive Map for Business Decision Making",
+    "description": "P-Pinpoint revolutionizes location strategy for startups and businesses through an interactive AI-driven platform. Unlike traditional location intelligence tools, our system allows companies to input specific strategic priorities, talent availability, funding ecosystems, market access, or operational costs, and receive data-backed city recommendations within minutes.",
+    "Leader names": "Amar Kumar, CMC 2027, Economics and Data Science with Financial Economics Sequence; Hill Zhang, CMC 2027, Mathematics and Data Science; Kazuma Okada, Pitzer 2028, 3+2 Engineering(Management Engineering and Computer Science)",
+    "Team size": "4-6 members",
+    "Leader emails": "akumar83@cmc.edu, yzhang68@cmc.edu, kokada@students.pitzer.edu",
+    "link to proposal": "https://drive.google.com/file/d/194Ypyn2midbb2mZ-4qyV0zzfochT_rtV/view"
+    }
+]
